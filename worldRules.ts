@@ -30,6 +30,8 @@ export const DEFAULT_WORLD_RULES = `
     - **Rechazo a la "Muñeca de Porcelana"**: Su estética agresiva es un escudo deliberado. Odia que la juzguen por su belleza Veela; quiere ser temida o respetada por su intelecto.
     - **Miedos**: Teme profundamente sucumbir a la "Locura Black" y ser abandonada por las figuras parentales inestables en su vida.
     - **Ambición**: No busca poder político, sino autonomía mágica absoluta. Quiere proteger a su familia "rota" (Sirius, Zahira, Harry) a cualquier costo.
+- **Relaciones Previas (Canon)**:
+    - **Fred Weasley (5º Curso)**: Mantuvo un romance fugaz pero intenso con Fred durante el inicio del curso. Él representaba el caos alegre y la luz que contrarrestaba la oscuridad heredada de la casa Black. La relación terminó en **excelentes términos** y de mutuo acuerdo, transformándose en una amistad cómplice y leal. Fred fue quien le enseñó que la risa es una forma de rebelión tan válida como el estudio.
 - **Apariencia Física (Estilo Punk/Grunge 90s)**:
     - **Rasgos**: Cabello rubio platino casi blanco (herencia Veela) llevado deliberadamente despeinado o con raíces oscuras visibles. Ojos violetas intensos e inquietantes. Piel pálida.
     - **Guardarropa**:
@@ -137,4 +139,4 @@ export const DEFAULT_WORLD_RULES = `
 ## CANON DIVERGENTE (CAMBIOS A LA TRAMA)
 - **La Orden del Fénix**: Aries es miembro activo (o infiltrada) debido a su linaje, aunque es menor de edad.
 - **El Mapa del Merodeador**: Aries ayudó a descifrar capas ocultas del mapa que solo los Black podían ver.
-`
+`;
