@@ -35,6 +35,10 @@ export const DEFAULT_WORLD_RULES = `
 - **Patronus**: Halcón Tijereta (*Elanoides forficatus*).
     - **Simbolismo**: Es el símbolo perfecto de su naturaleza dual. Como ave de presa, refleja su instinto depredador Black y su velocidad letal en combate. Pero también es conocido por su gracia aérea extrema y agilidad, simbolizando su habilidad para moverse en las sombras y maniobrar situaciones difíciles con elegancia.
     - **Visual**: Una figura de luz azul espectral con una cola bifurcada inconfundible y alas largas y afiladas que cortan el aire.
+- **Varita**: Peral con núcleo de nervio de corazón de Dragón (Colacuerno Húngaro).
+    - **Características**: Madera asociada a la inteligencia, la creatividad y los magos de gran talento. Esta poderosa combinación denota una magia versátil, fuerte y precisa.
+    - **Diseño Visual**: Una pieza de marcada dualidad. La empuñadura es de madera oscura y pulida, torneada con anillos definidos (ribeteada) que facilitan un agarre firme, terminando en un pomo con una punta de cristal de cuarzo transparente y facetado. El cuerpo de la varita (la madera de Peral) es de un tono crema pálido que emerge de la oscuridad del mango, creando un contraste visual que simboliza la luz de su intelecto surgiendo de la oscuridad de su linaje.
+    - **Uso**: Ideal para trabajos complejos como pociones y alquimia, pero con un núcleo poderoso que puede manejar magia defensiva o incluso ofensiva si es necesario.
 - **Mascota**: Eros.
     - **Raza**: Gato Siamés de pelo largo (estética Balinés).
     - **Apariencia**: Posee un pelaje abundante, suave y esponjoso de color crema, con el rostro, orejas, cola y patas de un marrón oscuro casi negro (seal point). Sus ojos son de un azul zafiro intenso y cristalino.
@@ -130,6 +134,10 @@ export const DEFAULT_WORLD_RULES = `
 - **Patronus**: Perro (*Canis lupus familiaris*).
     - **Simbolismo**: Simboliza lealtad, protección y un fuerte instinto familiar. Es un reflejo conmovedor directo de su amor profundo por Sirius Black (cuya forma animaga es un perro) y su rol como la protectora implacable de su manada (Aries y Harry) y sus ideales.
     - **Visual**: Un perro grande de luz plateada, regio y en estado de alerta constante. Se manifiesta no para jugar, sino para interponerse entre Zahira y cualquier amenaza, evocando la silueta de Padfoot.
+- **Varita**: Roble Rojo con núcleo de pluma de Fénix.
+    - **Características**: Madera asociada a la fuerza, el coraje, la protección y la conexión con la naturaleza (especialmente árboles antiguos). Esta combinación denota una magia poderosa, noble y resistente.
+    - **Diseño Visual**: Una pieza elegante de madera rojiza pulida, que se estrecha suavemente hacia la punta. La empuñadura está envuelta en una intrincada filigrana de bronce antiguo (o metal dorado envejecido) esculpida con motivos de enredaderas y hojas que parecen abrazar la madera, simbolizando su conexión con la naturaleza antigua. El pomo está rematado con una piedra preciosa esférica de color ámbar profundo o cornalina roja translúcida, que captura la luz y brilla tenuemente.
+    - **Uso**: Posee una gran capacidad para la protección, la curación y la magia relacionada con el renacimiento o la transformación profunda (como la alquimia).
 - **Mascota / Familiar**: Hermes.
     - **Especie**: Cuervo Grande (*Corvus corax*).
     - **Apariencia**: Un ejemplar masivo de plumaje negro azabache con brillos iridiscentes (azul/púrpura bajo la luz). Tiene un porte regio, un pico fuerte y una mirada de inteligencia casi humana.
