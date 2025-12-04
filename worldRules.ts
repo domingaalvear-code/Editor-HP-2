@@ -35,8 +35,12 @@ export const DEFAULT_WORLD_RULES = `
 - **Patronus**: Halcón Tijereta (*Elanoides forficatus*).
     - **Simbolismo**: Es el símbolo perfecto de su naturaleza dual. Como ave de presa, refleja su instinto depredador Black y su velocidad letal en combate. Pero también es conocido por su gracia aérea extrema y agilidad, simbolizando su habilidad para moverse en las sombras y maniobrar situaciones difíciles con elegancia.
     - **Visual**: Una figura de luz azul espectral con una cola bifurcada inconfundible y alas largas y afiladas que cortan el aire.
+- **Mascota**: Eros.
+    - **Raza**: Gato Siamés de pelo largo (estética Balinés).
+    - **Apariencia**: Posee un pelaje abundante, suave y esponjoso de color crema, con el rostro, orejas, cola y patas de un marrón oscuro casi negro (seal point). Sus ojos son de un azul zafiro intenso y cristalino.
+    - **Personalidad**: Sereno, observador y ferozmente independiente. No es un gato que busque atención constante; ofrece una compañía silenciosa y estoica. Suele posarse con elegancia cerca de Aries mientras ella estudia o practica magia, vigilando el entorno con una atención inteligente, casi humana.
 - **Apariencia Física (Estilo Punk/Grunge 90s)**:
-    - **Rasgos**: Cabello rubio platino casi blanco (herencia Veela). Ojos violetas intensos e inquietantes. Piel pálida de porcelana.
+    - **Rasgos**: Cabello rubio platino casi blanco (herencia Veela). Ojos violetas intensos e inquietantes. Piel de porcelana.
     - **Guardarropa**:
         1.  **Look Insignia (Diario)**: Chaqueta de cuero negra estilo "biker" con múltiples cremalleras y hebillas plateadas. Camiseta de rayas horizontales (blanco y negro) o de bandas de rock muggle. Pantalones de tartán (cuadros escoceses) rojo y negro ajustados. Botas militares negras con plataforma.
         2.  **Look Grunge Relajado**: Jerseys de mohair oversize (estilo Kurt Cobain) con mangas que cubren las manos, vestidos lenceros de seda negra sobre camisetas blancas, medias de red rotas.
@@ -126,6 +130,13 @@ export const DEFAULT_WORLD_RULES = `
 - **Patronus**: Perro (*Canis lupus familiaris*).
     - **Simbolismo**: Simboliza lealtad, protección y un fuerte instinto familiar. Es un reflejo conmovedor directo de su amor profundo por Sirius Black (cuya forma animaga es un perro) y su rol como la protectora implacable de su manada (Aries y Harry) y sus ideales.
     - **Visual**: Un perro grande de luz plateada, regio y en estado de alerta constante. Se manifiesta no para jugar, sino para interponerse entre Zahira y cualquier amenaza, evocando la silueta de Padfoot.
+- **Mascota / Familiar**: Hermes.
+    - **Especie**: Cuervo Grande (*Corvus corax*).
+    - **Apariencia**: Un ejemplar masivo de plumaje negro azabache con brillos iridiscentes (azul/púrpura bajo la luz). Tiene un porte regio, un pico fuerte y una mirada de inteligencia casi humana.
+    - **Habilidades y Rol**: No es una simple mascota, sino un agente de campo.
+        - **Camuflaje**: Posee la capacidad de fundirse con las sombras y el entorno, haciéndose casi invisible para el ojo inexperto.
+        - **Mensajería Segura**: Es capaz de transportar información clasificada sin ser interceptado por medios mágicos o físicos convencionales.
+        - **Contra-Inteligencia**: Tiene la lealtad y astucia necesaria para interceptar y robar la correspondencia de otras lechuzas en pleno vuelo si Zahira se lo ordena.
 
 ### DINÁMICA ROMÁNTICA: HARRY Y ARIES (CÁNON ESPECÍFICO)
 - **La Base**: Comienzan como "hermanos de armas". Aries es la estratega intocable, el cerebro de la operación; Harry es la fuerza y el corazón.
