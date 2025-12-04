@@ -36,12 +36,15 @@ export const DEFAULT_WORLD_RULES = `
     - **Simbolismo**: Es el símbolo perfecto de su naturaleza dual. Como ave de presa, refleja su instinto depredador Black y su velocidad letal en combate. Pero también es conocido por su gracia aérea extrema y agilidad, simbolizando su habilidad para moverse en las sombras y maniobrar situaciones difíciles con elegancia.
     - **Visual**: Una figura de luz azul espectral con una cola bifurcada inconfundible y alas largas y afiladas que cortan el aire.
 - **Apariencia Física (Estilo Punk/Grunge 90s)**:
-    - **Rasgos**: Cabello rubio platino casi blanco (herencia Veela) llevado deliberadamente despeinado o con raíces oscuras visibles. Ojos violetas intensos e inquietantes. Piel pálida.
+    - **Rasgos**: Cabello rubio platino casi blanco (herencia Veela). Ojos violetas intensos e inquietantes. Piel pálida de porcelana.
     - **Guardarropa**:
         1.  **Look Insignia (Diario)**: Chaqueta de cuero negra estilo "biker" con múltiples cremalleras y hebillas plateadas. Camiseta de rayas horizontales (blanco y negro) o de bandas de rock muggle. Pantalones de tartán (cuadros escoceses) rojo y negro ajustados. Botas militares negras con plataforma.
         2.  **Look Grunge Relajado**: Jerseys de mohair oversize (estilo Kurt Cobain) con mangas que cubren las manos, vestidos lenceros de seda negra sobre camisetas blancas, medias de red rotas.
         3.  **Uniforme Hogwarts Modificado**: Falda gris acortada, corbata de Ravenclaw floja y mal anudada, camisa por fuera, siempre con botas en lugar de zapatos escolares.
-        4.  **Atuendo Especial: Baile de Navidad (Celestial Gothic)**: Un vestido strapless de tul gris humo y plata con pedrería en degradado que imita un cielo de tormenta o estrellado. Una capa de tul transparente que cae desde la espalda creando un efecto de "alas" etéreas. Accesorio clave: Un choker de terciopelo negro ajustado al cuello con un camafeo victoriano y una lágrima negra colgando.
+        4.  **Atuendo Especial: Baile de Navidad (14 años - Celestial Gothic)**:
+            - **Peinado**: El cabello rubio platino recogido en una trenza corona (estilo *halo braid*) intrincada y romántica alrededor de la cabeza, con mechones sueltos y ondulados cayendo suavemente para enmarcar el rostro.
+            - **Vestido**: Un diseño etéreo de tul gris perla y plata. El corpiño está ajustado y cubierto de lentejuelas plateadas que atrapan la luz. Una capa ligera de tul transparente cubre los hombros y cae suavemente sobre los brazos.
+            - **Accesorio Clave**: Un choker de terciopelo negro ajustado al cuello con un camafeo victoriano (perfil color marfil sobre fondo beige) y una lágrima de cristal negro colgando, contrastando la delicadeza del vestido.
 - **Espacio Personal (Habitación en Grimmauld Place)**:
     - **Atmósfera**: Un santuario de rebeldía Muggle en medio de la opresión mágica antigua y el polvo de la casa Black. Las paredes están cubiertas estratégicamente para ocultar el papel tapiz original. Huele a incienso y vinilo viejo.
     - **Decoración (Pósters Específicos)**:
@@ -153,4 +156,4 @@ export const DEFAULT_WORLD_RULES = `
 ## CANON DIVERGENTE (CAMBIOS A LA TRAMA)
 - **La Orden del Fénix**: Aries es miembro activo (o infiltrada) debido a su linaje, aunque es menor de edad.
 - **El Mapa del Merodeador**: Aries ayudó a descifrar capas ocultas del mapa que solo los Black podían ver.
-`
+`;
