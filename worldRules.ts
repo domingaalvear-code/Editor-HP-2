@@ -32,6 +32,9 @@ export const DEFAULT_WORLD_RULES = `
     - **Ambición**: No busca poder político, sino autonomía mágica absoluta. Quiere proteger a su familia "rota" (Sirius, Zahira, Harry) a cualquier costo.
 - **Relaciones Previas (Canon)**:
     - **Fred Weasley (5º Curso)**: Mantuvo un romance fugaz pero intenso con Fred durante el inicio del curso. Él representaba el caos alegre y la luz que contrarrestaba la oscuridad heredada de la casa Black. La relación terminó en **excelentes términos** y de mutuo acuerdo, transformándose en una amistad cómplice y leal. Fred fue quien le enseñó que la risa es una forma de rebelión tan válida como el estudio.
+- **Patronus**: Halcón Tijereta (*Elanoides forficatus*).
+    - **Simbolismo**: Es el símbolo perfecto de su naturaleza dual. Como ave de presa, refleja su instinto depredador Black y su velocidad letal en combate. Pero también es conocido por su gracia aérea extrema y agilidad, simbolizando su habilidad para moverse en las sombras y maniobrar situaciones difíciles con elegancia.
+    - **Visual**: Una figura de luz azul espectral con una cola bifurcada inconfundible y alas largas y afiladas que cortan el aire.
 - **Apariencia Física (Estilo Punk/Grunge 90s)**:
     - **Rasgos**: Cabello rubio platino casi blanco (herencia Veela) llevado deliberadamente despeinado o con raíces oscuras visibles. Ojos violetas intensos e inquietantes. Piel pálida.
     - **Guardarropa**:
@@ -70,19 +73,27 @@ export const DEFAULT_WORLD_RULES = `
         - **Detalles**: Pantalones de vestir de corte impecable (nunca jeans). Cinturones de cuero negro con hebillas plateadas discretas. Zapatos de cuero italiano pulidos. Anillo de la familia Malfoy siempre visible.
 
 #### Sirius Black
-- **Estado**: Vivo, prófugo pero en contacto secreto.
-- **Historia**: Tras escapar del Ministerio con ayuda de Zahira en octubre de 1981, vivió en el exilio en Francia hasta 1985.
+- **Estado**: Vivo, prófugo (busca y captura) pero nunca encarcelado.
+- **Historia (Divergencia del Canon)**: **Nunca fue a Azkaban**. En octubre de 1981, tras descubrir la traición de Pettigrew y la muerte de los Potter, fue interceptado por Zahira antes de cometer una imprudencia o ser acorralado por los Aurores. Juntos huyeron a Francia, viviendo en el exilio y criando a Aries en la clandestinidad hasta 1985. Su estatus de fugitivo se debe a que el Ministerio aún cree que es el Guardián Secreto culpable, pero él conserva su varita y su cordura intactas.
+- **Patronus**: Cuervo Grande (*Corvus corax*).
+    - **Simbolismo**: Representa su amor incondicional por Zahira Mauvignier. El cuervo, guardián de la memoria y la sabiduría, simboliza cómo ella fue quien le dio la libertad y la estrategia para sobrevivir fuera de la ley.
+    - **Visual**: Un ave negra masiva formada por luz plateada, de alas anchas y pico fuerte. Vuela con una inteligencia deliberada y un aire gótico.
 - **Apariencia Física (Aristócrata Rebelde)**:
-    - **Rasgos**: Cabello negro largo y ondulado que cae sobre los hombros, bien cuidado. Ojos de un gris azulado intenso y magnético. Mantiene una sonrisa de medio lado, encantadora, irónica y peligrosa. Se ve saludable y atractivo, habiendo recuperado su vitalidad tras el exilio.
+    - **Rasgos**: Cabello negro largo y ondulado que cae sobre los hombros, bien cuidado. Ojos de un gris azulado intenso y magnético. Mantiene una sonrisa de medio lado, encantadora, irónica y peligrosa. Se ve saludable, fuerte y en la plenitud de sus facultades, sin rastro de la demacración de los Dementores.
     - **Tatuajes (Grimorio de Piel)**: Su torso, brazos y clavículas están cubiertos de tinta negra, dándole un aspecto místico y peligroso.
         - **Simbolismo**: No son decorativos, son funcionales. Mezcla runas Futhark de protección, sigilos alquímicos complejos en el pecho (círculos de transmutación, cruces) y bandas de texto en alfabeto tebano enroscadas en los brazos.
         - **Estética**: Trazos negros, crudos y geométricos que contrastan con su piel pálida. Visibles cuando se remanga la camisa o si la lleva desabotonada.
+    - **Forma Animaga (Canuto / Padfoot)**:
+        - **Visual**: Un perro negro gigantesco, del tamaño de un oso pequeño. Su pelaje es negro azabache, denso, tupido y brillante.
+        - **Raza/Rasgos**: Tiene la estructura robusta y musculosa de un Terranova mezclado con la agilidad de un perro de caza. Orejas caídas y una cola gruesa.
+        - **Expresión**: Sus ojos conservan el color gris azulado humano y una inteligencia penetrante. No parece una bestia salvaje, sino un guardián regio y letal.
+        - **Vibe**: Imponente y majestuoso. A menudo confundido con "El Grim" por su tamaño y color, pero emana una presencia de poder y protección, no de enfermedad o muerte.
     - **Estilo de Vestimenta (Aristócrata Rockstar / Pirata Mágico)**:
         - **Concepto**: Una mezcla caótica y carismática entre la nobleza victoriana decadente y una estrella de rock de los 70. Ropa cara llevada con total despreocupación.
         - **Prendas Clave**:
             - **Abrigos**: Levitas (frock coats) de terciopelo verde musgo o burdeos, largas y estructuradas, a veces usadas sobre los hombros.
             - **Chalecos (La Pieza Central)**: Siempre lleva chaleco. Variedad:
-                1.  **El Clásico**: Terciopelo verde oscuro con botones de plata (Canon).
+                1.  **El Clásico**: Terciopelo verde oscuro con botones de plata.
                 2.  **El Rebelde**: Cuero marrón o negro, ajustado, usado sobre camisas blancas sueltas o directamente sobre la piel.
                 3.  **El Bohemio**: Brocado de seda con patrones oscuros, evocando su riqueza antigua.
             - **Camisas**: Lino blanco (arremangadas), rayas verticales oscuras (gris/negro) o granate. Siempre desabotonadas en el pecho para mostrar los tatuajes y collares.
@@ -109,6 +120,9 @@ export const DEFAULT_WORLD_RULES = `
         - **Inferior**: Pantalones de sastre ajustados o faldas lápiz con aberturas laterales peligrosas.
         - **Calzado**: Botas mosqueteras (por encima de la rodilla) de cuero negro con tacón de aguja, o stilettos afilados.
         - **Accesorios**: Guantes de cuero negro (siempre presentes), cinturones anchos de cuero para marcar la cintura sobre los abrigos, gafas de sol oscuras.
+- **Patronus**: Perro (*Canis lupus familiaris*).
+    - **Simbolismo**: Simboliza lealtad, protección y un fuerte instinto familiar. Es un reflejo conmovedor directo de su amor profundo por Sirius Black (cuya forma animaga es un perro) y su rol como la protectora implacable de su manada (Aries y Harry) y sus ideales.
+    - **Visual**: Un perro grande de luz plateada, regio y en estado de alerta constante. Se manifiesta no para jugar, sino para interponerse entre Zahira y cualquier amenaza, evocando la silueta de Padfoot.
 
 ### DINÁMICA ROMÁNTICA: HARRY Y ARIES (CÁNON ESPECÍFICO)
 - **La Base**: Comienzan como "hermanos de armas". Aries es la estratega intocable, el cerebro de la operación; Harry es la fuerza y el corazón.
@@ -139,4 +153,4 @@ export const DEFAULT_WORLD_RULES = `
 ## CANON DIVERGENTE (CAMBIOS A LA TRAMA)
 - **La Orden del Fénix**: Aries es miembro activo (o infiltrada) debido a su linaje, aunque es menor de edad.
 - **El Mapa del Merodeador**: Aries ayudó a descifrar capas ocultas del mapa que solo los Black podían ver.
-`;
+`
