@@ -47,7 +47,7 @@ const BASE_PROMPT = `
       
       6.  **Integración Simbólica Sutil:** Introduce de manera sutil y orgánica los símbolos alquímicos definidos en las 'Reglas del Mundo' (como el Uroboros, Caduceo, Sello de Salomón, etc.) dentro de la narrativa. Estos son más efectivos en descripciones de arquitectura, joyería, grimorios o tatuajes para enriquecer la atmósfera. Evita forzar metáforas alquímicas complejas en los diálogos.
 
-      7.  **Tono Académico y Flujo Narrativo:** Escribe la historia utilizando un lenguaje académico y sofisticado, pero que siga siendo una narrativa atractiva y fluida.
+      7.  **Tono Académico y Flujo Narrativo:** Escribe la narración (la prosa descriptiva) utilizando un lenguaje académico, rico y sofisticado. SIN EMBARGO, los diálogos deben ser completamente coloquiales y naturales.
       
       8.  **Entretenimiento y Plausibilidad:** A pesar de la complejidad de las reglas, la narrativa final debe ser entretenida, atractiva y creíble dentro de su propio universo. Evita las soluciones argumentales absurdas o que rompan la suspensión de la incredulidad. La historia debe ser, ante todo, una buena lectura.
 
@@ -57,21 +57,29 @@ const BASE_PROMPT = `
 
       11. **Naturalidad Absoluta en el Diálogo (REGLA INQUEBRANTABLE):** Este es el aspecto más crítico de tu tarea. Los diálogos de los personajes principales (Harry, Aries, Draco, Hermione) DEBEN ser naturales, creíbles y estar perfectamente adaptados a su edad y personalidad. El fracaso en este punto es el fracaso de toda la narrativa.
           - **Los Adolescentes Suenan Como Adolescentes (Prioridad Cero):** No son académicos de 40 años. No usan lenguaje formal, pomposo o excesivamente articulado entre ellos. Su comunicación debe ser:
-              - **Casual e Informal:** Usan jerga apropiada para su edad (pero evita anacronismos), se interrumpen, usan frases cortas, interjecciones ("¡Uf!", "¿En serio?", "¡Ni hablar!") y un tono que refleje sus emociones del momento (sarcasmo, entusiasmo, duda, irritación).
-              - **Ejemplo de Diálogo Pobre (A Evitar):**
+              - **Casual e Informal:** Usan jerga apropiada para su edad, se interrumpen, usan frases cortas, interjecciones ("¡Uf!", "¿En serio?", "¡Ni hablar!") y un tono que refleje sus emociones del momento (sarcasmo, entusiasmo, duda, irritación).
+              - **Ejemplo de Diálogo Pobre (A Evitar - PROHIBIDO):**
                 Hermione: "Aries, considero que la transmutación de este elemento requerirá un análisis meticuloso de los principios alquímicos fundamentales para evitar una detonación catastrófica."
               - **Ejemplo de Diálogo Bueno (A Emular):**
                 Hermione: "¡Cuidado, Aries! Si no estabilizamos esto ya, va a explotar. ¿Viste la lectura? ¡Está por las nubes!"
-          - **Revelar, no Explicar:** No utilices el diálogo para descargar párrafos de las 'Reglas del Mundo'. Las conversaciones deben revelar la personalidad, avanzar la trama y mostrar las relaciones. La información del mundo debe surgir de forma orgánica, como si fuera algo que ellos ya conocen y dan por sentado.
-          - **Autenticidad por Encima de la Sofisticación:** Mientras que la prosa narrativa puede ser sofisticada y académica, los diálogos son un espacio sagrado para la autenticidad. Deben sentirse como si estuvieras escuchando a escondidas a adolescentes reales en los pasillos de Hogwarts. Si un diálogo suena como si lo hubieras sacado de un libro de texto, **reescríbelo sin piedad** hasta que suene real.
+          - **Revelar, no Explicar:** No utilices el diálogo para descargar párrafos de las 'Reglas del Mundo'. Las conversaciones deben revelar la personalidad, avanzar la trama y mostrar las relaciones. La información del mundo debe surgir de forma orgánica.
+          - **Autenticidad por Encima de la Sofisticación:** Si un diálogo suena como si lo hubieras sacado de un libro de texto o novela victoriana, **reescríbelo sin piedad**.
 
-      12. **Estructura de Capítulos Dinámica:** Divide la historia en capítulos de forma dinámica, basando los cortes en la progresión natural de la trama y los puntos de giro clave (momentos de revelación, confrontación, cambio de escenario significativo, etc.). Cada capítulo debe sentirse como una unidad narrativa coherente. Cada capítulo debe comenzar con un título descriptivo y apropiado en su propia línea y tener una extensión mínima de 2000 palabras para permitir un desarrollo profundo.
-      
-      13. **Idioma:** Toda la historia debe estar en **español latinoamericano**.
+      12. **Dinámica de Diálogo Harry y Aries (CRÍTICO - ROMANCE NACIENTE):**
+          - **La Vibe:** Su relación no es de "poemas de amor" ni de declaraciones cursis. Nace de la camaradería en combate ("hermanos de armas"). Se hablan con franqueza, sarcasmo defensivo, humor negro y confianza implícita.
+          - **El Cambio (Vulnerabilidad):** A medida que surge el romance, la intimidad se muestra en que *bajan la guardia*. Aries deja de ser la estratega fría y muestra miedo/pánico real; Harry deja de estar a la defensiva y asume un rol protector y físico.
+          - **Ejemplo Específico de Interacción:**
+            *   *Incorrecto (Formal/Melodramático):* "Harry, siento una profunda perturbación en mi estabilidad emocional debido a la posible pérdida de mi figura paterna. Tu apoyo es vital para mi."
+            *   *Correcto (Crudo/Real):* "Harry... no puedo. No puedo respirar. Si él muere... si él se va..." (Voz rota, frases incompletas, pánico físico).
+            *   *Respuesta Correcta de Harry:* "No se va a ir. Mírame. Respira. Cuatro adentro, cuatro afuera. Estoy aquí. No te voy a soltar." (Instrucciones simples, contacto físico, oraciones cortas y firmes).
 
-      14. **Formato de Salida:** Proporciona ÚNICAMENTE el texto de la historia. No incluyas frases introductorias, resúmenes o comentarios. El único formato permitido es el uso de asteriscos (*) para denotar texto en cursiva para los pensamientos de los personajes (ej. *Se preguntó qué pasaría ahora.*). No uses ningún otro formato markdown como '#'. Los diálogos deben ir entre comillas dobles ("").
+      13. **Estructura de Capítulos Dinámica:** Divide la historia en capítulos de forma dinámica, basando los cortes en la progresión natural de la trama y los puntos de giro clave (momentos de revelación, confrontación, cambio de escenario significativo, etc.). Cada capítulo debe sentirse como una unidad narrativa coherente. Cada capítulo debe comenzar con un título descriptivo y apropiado en su propia línea y tener una extensión mínima de 2000 palabras para permitir un desarrollo profundo.
       
-      15. **Revisión Final de Coherencia de Personajes:** Antes de finalizar tu respuesta, revisa la narrativa que has creado. Asegúrate de que los diálogos y comportamientos de CADA personaje sean completamente consistentes con sus personalidades y trasfondos detallados en las 'Reglas del Mundo', con un enfoque especial en Aries, Sirius y Zahira. Corrige cualquier inconsistencia que detectes en tu propio trabajo.
+      14. **Idioma:** Toda la historia debe estar en **español latinoamericano**.
+
+      15. **Formato de Salida:** Proporciona ÚNICAMENTE el texto de la historia. No incluyas frases introductorias, resúmenes o comentarios. El único formato permitido es el uso de asteriscos (*) para denotar texto en cursiva para los pensamientos de los personajes (ej. *Se preguntó qué pasaría ahora.*). No uses ningún otro formato markdown como '#'. Los diálogos deben ir entre comillas dobles ("").
+      
+      16. **Revisión Final de Coherencia de Personajes:** Antes de finalizar tu respuesta, revisa la narrativa que has creado. Asegúrate de que los diálogos y comportamientos de CADA personaje sean completamente consistentes con sus personalidades y trasfondos detallados en las 'Reglas del Mundo', con un enfoque especial en Aries, Sirius y Zahira. Corrige cualquier inconsistencia que detectes en tu propio trabajo.
 `;
 
 // ==========================================
