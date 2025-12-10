@@ -24,7 +24,8 @@ export const DEFAULT_WORLD_RULES = `
 - **Trasfondo**:
     - **Exilio (1981-1985)**: Tras la tragedia del Valle de Godric (Oct 1981), Zahira ayudó a Sirius a escapar del Ministerio. Huyeron a Francia con Aries en noviembre de 1981. Regresaron a Gran Bretaña en 1985, ocultándose en Grimmauld Place.
     - **Intereses Muggles**: Desarrolló un interés por la cultura Muggle a través de libros y música de contrabando que Sirius conseguía, encontrando en ella una rebeldía y autenticidad que resonaba con su propia disidencia.
-- **La 'Locura Black'**: Una predisposición genética a la inestabilidad mental exacerbada por la magia oscura y el trauma. Se manifiesta como obsesiones extremas, paranoia o pérdida de la realidad. Aries teme que su sangre Veela pueda intensificarla o alterarla.
+- **La 'Locura Black'**: Una predisposición genética a la inestabilidad mental exacerbada por la magia oscura y el trauma.
+    - **El Miedo Veela**: Aries teme que su sangre Veela no solo intensifique la 'Locura Black' —convirtiendo las obsesiones en compulsiones irresistibles y la paranoia en una seducción oscura y manipuladora— sino que también añada una capa de inestabilidad mágica que podría manifestarse como explosiones incontrolables de su poder Veela cuando sus emociones son extremas.
 - **Personalidad (La Intelectual Disidente)**:
     - **Contradicción Viviente**: Es una Ravenclaw brillante no por amor a las reglas, sino por una obsesión casi clínica con entender la magia para poder romperla o mejorarla. Corrige a los libros de texto.
     - **Rechazo a la "Muñeca de Porcelana"**: Su estética agresiva es un escudo deliberado. Odia que la juzguen por su belleza Veela; quiere ser temida o respetada por su intelecto.
@@ -139,12 +140,11 @@ export const DEFAULT_WORLD_RULES = `
     - **Diseño Visual**: Una pieza elegante de madera rojiza pulida, que se estrecha suavemente hacia la punta. La empuñadura está envuelta en una intrincada filigrana de bronce antiguo (o metal dorado envejecido) esculpida con motivos de enredaderas y hojas que parecen abrazar la madera, simbolizando su conexión con la naturaleza antigua. El pomo está rematado con una piedra preciosa esférica de color ámbar profundo o cornalina roja translúcida, que captura la luz y brilla tenuemente.
     - **Uso**: Posee una gran capacidad para la protección, la curación y la magia relacionada con el renacimiento o la transformación profunda (como la alquimia).
 - **Mascota / Familiar**: Hermes.
-    - **Especie**: Cuervo Grande (*Corvus corax*).
+    - **Especie**: Cuervo Sombrío (una variante mágica rara del *Corvus corax*).
     - **Apariencia**: Un ejemplar masivo de plumaje negro azabache con brillos iridiscentes (azul/púrpura bajo la luz). Tiene un porte regio, un pico fuerte y una mirada de inteligencia casi humana.
-    - **Habilidades y Rol**: No es una simple mascota, sino un agente de campo.
-        - **Camuflaje**: Posee la capacidad de fundirse con las sombras y el entorno, haciéndose casi invisible para el ojo inexperto.
-        - **Mensajería Segura**: Es capaz de transportar información clasificada sin ser interceptado por medios mágicos o físicos convencionales.
-        - **Contra-Inteligencia**: Tiene la lealtad y astucia necesaria para interceptar y robar la correspondencia de otras lechuzas en pleno vuelo si Zahira se lo ordena.
+    - **Habilidades y Rol**: No es una simple mascota, sino un agente de campo y espionaje.
+        - **Naturaleza Mágica**: No es un cuervo ordinario. Posee una afinidad natural por la magia de sigilo y ocultamiento, capaz de manipular la luz y las sombras a su alrededor para hacerse casi invisible y bloquear escrutinios mágicos.
+        - **Mejoras de Zahira**: Sus habilidades naturales han sido potenciadas por un complejo y antiguo encantamiento de camuflaje y contramedida creado por Zahira. Esto lo vuelve indetectable a sensores mágicos y capaz de anular temporalmente los hechizos protectores de la correspondencia rival para interceptarla y robarla en pleno vuelo.
 
 ### DINÁMICA ROMÁNTICA: HARRY Y ARIES (CÁNON ESPECÍFICO)
 - **La Base**: Comienzan como "hermanos de armas". Aries es la estratega intocable, el cerebro de la operación; Harry es la fuerza y el corazón.
