@@ -1,4 +1,5 @@
 
+
 export const DEFAULT_WORLD_RULES = `
 # REGLAS DEL MUNDO INMUTABLES
 
@@ -46,6 +47,9 @@ export const DEFAULT_WORLD_RULES = `
     - **Personalidad**: Sereno, observador y ferozmente independiente. No es un gato que busque atención constante; ofrece una compañía silenciosa y estoica. Suele posarse con elegancia cerca de Aries mientras ella estudia o practica magia, vigilando el entorno con una atención inteligente, casi humana.
 - **Apariencia Física (Estilo Punk/Grunge 90s)**:
     - **Rasgos**: Cabello rubio platino casi blanco (herencia Veela). Ojos violetas intensos e inquietantes. Piel de porcelana.
+    - **Aroma Característico (Signature Scent)**: *La Nuit Trésor* de Lancôme.
+        - **Historia**: Un regalo personal de Zahira en **agosto de 1994**, justo antes de comenzar su cuarto año.
+        - **Descripción**: Una fragancia gourmand afrodisíaca y oscura. Notas de rosa negra, orquídea de vainilla tahitiana, incienso natural, papiro y praliné de lichi. Es un aroma dulce, misterioso y sofisticado que contrasta con el olor metálico de las pociones que suele impregnar su ropa.
     - **Guardarropa**:
         1.  **Look Insignia (Diario)**: Chaqueta de cuero negra estilo "biker" con múltiples cremalleras y hebillas plateadas. Camiseta de rayas horizontales (blanco y negro) o de bandas de rock muggle. Pantalones de tartán (cuadros escoceses) rojo y negro ajustados. Botas militares negras con plataforma.
         2.  **Look Grunge Relajado**: Jerseys de mohair oversize (estilo Kurt Cobain) con mangas que cubren las manos, vestidos lenceros de seda negra sobre camisetas blancas, medias de red rotas.
