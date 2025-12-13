@@ -149,6 +149,12 @@ export const DEFAULT_WORLD_RULES = `
     - **Habilidades y Rol**: No es una simple mascota, sino un agente de campo y espionaje.
         - **Naturaleza Mágica**: No es un cuervo ordinario. Posee una afinidad natural por la magia de sigilo y ocultamiento, capaz de manipular la luz y las sombras a su alrededor para hacerse casi invisible y bloquear escrutinios mágicos.
         - **Mejoras de Zahira**: Sus habilidades naturales han sido potenciadas por un complejo y antiguo encantamiento de camuflaje y contramedida creado por Zahira. Esto lo vuelve indetectable a sensores mágicos y capaz de anular temporalmente los hechizos protectores de la correspondencia rival para interceptarla y robarla en pleno vuelo.
+- **Legado Familiar (Casa Mauvignier)**:
+    - **Escudo y Lema**: *"Natura Ardet, Mens Gubernat"* (La Naturaleza Arde, La Mente Gobierna).
+    - **Simbolismo**:
+        - **Natura Ardet**: Reconoce el linaje Veela (fuego, pasión, belleza sobrenatural, magia elemental instintiva). Valida la intensidad de la magia como una fuerza viva, peligrosa y "caótica" que corre por su sangre.
+        - **Mens Gubernat**: Representa la herencia Mauvignier/Flamel/Alquimista. La lógica, la precisión, el estudio, la Aritmancia y la voluntad de hierro necesaria para controlar ese poder. Es la "Alquimia Defensiva" y la estrategia que priorizan sobre la fuerza bruta.
+    - **Filosofía**: Es un lema de equilibrio, no de represión. Ideal para una familia que camina entre la luz y la oscuridad, transformando el plomo de sus legados en el oro de su propio destino.
 
 ### DINÁMICA ROMÁNTICA: HARRY Y ARIES (CÁNON ESPECÍFICO)
 - **La Base**: Comienzan como "hermanos de armas". Aries es la estratega intocable, el cerebro de la operación; Harry es la fuerza y el corazón.
