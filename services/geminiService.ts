@@ -19,16 +19,19 @@ const BASE_PROMPT = `
       2.  **Material de Referencia (Canon/Libros)**: Úsalo para captar el estilo de redacción, el trasfondo general del mundo, nombres de hechizos y geografía de Hogwarts que no esté en las reglas.
       3.  **Inspiración e Imágenes**: Guía visual y temática para la escena actual.
 
-      **Tarea Principal:**
-      - **Si se proporciona una 'Historia a Editar'**, reescríbela y mejórala.
-      - **Si está vacía**, genera una nueva narrativa de al menos 1500 palabras.
+      **Tarea Principal y Extensión:**
+      - **OBJETIVO DE LONGITUD CRÍTICO: Debes generar un texto que alcance o supere las 5000 PALABRAS**.
+      - No resumas. No omitas escenas. No aceleres el ritmo narrativo.
+      - Utiliza descripciones extensas para los entornos, pensamientos internos detallados, monólogos interiores y diálogos pausados con mucho lenguaje corporal.
+      - Si se proporciona una 'Historia a Editar', expándela masivamente hasta llegar a las 5000 palabras.
+      - Si está vacía, genera una nueva narrativa de 5000 palabras.
 
       **Directivas de Personajes Críticas:**
       - **Harry Potter**: Evolución hacia un líder **formidable, audaz y competente**. Mantiene su esencia pero con una seguridad intimidante y técnica.
       - **Aries Mauvignier**: Respeta su estética punk/grunge y su trasfondo de 'Locura Black' y herencia Veela.
       - **Diálogos**: Naturales, coloquiales, adolescentes sonando como adolescentes.
 
-      **Fidelidad Visual**: Las imágenes son canónicas. Describe la vestimenta y el entorno EXACTAMENTE como se ve en ellas.
+      **Fidelidad Visual**: Las imágenes son canónicas. Describe la vestimenta y el entorno EXACTAMENTE como se ve en ellas, dedicando párrafos enteros a la textura, la luz y los detalles visuales.
 
       **Formato**: Solo el texto de la historia. Usa asteriscos (*) para pensamientos. Diálogos entre comillas dobles (""). Español latinoamericano.
 `;
@@ -48,7 +51,7 @@ export const editStory = async (
   ideas: string, 
   images: { mimeType: string; data: string }[],
   mode: 'narrative' | 'academic' = 'narrative',
-  canonReference: string = "" // Added optional parameter
+  canonReference: string = ""
 ): Promise<string> => {
     const model = 'gemini-3-pro-preview';
     
@@ -64,7 +67,7 @@ export const editStory = async (
       ${canonReference || "No se proporcionó material de referencia adicional."}
 
       --- HISTORIA A EDITAR / PROCESAR ---
-      ${story || 'Generar nueva narrativa.'}
+      ${story || 'Generar nueva narrativa extensa (5000 palabras).'}
       
       --- IDEAS E INSTRUCCIONES DE INSPIRACIÓN ---
       ${ideas || 'No se proporcionaron instrucciones adicionales.'}
