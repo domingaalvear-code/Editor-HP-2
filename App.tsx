@@ -19,6 +19,9 @@ const App: React.FC = () => {
   // Dual state for Rules/Source Material
   const [narrativeRules, setNarrativeRules] = useState<string>(() => localStorage.getItem('worldRules') || DEFAULT_WORLD_RULES);
   const [academicSource, setAcademicSource] = useState<string>(() => localStorage.getItem('academicSource') || '');
+  
+  // New: Canon/Reference Material state
+  const [canonReference, setCanonReference] = useState<string>('');
 
   const [storyFile, setStoryFile] = useState<File | null>(null);
   const [inspirationIdeas, setInspirationIdeas] = useState<string>('');
@@ -29,30 +32,27 @@ const App: React.FC = () => {
 
   const isAcademic = appMode === AppMode.ACADEMIC;
   
-  // Derived state for the current active text area
   const currentRulesText = isAcademic ? academicSource : narrativeRules;
   const setCurrentRulesText = isAcademic ? setAcademicSource : setNarrativeRules;
 
   const handleModeChange = (mode: AppMode) => {
     setAppMode(mode);
-    // Reset transient states to avoid confusion between modes
     setStoryFile(null);
     setEditedStory('');
     setStatus(AppStatus.IDLE);
     setError(null);
-    // Keep inspirationIdeas/Images as they might be useful, or clear them if preferred. 
-    // Clearing them for cleaner UX:
     setInspirationIdeas('');
     setInspirationImages([]);
+    setCanonReference('');
   };
   
   const handleSaveRules = useCallback(() => {
     if (isAcademic) {
       localStorage.setItem('academicSource', academicSource);
-      alert('¡Material de investigación guardado en el navegador!');
+      alert('¡Material de investigación guardado!');
     } else {
       localStorage.setItem('worldRules', narrativeRules);
-      alert('¡Reglas del mundo guardadas en el navegador!');
+      alert('¡Reglas del mundo guardadas!');
     }
   }, [narrativeRules, academicSource, isAcademic]);
 
@@ -64,14 +64,14 @@ const App: React.FC = () => {
     
     setStatus(AppStatus.LOADING);
     setError(null);
-    setEditedStory(''); // Clear previous story/analysis
+    setEditedStory('');
 
     try {
         const result = await analyzeWorldRules(currentRulesText);
         setEditedStory(result);
         setStatus(AppStatus.SUCCESS);
     } catch (err) {
-        const errorMessage = err instanceof Error ? err.message : "Ocurrió un error desconocido durante el análisis.";
+        const errorMessage = err instanceof Error ? err.message : "Error desconocido.";
         setError(`Falló el análisis: ${errorMessage}`);
         setStatus(AppStatus.ERROR);
     }
@@ -80,6 +80,22 @@ const App: React.FC = () => {
   const handleSelectStarter = useCallback((prompt: string) => {
     setInspirationIdeas(prevIdeas => prevIdeas ? `${prevIdeas}\n\n${prompt}` : prompt);
     document.getElementById('inspiration-board')?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
+  const handleUploadCanon = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+        setStatus(AppStatus.LOADING);
+        try {
+            const text = await parsePdf(file);
+            setCanonReference(prev => prev + "\n\n" + text);
+            setStatus(AppStatus.IDLE);
+            alert("Material de referencia añadido con éxito.");
+        } catch (err) {
+            setError("No se pudo procesar el PDF de referencia.");
+            setStatus(AppStatus.ERROR);
+        }
+    }
   }, []);
 
   const processStory = async (storyText: string) => {
@@ -95,11 +111,18 @@ const App: React.FC = () => {
 
       const images = await Promise.all(imagePromises);
       
-      const result = await editStory(currentRulesText, storyText, inspirationIdeas, images, appMode);
+      const result = await editStory(
+        currentRulesText, 
+        storyText, 
+        inspirationIdeas, 
+        images, 
+        appMode,
+        canonReference // Pass the new reference context
+      );
       setEditedStory(result);
       setStatus(AppStatus.SUCCESS);
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : "Ocurrió un error desconocido.";
+      const errorMessage = err instanceof Error ? err.message : "Error desconocido.";
       setError(`Falló durante el procesamiento: ${errorMessage}`);
       setStatus(AppStatus.ERROR);
     }
@@ -107,13 +130,13 @@ const App: React.FC = () => {
 
   const handleGenerate = useCallback(() => {
     processStory('');
-  }, [currentRulesText, inspirationIdeas, inspirationImages, appMode]);
+  }, [currentRulesText, inspirationIdeas, inspirationImages, appMode, canonReference]);
 
   const handleEdit = useCallback(async () => {
     if (!storyFile) return;
     const storyText = await parsePdf(storyFile);
     processStory(storyText);
-  }, [currentRulesText, storyFile, inspirationIdeas, inspirationImages, appMode]);
+  }, [currentRulesText, storyFile, inspirationIdeas, inspirationImages, appMode, canonReference]);
   
   const handleDownload = useCallback(() => {
     if (editedStory) {
@@ -127,6 +150,7 @@ const App: React.FC = () => {
     setInspirationIdeas('');
     setInspirationImages([]);
     setEditedStory('');
+    setCanonReference('');
     setStatus(AppStatus.IDLE);
     setError(null);
   }
@@ -135,12 +159,11 @@ const App: React.FC = () => {
   const isSuccess = status === AppStatus.SUCCESS;
 
   return (
-    <div className="min-h-screen bg-gray-50 text-brand-text font-sans">
+    <div className="min-h-screen bg-gray-50 text-brand-text font-sans pb-20">
       <Header />
       <main className="container mx-auto p-4 md:p-8 max-w-4xl">
         <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 space-y-8">
           
-          {/* Mode Switcher */}
           {!isSuccess && (
             <div className="flex justify-center pb-4 border-b border-gray-100">
                 <div className="bg-gray-100 p-1 rounded-lg flex shadow-inner">
@@ -169,28 +192,47 @@ const App: React.FC = () => {
                   onSaveRules={handleSaveRules}
                   onAnalyze={handleAnalyzeRules}
                   disabled={isProcessing}
-                  title={isAcademic ? "1. Material de Investigación (PDF Fuente)" : "1. Gestiona las Reglas del Mundo"}
+                  title={isAcademic ? "1. Material de Investigación" : "1. Reglas del Mundo (Tu AU)"}
                   description={isAcademic 
-                    ? "Sube los artículos, datos o el marco teórico en PDF. La IA usará esto como la fuente de verdad absoluta para construir la tesis."
-                    : "Edita las reglas a continuación o sube un PDF. Haz clic en 'Guardar' para almacenarlas."
+                    ? "Sube los artículos o datos que son la fuente de verdad."
+                    : "Aquí defines tus cambios al canon (ej. Sirius libre, Aries Mauvignier). Esto manda sobre cualquier libro."
                   }
                 />
+
+                {!isAcademic && (
+                    <div className="pt-4 border-t border-gray-200">
+                        <h3 className="font-semibold text-lg text-brand-primary">2. Material de Referencia (Libros/Canon)</h3>
+                        <p className="text-sm text-gray-500 mb-2">Sube los libros originales como PDF para que la IA aprenda el estilo y el trasfondo general. No sobreescribirán tus reglas.</p>
+                        <div className="flex items-center space-x-4">
+                            <label className="flex-1 border-2 border-dashed border-gray-300 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-50 transition-colors">
+                                <input type="file" accept=".pdf" className="hidden" onChange={handleUploadCanon} disabled={isProcessing} />
+                                <span className="text-sm text-gray-600">{canonReference ? "✓ Libros cargados como contexto" : "Subir Libros (PDF)"}</span>
+                            </label>
+                            {canonReference && (
+                                <button 
+                                    onClick={() => setCanonReference('')}
+                                    className="text-xs text-red-600 hover:underline"
+                                >
+                                    Limpiar Referencia
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                )}
+
                  {!isAcademic && (
                     <StoryStarters 
                         onSelectStarter={handleSelectStarter}
                         disabled={isProcessing}
                     />
                  )}
+                
                 <FileUpload
                   id="story-upload"
                   file={storyFile}
                   onFileChange={setStoryFile}
                   disabled={isProcessing}
-                  title={isAcademic ? "2. Borrador de Tesis (Opcional)" : "3. Sube tu Historia (Opcional)"}
-                  description={isAcademic 
-                    ? "Sube un borrador de tu tesis en PDF para reescribirlo. Si lo dejas vacío, la IA generará una sección nueva (ej. Marco Teórico) basada en el Material de Investigación."
-                    : "Sube el PDF de la historia que quieres editar. Si lo dejas vacío, se generará una nueva historia."
-                  }
+                  title={isAcademic ? "2. Borrador de Tesis" : "4. Sube tu Historia (Opcional)"}
                 />
               </div>
               
@@ -202,21 +244,6 @@ const App: React.FC = () => {
                     onImagesChange={setInspirationImages}
                     disabled={isProcessing}
                   />
-              )}
-
-              {isAcademic && (
-                <div className="pt-4 border-t border-gray-200">
-                     <h3 className="font-semibold text-lg text-brand-primary">3. Instrucciones de Redacción</h3>
-                     <p className="text-sm text-gray-500 mb-2">Especifica qué sección escribir (ej. Introducción, Metodología) o el tono deseado.</p>
-                     <textarea
-                        rows={3}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-accent focus:border-brand-primary text-sm placeholder-gray-400"
-                        value={inspirationIdeas}
-                        onChange={(e) => setInspirationIdeas(e.target.value)}
-                        placeholder="Ej: Escribe el Marco Teórico enfocándote en las discrepancias de los autores del PDF..."
-                        disabled={isProcessing}
-                     />
-                </div>
               )}
             </>
           )}
@@ -235,19 +262,18 @@ const App: React.FC = () => {
                 <>
                   <ActionButton
                       onClick={handleGenerate}
-                      text={isAcademic ? "Generar Tesis (Texto Nuevo)" : "Generar Nueva Historia"}
+                      text={isAcademic ? "Generar Texto Académico" : "Escribir Historia"}
                       Icon={isProcessing ? undefined : MagicWandIcon}
                       disabled={isProcessing}
                   />
                   <ActionButton
                       onClick={handleEdit}
-                      text={isAcademic ? "Mejorar/Reescribir Borrador" : "Editar Mi Historia"}
+                      text="Editar Mi Archivo"
                       Icon={isProcessing ? undefined : EditIcon}
                       disabled={isProcessing || !storyFile}
                   />
                 </>
             )}
-           
           </div>
 
           <ResultDisplay 
@@ -256,21 +282,14 @@ const App: React.FC = () => {
             onDownload={handleDownload} 
           />
         </div>
-        <footer className="text-center text-gray-500 mt-8 text-sm">
-          <p>Desarrollado con la API de Gemini</p>
-        </footer>
       </main>
     </div>
   );
 };
 
-
 const MagicWandIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21.6667C12 21.6667 15.3333 16.3333 21 16.3333M12 21.6667C12 21.6667 8.66667 16.3333 3 16.3333M12 21.6667V3M3 8.33333C8.66667 8.33333 12 3 12 3C12 3 15.3333 8.33333 21 8.33333" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.5 7.5L12 3L13.5 7.5" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 9.5L3 8L1.5 9.5" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.5 9.5L21 8L22.5 9.5" />
     </svg>
 );
 
@@ -286,6 +305,5 @@ const RestartIcon = () => (
       <path strokeLinecap="round" strokeLinejoin="round" d="M4 9a9 9 0 0114.13-5.26M20 15a9 9 0 01-14.13 5.26" />
     </svg>
 );
-
 
 export default App;
