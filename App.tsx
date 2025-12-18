@@ -24,6 +24,7 @@ const App: React.FC = () => {
   const [canonReference, setCanonReference] = useState<string>('');
 
   const [storyFile, setStoryFile] = useState<File | null>(null);
+  const [manualStoryText, setManualStoryText] = useState<string>('');
   const [inspirationIdeas, setInspirationIdeas] = useState<string>('');
   const [inspirationImages, setInspirationImages] = useState<File[]>([]);
   const [editedStory, setEditedStory] = useState<string>('');
@@ -38,6 +39,7 @@ const App: React.FC = () => {
   const handleModeChange = (mode: AppMode) => {
     setAppMode(mode);
     setStoryFile(null);
+    setManualStoryText('');
     setEditedStory('');
     setStatus(AppStatus.IDLE);
     setError(null);
@@ -117,7 +119,7 @@ const App: React.FC = () => {
         inspirationIdeas, 
         images, 
         appMode,
-        canonReference // Pass the new reference context
+        canonReference
       );
       setEditedStory(result);
       setStatus(AppStatus.SUCCESS);
@@ -128,16 +130,18 @@ const App: React.FC = () => {
     }
   };
 
-  const handleGenerate = useCallback(() => {
-    processStory('');
-  }, [currentRulesText, inspirationIdeas, inspirationImages, appMode, canonReference]);
+  const handleAction = useCallback(async () => {
+    // Priority: 1. File Upload, 2. Manual Text, 3. Generate New
+    if (storyFile) {
+        const storyText = await parsePdf(storyFile);
+        processStory(storyText);
+    } else if (manualStoryText.trim()) {
+        processStory(manualStoryText);
+    } else {
+        processStory(''); // New generation
+    }
+  }, [currentRulesText, storyFile, manualStoryText, inspirationIdeas, inspirationImages, appMode, canonReference]);
 
-  const handleEdit = useCallback(async () => {
-    if (!storyFile) return;
-    const storyText = await parsePdf(storyFile);
-    processStory(storyText);
-  }, [currentRulesText, storyFile, inspirationIdeas, inspirationImages, appMode, canonReference]);
-  
   const handleDownload = useCallback(() => {
     if (editedStory) {
       const filename = isAcademic ? "tesis-borrador.docx" : "historia-editada.docx";
@@ -147,6 +151,7 @@ const App: React.FC = () => {
 
   const handleReset = () => {
     setStoryFile(null);
+    setManualStoryText('');
     setInspirationIdeas('');
     setInspirationImages([]);
     setEditedStory('');
@@ -231,8 +236,10 @@ const App: React.FC = () => {
                   id="story-upload"
                   file={storyFile}
                   onFileChange={setStoryFile}
+                  manualText={manualStoryText}
+                  onManualTextChange={setManualStoryText}
                   disabled={isProcessing}
-                  title={isAcademic ? "2. Borrador de Tesis" : "4. Sube tu Historia (Opcional)"}
+                  title={isAcademic ? "2. Borrador de Tesis" : "3. Tu Historia"}
                 />
               </div>
               
@@ -259,20 +266,16 @@ const App: React.FC = () => {
                     color="bg-gray-600 hover:bg-gray-700"
                 />
             ) : (
-                <>
-                  <ActionButton
-                      onClick={handleGenerate}
-                      text={isAcademic ? "Generar Texto Académico" : "Escribir Historia"}
-                      Icon={isProcessing ? undefined : MagicWandIcon}
-                      disabled={isProcessing}
-                  />
-                  <ActionButton
-                      onClick={handleEdit}
-                      text="Editar Mi Archivo"
-                      Icon={isProcessing ? undefined : EditIcon}
-                      disabled={isProcessing || !storyFile}
-                  />
-                </>
+                <ActionButton
+                    onClick={handleAction}
+                    text={
+                        (storyFile || manualStoryText.trim()) 
+                        ? (isAcademic ? "Editar Tesis" : "Editar Mi Historia") 
+                        : (isAcademic ? "Generar Tesis Nueva" : "Generar Nueva Historia")
+                    }
+                    Icon={isProcessing ? undefined : MagicWandIcon}
+                    disabled={isProcessing}
+                />
             )}
           </div>
 
@@ -290,12 +293,6 @@ const App: React.FC = () => {
 const MagicWandIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21.6667C12 21.6667 15.3333 16.3333 21 16.3333M12 21.6667C12 21.6667 8.66667 16.3333 3 16.3333M12 21.6667V3M3 8.33333C8.66667 8.33333 12 3 12 3C12 3 15.3333 8.33333 21 8.33333" />
-    </svg>
-);
-
-const EditIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L15.232 5.232z" />
     </svg>
 );
 
