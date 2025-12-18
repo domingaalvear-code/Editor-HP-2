@@ -4,11 +4,7 @@ import { AppStatus } from '../types';
 import { Loader } from './Loader';
 import { ActionButton } from './ActionButton';
 
-interface ResultDisplayProps {
-  status: AppStatus;
-  text: string;
-  onDownload: () => void;
-}
+interface ResultDisplayProps { status: AppStatus; text: string; onDownload: () => void; }
 
 const ResultDisplay: React.FC<ResultDisplayProps> = ({ status, text, onDownload }) => {
   const [progress, setProgress] = useState(0);
@@ -19,35 +15,24 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ status, text, onDownload 
       setProgress(0);
       intervalId = window.setInterval(() => {
         setProgress(prev => {
-          if (prev >= 98) {
-            if (intervalId) clearInterval(intervalId);
-            return 98;
-          }
-          // Muy lento al final para simular el procesamiento de 5k palabras
+          if (prev >= 98) { if (intervalId) clearInterval(intervalId); return 98; }
           const increment = prev > 85 ? Math.random() * 0.2 : Math.random() * 1.5;
           return prev + increment;
         });
       }, 1000);
     }
-
-    return () => {
-      if (intervalId) {
-        clearInterval(intervalId);
-      }
-    };
+    return () => { if (intervalId) clearInterval(intervalId); };
   }, [status]);
 
-  if (status === AppStatus.IDLE || status === AppStatus.ERROR) {
-    return null;
-  }
+  if (status === AppStatus.IDLE || status === AppStatus.ERROR) return null;
 
   if (status === AppStatus.LOADING) {
     return (
       <div className="flex flex-col items-center justify-center p-8 space-y-4 w-full border-t border-gray-100 mt-8">
         <Loader />
-        <p className="text-brand-primary font-semibold text-center text-lg">Redactando capítulo completo (5000 palabras)...</p>
-        <p className="text-sm text-gray-500 text-center max-w-md">
-          La IA está expandiendo cada escena con máximo detalle. Por favor, ten paciencia, esto genera un texto mucho más extenso de lo normal.
+        <p className="text-brand-primary font-semibold text-center text-lg">Expandiendo narrativa proporcionalmente...</p>
+        <p className="text-sm text-gray-500 text-center max-w-md italic">
+          Aplicando prolijidad extrema y respetando las leyes de la Alquimia...
         </p>
         <div className="w-full bg-gray-200 rounded-full h-3 my-4 max-w-lg">
           <div
@@ -55,42 +40,45 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ status, text, onDownload 
             style={{ width: `${progress}%` }}
           ></div>
         </div>
-        <p className="text-sm font-mono text-brand-primary">{`Progreso: ${Math.floor(progress)}%`}</p>
       </div>
     );
   }
 
   if (status === AppStatus.SUCCESS && text) {
+    const isAnalysis = text.toLowerCase().includes("informe") || text.toLowerCase().includes("coherencia");
     const wordCount = text.split(/\s+/).length;
+
     return (
       <div className="space-y-6 animate-fade-in pt-8 border-t border-gray-200">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <div>
-                <h2 className="text-2xl font-bold text-brand-primary">Narrativa Completa</h2>
-                <p className="text-xs text-gray-500 font-medium">Extensión aproximada: {wordCount} palabras</p>
+                <h2 className={`text-2xl font-bold ${isAnalysis ? 'text-blue-700' : 'text-brand-primary'}`}>
+                    {isAnalysis ? "Informe de Coherencia" : "Narrativa Expandida"}
+                </h2>
+                <p className="text-xs text-gray-500 font-medium">Recuento: {wordCount} palabras</p>
             </div>
-            <ActionButton 
-              onClick={onDownload}
-              text="Descargar Manuscrito (.docx)"
-              Icon={DownloadIcon}
-              color="bg-green-600 hover:bg-green-700"
-            />
+            {!isAnalysis && (
+              <ActionButton 
+                onClick={onDownload}
+                text="Descargar .docx"
+                Icon={DownloadIcon}
+                color="bg-green-600 hover:bg-green-700"
+              />
+            )}
         </div>
-        <div className="p-6 border rounded-xl bg-white max-h-[600px] overflow-y-auto shadow-inner relative group">
-          <div className="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-             <span className="text-[10px] bg-gray-200 text-gray-600 px-2 py-1 rounded">Visualización de lectura</span>
+        <div className={`p-6 border rounded-xl shadow-inner relative group ${isAnalysis ? 'bg-blue-50 border-blue-200' : 'bg-white border-gray-200'}`}>
+          <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+             <span className="text-[10px] bg-gray-200 text-gray-600 px-2 py-1 rounded">
+               {isAnalysis ? "Diagnóstico IA" : "Manuscrito Final"}
+             </span>
           </div>
-          <pre className="whitespace-pre-wrap font-serif text-brand-text leading-relaxed text-base">
+          <div className={`whitespace-pre-wrap ${isAnalysis ? 'font-mono text-sm text-blue-900' : 'font-serif text-base text-brand-text leading-relaxed'}`}>
             {text}
-          </pre>
+          </div>
         </div>
-        <p className="text-center text-xs text-gray-400 italic">
-            Nota: Si el texto parece cortarse, es debido a los límites de salida de la IA. Puedes pedir continuar desde el último párrafo en una nueva sesión.
-        </p>
       </div>
     );
   }
-
   return null;
 };
 

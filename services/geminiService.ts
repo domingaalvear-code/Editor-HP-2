@@ -12,35 +12,45 @@ const ai = new GoogleGenAI({ apiKey: API_KEY });
 // NARRATIVE / FICTION PROMPT
 // ==========================================
 const BASE_PROMPT = `
-      Eres un editor literario de clase mundial y un autor creativo con profunda experiencia en el universo de Harry Potter y la construcción de mundos mágicos complejos.
-      Tu tarea es producir una narrativa coherente basándote en tres niveles de información:
+      Eres un editor literario de clase mundial y un experto en el universo de Harry Potter (AU).
+      Tu tarea es producir una narrativa coherente basándote en:
 
-      1.  **Reglas del Mundo (Inmutables)**: Esta es tu VERDAD ABSOLUTA. Si una regla aquí contradice los libros originales, la REGLA gana.
-      2.  **Material de Referencia (Canon/Libros)**: Úsalo para captar el estilo de redacción, el trasfondo general del mundo, nombres de hechizos y geografía de Hogwarts que no esté en las reglas.
-      3.  **Inspiración e Imágenes**: Guía visual y temática para la escena actual.
+      1.  **Reglas del Mundo (Inmutables)**: Tu VERDAD ABSOLUTA.
+      2.  **Material de Referencia (Canon/Libros)**: Estilo y trasfondo.
+      3.  **Inspiración e Imágenes**: Guía visual.
 
-      **DIRECTIVA DE SALIDA (REGLA DE ORO):**
-      - **PROHIBIDO RESUMIR**: No entregues un resumen de lo que sucede. No digas "En este capítulo pasa esto...". Entrega ÚNICAMENTE el texto narrativo completo.
-      - **EXTENSIÓN DE 5000 PALABRAS**: Debes ser extremadamente prolijo y detallista. Describe cada gesto, cada cambio en la luz, cada aroma y cada pensamiento interno. Si una escena dura 5 minutos en tiempo real, debe durar páginas en tu escritura.
-      - **PROSA EXTENDIDA**: Utiliza oraciones complejas, descripciones ambientales inmersivas y diálogos pausados que exploren la psicología de los personajes. No apresures la trama.
+      **DIRECTIVA DE SALIDA (REGLA DE PROPORCIÓN):**
+      - **PROHIBIDO RESUMIR**: Entrega el texto narrativo completo.
+      - **PROSA EXTENDIDA Y PROPORCIONAL**: Debes expandir el texto de entrada manteniendo una proporción de detalle significativa. Tu objetivo es que el texto de salida sea considerablemente más extenso que el original (idealmente triplicando o cuadruplicando la descripción original) a través de una descripción exhaustiva de gestos, pensamientos internos, atmósfera y psicología.
+      - **NIVEL DE DETALLE**: Si una escena en el borrador ocupa un párrafo, en tu versión debe ocupar varias páginas de narrativa inmersiva.
 
-      **Directivas de Personajes Críticas:**
-      - **Harry Potter**: Evolución hacia un líder **formidable, audaz y competente**. Mantiene su esencia (valentía, lealtad) pero con una seguridad intimidante. No duda, no se queja; actúa con una calma gélida y una competencia técnica indiscutible. Su fuerza emana de su autenticidad, sin necesidad de alardear.
-      - **Aries Mauvignier**: Respeta su estética punk/grunge y su dualidad entre la intelectualidad de Ravenclaw y la oscuridad heredada de los Black.
-      - **Diálogos**: Naturales, coloquiales, adolescentes sonando como adolescentes de los 90 (jerga, sarcasmo, interrupciones).
-
-      **Fidelidad Visual**: Las imágenes son canónicas. Describe la vestimenta y el entorno EXACTAMENTE como se ve en ellas.
-
-      **Formato**: Solo el texto de la historia. Usa asteriscos (*) para pensamientos. Diálogos entre comillas dobles (""). Español latinoamericano.
+      **Directivas Críticas de Coherencia:**
+      - **Aries**: Describe siempre su frialdad física al tacto en interacciones cercanas.
+      - **Identidad de Sirius**: Aries es el filtro. Ella nunca revela que Sirius es quien envía los regalos; dice "Era de tu padre" y oculta cualquier rastro de Canuto/Padfoot.
+      - **Dumbledore**: Debe mostrarse críptico y, en el clímax, debe mentirle a Harry sobre la destrucción de la Piedra Filosofal.
+      - **Grimmauld Place**: No es solo una casa oculta; es un lugar que emana terror para el Ministerio.
+      - **Hermione**: Su análisis sobre Snape es sobre su desprecio por la "magia tonta" y su enfoque en acertijos mentales.
 `;
 
 const ACADEMIC_PROMPT = `
       Actúa como un investigador académico senior. Escribe o mejora una sección de tesis basada exclusivamente en el Material de Investigación.
-      Usa variabilidad sintáctica y evita clichés de IA. PROHIBIDO RESUMIR, solo redactar el contenido académico completo.
+      PROHIBIDO RESUMIR. El texto de salida debe ser proporcionalmente extenso y detallado respecto al material de origen.
 `;
 
 const ANALYSIS_PROMPT = `
-      Eres un analista de coherencia. Revisa las 'Reglas del Mundo' para identificar contradicciones lógicas internas.
+      Eres un analista de coherencia narrativa especializado en mundos de fantasía complejos.
+      Tu misión es revisar el texto proporcionado (Reglas o Historia) y encontrar grietas en la lógica interna.
+      
+      **Categorías de Análisis Crítico:**
+      1. **Leyes de la Alquimia**: ¿Se respeta la Triada Operativa, el Equilibrio de Intercambio y el Límite de Iteración?
+      2. **Rasgos de Personaje**: ¿Se menciona la frialdad de Aries? ¿Harry es formidable?
+      3. **Puntos de Trama AU**: ¿Dumbledore miente sobre la piedra? ¿Aries oculta la nota de Sirius? ¿Grimmauld Place causa terror al Ministerio?
+      4. **Cronología**: Verificación de fechas y eventos del AU.
+
+      **Formato de Salida**: 
+      - **Resumen de Estado**: (Estable/Inestable).
+      - **Inconsistencias Detectadas**: Lista de errores lógicos.
+      - **Sugerencias de Mejora**: Cómo arreglar la coherencia.
 `;
 
 export const editStory = async (
@@ -52,37 +62,36 @@ export const editStory = async (
   canonReference: string = ""
 ): Promise<string> => {
     const model = 'gemini-3-pro-preview';
-    
     const SYSTEM_PROMPT = mode === 'academic' ? ACADEMIC_PROMPT : BASE_PROMPT;
     
+    const inputWordCount = story ? story.split(/\s+/).length : 0;
+
     const promptText = `
       ${SYSTEM_PROMPT}
 
-      --- REGLAS DEL MUNDO (INMUTABLES - PRIORIDAD MÁXIMA) ---
+      --- REGLAS DEL MUNDO (INMUTABLES) ---
       ${worldRules}
 
-      --- MATERIAL DE REFERENCIA (CANON/LIBROS - SÓLO AUXILIAR) ---
-      ${canonReference || "No se proporcionó material de referencia adicional."}
+      --- MATERIAL DE REFERENCIA (CANON) ---
+      ${canonReference || "No se proporcionó."}
 
-      --- HISTORIA A EDITAR / PROCESAR ---
-      ${story || 'Generar nueva narrativa de 5000 palabras desde cero.'}
+      --- HISTORIA A EDITAR (INPUT) ---
+      ${story || 'Generar nueva narrativa desde cero.'}
+      (Extensión del texto original: ${inputWordCount} palabras)
       
-      --- IDEAS E INSTRUCCIONES DE INSPIRACIÓN ---
-      ${ideas || 'No se proporcionaron instrucciones adicionales.'}
+      --- INSTRUCCIONES ADICIONALES ---
+      ${ideas || 'No se proporcionaron.'}
 
-      --- TEXTO NARRATIVO FINAL (SIN RESÚMENES) ---
+      --- DIRECTIVA DE EXTENSIÓN ---
+      Redacta el texto final de modo que la cantidad de palabras sea proporcionalmente mayor a la entrada, expandiendo cada escena con el máximo detalle posible para evitar cualquier tipo de síntesis.
+
+      --- TEXTO NARRATIVO FINAL ---
     `;
 
     const contentParts: Part[] = [{ text: promptText }];
-    
     if (mode === 'narrative') {
         for (const image of images) {
-          contentParts.push({
-            inlineData: {
-              mimeType: image.mimeType,
-              data: image.data,
-            },
-          });
+          contentParts.push({ inlineData: { mimeType: image.mimeType, data: image.data } });
         }
     }
     
@@ -93,14 +102,21 @@ export const editStory = async (
         });
         return response.text;
     } catch(error) {
-        console.error("Gemini API call failed:", error);
-        throw new Error("Error procesando la solicitud con la IA. Asegúrate de que el contenido no infrinja las políticas de seguridad.");
+        console.error("API Error:", error);
+        throw new Error("Error en la IA. Revisa las políticas de seguridad.");
     }
 };
 
 export const analyzeWorldRules = async (worldRules: string): Promise<string> => {
   const model = 'gemini-3-pro-preview';
-  const prompt = `${ANALYSIS_PROMPT}\n${worldRules}`;
+  const prompt = `
+    ${ANALYSIS_PROMPT}
+    
+    --- TEXTO A ANALIZAR ---
+    ${worldRules}
+    
+    --- INFORME DE COHERENCIA ---
+  `;
   try {
     const response = await ai.models.generateContent({
       model: model,
