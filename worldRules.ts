@@ -3,26 +3,35 @@ export const DEFAULT_WORLD_RULES = `
 # REGLAS DEL MUNDO INMUTABLES (AU)
 
 ## AMBIENTACIÓN Y LUGARES CLAVE
-- **Grimmauld Place**: El Ministerio de Magia cree oficialmente que la casa está abandonada y profundamente maldita. No es solo un lugar confuso de encontrar; existe un aura de **terror real** que impide que los funcionarios o aurores se acerquen siquiera a la puerta. Es un "punto muerto" en el mapa ministerial.
-- **Estaciones en Gran Bretaña**: Primavera (21 de marzo - 21 de junio), Verano (21 de junio - 23 de septiembre), Otoño (23 de septiembre - 21 de diciembre), Invierno (21 de diciembre - 21 de marzo).
+- **Grimmauld Place**: El Ministerio de Magia cree oficialmente que la casa está abandonada y profundamente maldita. Existe un aura de **terror real** que impide que los funcionarios se acerquen. Es un "punto muerto" en el mapa ministerial.
+- **Estaciones en Gran Bretaña**: Primavera (21 de marzo), Verano (21 de junio), Otoño (23 de septiembre), Invierno (21 de diciembre).
 
 ## PERSONAJES Y RASGOS ESPECÍFICOS
 
 #### Aries Mauvignier (Aries Black)
-- **Rasgo Físico Permanente**: **Aries siempre está fría al tacto**. Su piel mantiene una temperatura gélida, independientemente del clima o su salud, una manifestación física de su herencia alquímica y de sangre.
+- **Rasgo Físico**: Siempre está fría al tacto (piel gélida).
 - **Personalidad**: Intelectual disidente, Ravenclaw, estética punk-grunge.
-- **Protección de Sirius**: Aries actúa como un filtro absoluto entre su padre y el mundo exterior. 
+- **Protección de Sirius**: Actúa como un filtro absoluto entre su padre y el mundo.
 
-#### Harry Potter
-- **Evolución**: Líder formidable, audaz y técnicamente competente. Menos dependiente de la suerte, más dependiente de su propia fuerza e intimidación natural.
+#### Harry Potter (Evolución Cronológica)
 
-## EVENTOS CRÍTICOS Y REVELACIONES (DIVERGENCIAS)
+**Del Primer al Tercer Libro:**
+- **Libro 1**: Niño bondadoso, leal y valiente, pero ingenuo y solitario. Fuerte sentido de la justicia y la moral, aunque impulsivo y malhumorado ante las injusticias.
+- **Libro 2**: Más impulsivo, testarudo y sarcástico. Sufre la presión de ser el "elegido" y no ser creído. Lealtad feroz hacia sus amigos y desafío constante a la autoridad (rasgos Gryffindor en desarrollo).
+- **Libro 3**: Más maduro pero aún impulsivo. Lidia con el miedo (Dementores) y desarrolla una gran habilidad técnica en Defensa Contra las Artes Oscuras (Patronus). Faceta protectora profunda y búsqueda obsesiva de la verdad sobre sus padres.
 
-- **La Brújula de James**: Aries intercepta el regalo de Sirius para Harry. Ella elimina la nota original ("Tu hermano, Canuto") para proteger la identidad y el paradero de su padre. Aries coloca la brújula directamente en la pila de regalos de Harry y le dice verbalmente: **"Era de tu padre"**, omitiendo cualquier mención a Sirius o a los Merodeadores.
-- **La Intuición de Hermione**: Sobre la prueba de Snape, Hermione debe decir: *"Snape odia la magia tonta. Su prueba no será de fuerza, será mental. Probablemente acertijos o pociones trampas"*. No se mencionan "botellas" específicamente hasta que los personajes las tienen delante.
-- **La Mentira de Dumbledore**: Al final del primer año, **Albus Dumbledore le miente deliberadamente a Harry** diciéndole que la Piedra Filosofal ha sido destruida, cuando en realidad ha sido devuelta a los Flamel o puesta a buen recaudo (como se ve en el encuentro con Zahira).
+**A partir del Cuarto Libro (Punto de Inflexión):**
+- **Liderazgo Formidable**: Se convierte en una figura que impone respeto y toma la iniciativa sin dudar.
+- **Competencia Técnica**: Mago extremadamente hábil. Sus logros nacen de su capacidad técnica y entrenamiento, no de la suerte o el azar.
+- **Independencia de la Suerte**: No depende de coincidencias. Se apoya en su propia fuerza e **intimidación natural**.
+- **Evolución Psicológica**: Mentalidad estratégica y madura. Capaz de procesar las mentiras de Dumbledore y los secretos de Aries con frialdad analítica.
+
+## EVENTOS CRÍTICOS Y REVELACIONES
+- **La Brújula de James**: Aries intercepta el regalo, quita la nota de Sirius y le dice a Harry: **"Era de tu padre"**, ocultando a Sirius para protegerlo.
+- **La Intuición de Hermione**: Sobre la prueba de Snape: *"Snape odia la magia tonta. Su prueba será mental. Acertijos o pociones trampas"*.
+- **La Mentira de Dumbledore**: Al final del 1er año, Dumbledore miente deliberadamente diciendo que la Piedra fue destruida, cuando en realidad fue puesta a buen recaudo.
 
 ## SISTEMA DE MAGIA Y ALQUIMIA
-- **Leyes**: Triada Operativa (Entrada, Proceso, Salida), Equilibrio de Intercambio, Límite de Iteración y Resonancia Emocional.
-- **Fases**: Nigredo (corrupción/dolor), Albedo (purificación/claridad), Rubedo (integración/éxito).
+- **Leyes**: Triada Operativa, Equilibrio de Intercambio, Límite de Iteración y Resonancia Emocional.
+- **Fases**: Nigredo, Albedo, Rubedo.
 `;

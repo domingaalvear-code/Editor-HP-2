@@ -12,35 +12,34 @@ const ai = new GoogleGenAI({ apiKey: API_KEY });
 // NARRATIVE / FICTION PROMPT (EPIC EXTENSION)
 // ==========================================
 const BASE_PROMPT = `
-      Actúa como un novelista de fantasía épica y editor literario de prestigio. 
-      Tu objetivo es reescribir la historia proporcionada expandiéndola a una extensión de **5000 PALABRAS POR CAPÍTULO**.
+      Eres un novelista de fantasía épica especializado en mundos complejos y evoluciones de personajes.
+      Tu meta es producir capítulos de **5000 PALABRAS** con una prosa rica y detallada.
+
+      **CRONOLOGÍA DE HARRY POTTER (Divergencia Crítica):**
+      - **Años 1-3**: Harry es valiente pero ingenuo, impulsivo y sarcástico. Su habilidad técnica está creciendo. Resalta su lealtad y su frustración con la autoridad.
+      - **Año 4 en adelante**: Aplica el modo **Líder Formidable**. Harry debe emanar autoridad, ser técnicamente impecable en su magia y mostrar una intimidación natural. No depende de la suerte; depende de su poder y estrategia.
 
       **ESTILO NARRATIVO:**
-      - **PROSA HIPER-DETALLADA**: Describe cada olor, cada cambio de temperatura, la textura de la piedra y el matiz de cada sombra.
-      - **MONÓLOGO INTERNO**: Dedica párrafos enteros a los pensamientos de los personajes, sus miedos, sus dudas y cómo procesan las leyes de la Alquimia.
-      - **LENTITUD ESTRATÉGICA**: No permitas que la trama avance rápido. Cada escena debe ser "estirada" con descripciones atmosféricas y diálogos cargados de subtexto.
-      - **SENSORIALIDAD**: Resalta constantemente la **frialdad gélida al tacto de Aries** y el **aura de terror** que emana de Grimmauld Place.
+      - **DETALLE SENSORIAL**: Expande cada interacción. Si Aries está presente, describe su **frialdad física**. Si están en Grimmauld Place, transmite el **terror ministerial**.
+      - **PSICOLOGÍA PROFUNDA**: Dedica espacio a los dilemas internos. ¿Cómo se siente Harry ante las mentiras de Dumbledore? ¿Cómo procesa Aries el peso de proteger a Sirius?
+      - **CERO SÍNTESIS**: Si el usuario entrega una idea breve, constrúyela hasta que sea una escena cinemática completa y extensa.
 
-      **DIRECTIVAS CRÍTICAS DE COHERENCIA (DIVERGENCIAS AU):**
-      1.  **Aries es el Filtro**: Ella protege a Sirius. Al entregar la brújula a Harry, oculta la nota y solo dice "Era de tu padre".
-      2.  **Grimmauld Place**: Describe el terror físico que sienten los externos al acercarse; es un vacío en el mapa del Ministerio.
-      3.  **Hermione y Snape**: Ella predice una prueba mental, de ingenio y pociones, despreciando la "magia tonta".
-      4.  **La Mentira de Dumbledore**: Al final del año, Dumbledore debe mentirle a Harry sobre la destrucción de la Piedra Filosofal con una solemnidad críptica.
-
-      **REGLA DE ORO**: Si el input es breve, tú debes CREAR el mundo alrededor de ese núcleo hasta alcanzar la extensión épica solicitada. PROHIBIDO RESUMIR.
+      **DIRECTIVAS DE COHERENCIA:**
+      1. Aries oculta el origen de los regalos de Sirius.
+      2. Hermione desprecia la "magia tonta" y anticipa los acertijos de Snape.
+      3. Dumbledore es un mentor que miente estratégicamente (ej. la Piedra Filosofal).
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un investigador académico senior. Expande el material de investigación en un tratado exhaustivo de lenguaje técnico y académico. 
-      Objetivo: Máxima extensión y profundidad de análisis.
+      Actúa como un investigador académico senior. Transforma el material en un tratado exhaustivo y detallado de nivel doctoral.
 `;
 
 const ANALYSIS_PROMPT = `
-      Eres un analista de coherencia narrativa. Revisa si el texto cumple con:
-      1. Las 5000 palabras por capítulo.
-      2. Los rasgos físicos (Aries fría).
-      3. Las leyes de la Alquimia.
-      4. Los puntos clave del AU (Dumbledore mintiendo, Ministerio aterrorizado).
+      Eres un analista de coherencia. Verifica:
+      1. ¿La personalidad de Harry corresponde a su año académico según las reglas?
+      2. ¿Se mantiene la extensión y el detalle sensorial?
+      3. ¿Aries es retratada con su frialdad característica y rol de protectora?
+      4. ¿Se respetan las leyes de la Alquimia?
 `;
 
 export const editStory = async (
@@ -59,21 +58,21 @@ export const editStory = async (
     const promptText = `
       ${SYSTEM_PROMPT}
 
-      --- REGLAS DEL MUNDO (INMUTABLES) ---
+      --- REGLAS DEL MUNDO (CON EL TIMELINE DE HARRY) ---
       ${worldRules}
 
-      --- MATERIAL DE REFERENCIA (CANON) ---
+      --- MATERIAL DE REFERENCIA (CONTEXTO) ---
       ${canonReference || "No se proporcionó."}
 
-      --- HISTORIA A EXPANDIR (BORRADOR) ---
+      --- HISTORIA / CAPÍTULO A REDACTAR ---
       ${story || 'Generar nuevo capítulo desde cero.'}
       (Extensión original: ${inputWordCount} palabras)
       
       --- NOTAS ADICIONALES ---
       ${ideas || 'No se proporcionaron.'}
 
-      --- OBJETIVO DE SALIDA ---
-      Redacta un manuscrito literario de aproximadamente 5000 palabras por capítulo. Usa una estructura de párrafos largos, descripciones ricas y diálogos profundos. Asegúrate de incluir la escena de la brújula y la mentira de Dumbledore si corresponden cronológicamente.
+      --- OBJETIVO FINAL ---
+      Genera un manuscrito de aproximadamente 5000 palabras. Identifica el año escolar en el que transcurre la escena y ajusta la personalidad de Harry en consecuencia (Gryffindor impulsivo vs Líder Formidable).
 
       --- MANUSCRITO EXPANDIDO FINAL ---
     `;
@@ -90,14 +89,14 @@ export const editStory = async (
           model: model,
           contents: { parts: contentParts },
           config: {
-            temperature: 0.8, // Un poco más alto para favorecer la creatividad descriptiva
+            temperature: 0.82,
             topP: 0.95,
           }
         });
         return response.text;
     } catch(error) {
         console.error("API Error:", error);
-        throw new Error("La magia de expansión ha fallado. Revisa la conexión con el éter.");
+        throw new Error("La conexión con el mundo mágico se ha interrumpido.");
     }
 };
 
