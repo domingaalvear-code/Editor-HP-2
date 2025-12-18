@@ -9,48 +9,38 @@ if (!API_KEY) {
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 // ==========================================
-// NARRATIVE / FICTION PROMPT
+// NARRATIVE / FICTION PROMPT (EPIC EXTENSION)
 // ==========================================
 const BASE_PROMPT = `
-      Eres un editor literario de clase mundial y un experto en el universo de Harry Potter (AU).
-      Tu tarea es producir una narrativa coherente basándote en:
+      Actúa como un novelista de fantasía épica y editor literario de prestigio. 
+      Tu objetivo es reescribir la historia proporcionada expandiéndola a una extensión de **5000 PALABRAS POR CAPÍTULO**.
 
-      1.  **Reglas del Mundo (Inmutables)**: Tu VERDAD ABSOLUTA.
-      2.  **Material de Referencia (Canon/Libros)**: Estilo y trasfondo.
-      3.  **Inspiración e Imágenes**: Guía visual.
+      **ESTILO NARRATIVO:**
+      - **PROSA HIPER-DETALLADA**: Describe cada olor, cada cambio de temperatura, la textura de la piedra y el matiz de cada sombra.
+      - **MONÓLOGO INTERNO**: Dedica párrafos enteros a los pensamientos de los personajes, sus miedos, sus dudas y cómo procesan las leyes de la Alquimia.
+      - **LENTITUD ESTRATÉGICA**: No permitas que la trama avance rápido. Cada escena debe ser "estirada" con descripciones atmosféricas y diálogos cargados de subtexto.
+      - **SENSORIALIDAD**: Resalta constantemente la **frialdad gélida al tacto de Aries** y el **aura de terror** que emana de Grimmauld Place.
 
-      **DIRECTIVA DE SALIDA (REGLA DE PROPORCIÓN):**
-      - **PROHIBIDO RESUMIR**: Entrega el texto narrativo completo.
-      - **PROSA EXTENDIDA Y PROPORCIONAL**: Debes expandir el texto de entrada manteniendo una proporción de detalle significativa. Tu objetivo es que el texto de salida sea considerablemente más extenso que el original (idealmente triplicando o cuadruplicando la descripción original) a través de una descripción exhaustiva de gestos, pensamientos internos, atmósfera y psicología.
-      - **NIVEL DE DETALLE**: Si una escena en el borrador ocupa un párrafo, en tu versión debe ocupar varias páginas de narrativa inmersiva.
+      **DIRECTIVAS CRÍTICAS DE COHERENCIA (DIVERGENCIAS AU):**
+      1.  **Aries es el Filtro**: Ella protege a Sirius. Al entregar la brújula a Harry, oculta la nota y solo dice "Era de tu padre".
+      2.  **Grimmauld Place**: Describe el terror físico que sienten los externos al acercarse; es un vacío en el mapa del Ministerio.
+      3.  **Hermione y Snape**: Ella predice una prueba mental, de ingenio y pociones, despreciando la "magia tonta".
+      4.  **La Mentira de Dumbledore**: Al final del año, Dumbledore debe mentirle a Harry sobre la destrucción de la Piedra Filosofal con una solemnidad críptica.
 
-      **Directivas Críticas de Coherencia:**
-      - **Aries**: Describe siempre su frialdad física al tacto en interacciones cercanas.
-      - **Identidad de Sirius**: Aries es el filtro. Ella nunca revela que Sirius es quien envía los regalos; dice "Era de tu padre" y oculta cualquier rastro de Canuto/Padfoot.
-      - **Dumbledore**: Debe mostrarse críptico y, en el clímax, debe mentirle a Harry sobre la destrucción de la Piedra Filosofal.
-      - **Grimmauld Place**: No es solo una casa oculta; es un lugar que emana terror para el Ministerio.
-      - **Hermione**: Su análisis sobre Snape es sobre su desprecio por la "magia tonta" y su enfoque en acertijos mentales.
+      **REGLA DE ORO**: Si el input es breve, tú debes CREAR el mundo alrededor de ese núcleo hasta alcanzar la extensión épica solicitada. PROHIBIDO RESUMIR.
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un investigador académico senior. Escribe o mejora una sección de tesis basada exclusivamente en el Material de Investigación.
-      PROHIBIDO RESUMIR. El texto de salida debe ser proporcionalmente extenso y detallado respecto al material de origen.
+      Actúa como un investigador académico senior. Expande el material de investigación en un tratado exhaustivo de lenguaje técnico y académico. 
+      Objetivo: Máxima extensión y profundidad de análisis.
 `;
 
 const ANALYSIS_PROMPT = `
-      Eres un analista de coherencia narrativa especializado en mundos de fantasía complejos.
-      Tu misión es revisar el texto proporcionado (Reglas o Historia) y encontrar grietas en la lógica interna.
-      
-      **Categorías de Análisis Crítico:**
-      1. **Leyes de la Alquimia**: ¿Se respeta la Triada Operativa, el Equilibrio de Intercambio y el Límite de Iteración?
-      2. **Rasgos de Personaje**: ¿Se menciona la frialdad de Aries? ¿Harry es formidable?
-      3. **Puntos de Trama AU**: ¿Dumbledore miente sobre la piedra? ¿Aries oculta la nota de Sirius? ¿Grimmauld Place causa terror al Ministerio?
-      4. **Cronología**: Verificación de fechas y eventos del AU.
-
-      **Formato de Salida**: 
-      - **Resumen de Estado**: (Estable/Inestable).
-      - **Inconsistencias Detectadas**: Lista de errores lógicos.
-      - **Sugerencias de Mejora**: Cómo arreglar la coherencia.
+      Eres un analista de coherencia narrativa. Revisa si el texto cumple con:
+      1. Las 5000 palabras por capítulo.
+      2. Los rasgos físicos (Aries fría).
+      3. Las leyes de la Alquimia.
+      4. Los puntos clave del AU (Dumbledore mintiendo, Ministerio aterrorizado).
 `;
 
 export const editStory = async (
@@ -75,17 +65,17 @@ export const editStory = async (
       --- MATERIAL DE REFERENCIA (CANON) ---
       ${canonReference || "No se proporcionó."}
 
-      --- HISTORIA A EDITAR (INPUT) ---
-      ${story || 'Generar nueva narrativa desde cero.'}
-      (Extensión del texto original: ${inputWordCount} palabras)
+      --- HISTORIA A EXPANDIR (BORRADOR) ---
+      ${story || 'Generar nuevo capítulo desde cero.'}
+      (Extensión original: ${inputWordCount} palabras)
       
-      --- INSTRUCCIONES ADICIONALES ---
+      --- NOTAS ADICIONALES ---
       ${ideas || 'No se proporcionaron.'}
 
-      --- DIRECTIVA DE EXTENSIÓN ---
-      Redacta el texto final de modo que la cantidad de palabras sea proporcionalmente mayor a la entrada, expandiendo cada escena con el máximo detalle posible para evitar cualquier tipo de síntesis.
+      --- OBJETIVO DE SALIDA ---
+      Redacta un manuscrito literario de aproximadamente 5000 palabras por capítulo. Usa una estructura de párrafos largos, descripciones ricas y diálogos profundos. Asegúrate de incluir la escena de la brújula y la mentira de Dumbledore si corresponden cronológicamente.
 
-      --- TEXTO NARRATIVO FINAL ---
+      --- MANUSCRITO EXPANDIDO FINAL ---
     `;
 
     const contentParts: Part[] = [{ text: promptText }];
@@ -98,12 +88,16 @@ export const editStory = async (
     try {
         const response = await ai.models.generateContent({
           model: model,
-          contents: { parts: contentParts }
+          contents: { parts: contentParts },
+          config: {
+            temperature: 0.8, // Un poco más alto para favorecer la creatividad descriptiva
+            topP: 0.95,
+          }
         });
         return response.text;
     } catch(error) {
         console.error("API Error:", error);
-        throw new Error("Error en la IA. Revisa las políticas de seguridad.");
+        throw new Error("La magia de expansión ha fallado. Revisa la conexión con el éter.");
     }
 };
 
@@ -111,11 +105,8 @@ export const analyzeWorldRules = async (worldRules: string): Promise<string> => 
   const model = 'gemini-3-pro-preview';
   const prompt = `
     ${ANALYSIS_PROMPT}
-    
-    --- TEXTO A ANALIZAR ---
+    --- TEXTO ---
     ${worldRules}
-    
-    --- INFORME DE COHERENCIA ---
   `;
   try {
     const response = await ai.models.generateContent({
