@@ -13,18 +13,28 @@ export const DEFAULT_WORLD_RULES = `
 - **Personalidad**: Intelectual disidente, Ravenclaw, estética punk-grunge.
 - **Protección de Sirius**: Actúa como un filtro absoluto entre su padre y el mundo.
 
-#### Harry Potter (Evolución Cronológica)
+#### Hermes (Corvus corax)
+- **Dueña**: Familiar de Zahira Mauvignier.
+- **Rasgos**: Cuervo grande, altamente inteligente.
+- **Habilidades Especiales**: Imita voces humanas con precisión inquietante y tiene una afinidad sobrenatural para ocultarse en las sombras.
+- **Funciones**: Capacidad de interceptar el correo mágico y volar indetectado en condiciones de alta vigilancia (Ministerio de Magia, Hogwarts, etc.).
 
-**Del Primer al Tercer Libro:**
-- **Libro 1**: Niño bondadoso, leal y valiente, pero ingenuo y solitario. Fuerte sentido de la justicia y la moral, aunque impulsivo y malhumorado ante las injusticias.
-- **Libro 2**: Más impulsivo, testarudo y sarcástico. Sufre la presión de ser el "elegido" y no ser creído. Lealtad feroz hacia sus amigos y desafío constante a la autoridad (rasgos Gryffindor en desarrollo).
-- **Libro 3**: Más maduro pero aún impulsivo. Lidia con el miedo (Dementores) y desarrolla una gran habilidad técnica en Defensa Contra las Artes Oscuras (Patronus). Faceta protectora profunda y búsqueda obsesiva de la verdad sobre sus padres.
+#### Harry Potter (Evolución Psicológica y Técnica)
 
-**A partir del Cuarto Libro (Punto de Inflexión):**
-- **Liderazgo Formidable**: Se convierte en una figura que impone respeto y toma la iniciativa sin dudar.
-- **Competencia Técnica**: Mago extremadamente hábil. Sus logros nacen de su capacidad técnica y entrenamiento, no de la suerte o el azar.
-- **Independencia de la Suerte**: No depende de coincidencias. Se apoya en su propia fuerza e **intimidación natural**.
-- **Evolución Psicológica**: Mentalidad estratégica y madura. Capaz de procesar las mentiras de Dumbledore y los secretos de Aries con frialdad analítica.
+**Primer Año:**
+- Niño bondadoso, leal y valiente, pero ingenuo y algo solitario. Marcado por su infancia con los Dursley. Fuerte sentido de la justicia y la moral, aunque impulsivo y propenso al malhumor ante las injusticias.
+
+**Segundo Año (La Cámara Secreta):**
+- Más impulsivo, testarudo y sarcástico. Lidia con la frustración de la incredulidad ajena y la presión de ser el "elegido". Lealtad feroz y desafío abierto a la autoridad, rasgos típicos de un Gryffindor en desarrollo.
+
+**Tercer Año (El Prisionero de Azkaban):**
+- Más maduro pero aún impulsivo. Gran habilidad técnica en Defensa Contra las Artes Oscuras (desarrollo del Patronus). Faceta protectora profunda y búsqueda obsesiva de la verdad sobre su familia.
+
+**A partir del Cuarto Año (El Líder Formidable):**
+- **Personalidad**: Líder formidable y audaz. Figura que impone respeto y toma la iniciativa sin dudar.
+- **Competencia Técnica**: Mago extremadamente hábil. Domina sus facultades por capacidad propia; no es un "héroe por suerte".
+- **Independencia de la Suerte**: No depende de coincidencias afortunadas, sino de su propia fuerza e intimidación natural.
+- **Madurez**: Mentalidad estratégica y madura. Procesa situaciones complejas (mentiras de Dumbledore, protección de Aries) con frialdad analítica.
 
 ## EVENTOS CRÍTICOS Y REVELACIONES
 - **La Brújula de James**: Aries intercepta el regalo, quita la nota de Sirius y le dice a Harry: **"Era de tu padre"**, ocultando a Sirius para protegerlo.

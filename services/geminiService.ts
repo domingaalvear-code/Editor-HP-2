@@ -12,34 +12,37 @@ const ai = new GoogleGenAI({ apiKey: API_KEY });
 // NARRATIVE / FICTION PROMPT (EPIC EXTENSION)
 // ==========================================
 const BASE_PROMPT = `
-      Eres un novelista de fantasía épica especializado en mundos complejos y evoluciones de personajes.
-      Tu meta es producir capítulos de **5000 PALABRAS** con una prosa rica y detallada.
+      Actúa como un novelista de fantasía épica de clase mundial. Tu objetivo es expandir la historia a capítulos de **5000 PALABRAS**.
 
-      **CRONOLOGÍA DE HARRY POTTER (Divergencia Crítica):**
-      - **Años 1-3**: Harry es valiente pero ingenuo, impulsivo y sarcástico. Su habilidad técnica está creciendo. Resalta su lealtad y su frustración con la autoridad.
-      - **Año 4 en adelante**: Aplica el modo **Líder Formidable**. Harry debe emanar autoridad, ser técnicamente impecable en su magia y mostrar una intimidación natural. No depende de la suerte; depende de su poder y estrategia.
+      **DINÁMICA DE PERSONAJES SEGÚN EL AÑO:**
+      - Debes identificar el año escolar en el que transcurre la escena.
+      - **Años 1-3**: Harry es el niño valiente, impulsivo, sarcástico e ingenuo del canon, pero con destellos de su potencial técnico (especialmente en el 3er año con el Patronus).
+      - **Año 4+**: Cambia radicalmente al modo **Líder Formidable**. Harry debe ser audaz, intimidante, técnicamente perfecto con la magia y estratégico. Elimina cualquier dependencia de la "suerte".
+
+      **USO DE HERMES (EL CUERVO):**
+      - Hermes es una herramienta de espionaje. Úsalo para interceptar correspondencia, imitar voces para crear confusión o como observador silencioso en las sombras. Su lealtad es para Zahira Mauvignier.
 
       **ESTILO NARRATIVO:**
-      - **DETALLE SENSORIAL**: Expande cada interacción. Si Aries está presente, describe su **frialdad física**. Si están en Grimmauld Place, transmite el **terror ministerial**.
-      - **PSICOLOGÍA PROFUNDA**: Dedica espacio a los dilemas internos. ¿Cómo se siente Harry ante las mentiras de Dumbledore? ¿Cómo procesa Aries el peso de proteger a Sirius?
-      - **CERO SÍNTESIS**: Si el usuario entrega una idea breve, constrúyela hasta que sea una escena cinemática completa y extensa.
+      - **PROSA HIPER-DETALLADA**: Expande cada gesto, pensamiento y atmósfera. Si Aries está presente, resalta su **frialdad gélida**.
+      - **LENTITUD ESTRATÉGICA**: Las escenas deben tener profundidad psicológica. PROHIBIDO RESUMIR. Describe el terror ministerial de Grimmauld Place y la precisión de las leyes alquímicas.
 
       **DIRECTIVAS DE COHERENCIA:**
-      1. Aries oculta el origen de los regalos de Sirius.
-      2. Hermione desprecia la "magia tonta" y anticipa los acertijos de Snape.
-      3. Dumbledore es un mentor que miente estratégicamente (ej. la Piedra Filosofal).
+      1. Aries filtra la información sobre Sirius (Brújula de James).
+      2. Dumbledore es un manipulador bienintencionado que miente sobre la Piedra Filosofal.
+      3. Hermione valora la lógica y el intelecto de Snape.
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un investigador académico senior. Transforma el material en un tratado exhaustivo y detallado de nivel doctoral.
+      Actúa como un investigador académico senior especializado en análisis literario y estructural. Transforma el material en un tratado detallado que analice la evolución de los personajes y las leyes mágicas.
 `;
 
 const ANALYSIS_PROMPT = `
-      Eres un analista de coherencia. Verifica:
-      1. ¿La personalidad de Harry corresponde a su año académico según las reglas?
-      2. ¿Se mantiene la extensión y el detalle sensorial?
-      3. ¿Aries es retratada con su frialdad característica y rol de protectora?
-      4. ¿Se respetan las leyes de la Alquimia?
+      Eres un analista de coherencia narrativa. Verifica estrictamente:
+      1. ¿La personalidad de Harry Potter coincide con el año cronológico de la escena (Ingenuo vs Líder Formidable)?
+      2. ¿Se respeta la competencia técnica de Harry en los años superiores?
+      3. ¿Hermes actúa según sus rasgos de inteligencia, mimetismo y sigilo?
+      4. ¿Se mantiene el aura de terror en Grimmauld Place y la frialdad de Aries?
+      5. ¿La extensión se acerca al objetivo de 5000 palabras?
 `;
 
 export const editStory = async (
@@ -58,21 +61,21 @@ export const editStory = async (
     const promptText = `
       ${SYSTEM_PROMPT}
 
-      --- REGLAS DEL MUNDO (CON EL TIMELINE DE HARRY) ---
+      --- REGLAS DEL MUNDO (INMUTABLES) ---
       ${worldRules}
 
-      --- MATERIAL DE REFERENCIA (CONTEXTO) ---
+      --- MATERIAL DE REFERENCIA (CONTEXTO CANON) ---
       ${canonReference || "No se proporcionó."}
 
-      --- HISTORIA / CAPÍTULO A REDACTAR ---
+      --- HISTORIA A EXPANDIR ---
       ${story || 'Generar nuevo capítulo desde cero.'}
       (Extensión original: ${inputWordCount} palabras)
       
-      --- NOTAS ADICIONALES ---
+      --- NOTAS DE INSPIRACIÓN ---
       ${ideas || 'No se proporcionaron.'}
 
-      --- OBJETIVO FINAL ---
-      Genera un manuscrito de aproximadamente 5000 palabras. Identifica el año escolar en el que transcurre la escena y ajusta la personalidad de Harry en consecuencia (Gryffindor impulsivo vs Líder Formidable).
+      --- OBJETIVO ---
+      Redacta el manuscrito final (aproximadamente 5000 palabras). Asegúrate de que si es a partir del cuarto año, Harry Potter sea el líder formidable descrito, sin rastro de la "suerte del héroe". Si aparece Hermes, usa su habilidad para imitar voces e interceptar información.
 
       --- MANUSCRITO EXPANDIDO FINAL ---
     `;
@@ -89,14 +92,14 @@ export const editStory = async (
           model: model,
           contents: { parts: contentParts },
           config: {
-            temperature: 0.82,
+            temperature: 0.85,
             topP: 0.95,
           }
         });
         return response.text;
     } catch(error) {
         console.error("API Error:", error);
-        throw new Error("La conexión con el mundo mágico se ha interrumpido.");
+        throw new Error("La magia de la IA ha fallado. Verifica la conexión con el Ministerio.");
     }
 };
 
@@ -104,7 +107,7 @@ export const analyzeWorldRules = async (worldRules: string): Promise<string> => 
   const model = 'gemini-3-pro-preview';
   const prompt = `
     ${ANALYSIS_PROMPT}
-    --- TEXTO ---
+    --- TEXTO A ANALIZAR ---
     ${worldRules}
   `;
   try {
@@ -114,6 +117,6 @@ export const analyzeWorldRules = async (worldRules: string): Promise<string> => 
     });
     return response.text;
   } catch (error) {
-    throw new Error("Error analizando las reglas.");
+    throw new Error("Error analizando las reglas de coherencia.");
   }
 }
