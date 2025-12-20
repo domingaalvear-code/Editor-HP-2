@@ -16,11 +16,8 @@ import StoryStarters from './components/StoryStarters';
 const App: React.FC = () => {
   const [appMode, setAppMode] = useState<AppMode>(AppMode.NARRATIVE);
   
-  // Dual state for Rules/Source Material
   const [narrativeRules, setNarrativeRules] = useState<string>(() => localStorage.getItem('worldRules') || DEFAULT_WORLD_RULES);
   const [academicSource, setAcademicSource] = useState<string>(() => localStorage.getItem('academicSource') || '');
-  
-  // New: Canon/Reference Material state
   const [canonReference, setCanonReference] = useState<string>('');
 
   const [storyFile, setStoryFile] = useState<File | null>(null);
@@ -32,7 +29,6 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const isAcademic = appMode === AppMode.ACADEMIC;
-  
   const currentRulesText = isAcademic ? academicSource : narrativeRules;
   const setCurrentRulesText = isAcademic ? setAcademicSource : setNarrativeRules;
 
@@ -131,20 +127,23 @@ const App: React.FC = () => {
   };
 
   const handleAction = useCallback(async () => {
-    // Priority: 1. File Upload, 2. Manual Text, 3. Generate New
     if (storyFile) {
         const storyText = await parsePdf(storyFile);
         processStory(storyText);
     } else if (manualStoryText.trim()) {
         processStory(manualStoryText);
     } else {
-        processStory(''); // New generation
+        processStory(''); 
     }
   }, [currentRulesText, storyFile, manualStoryText, inspirationIdeas, inspirationImages, appMode, canonReference]);
 
   const handleDownload = useCallback(() => {
     if (editedStory) {
-      const filename = isAcademic ? "tesis-borrador.docx" : "historia-editada.docx";
+      const isAnalysis = editedStory.toLowerCase().includes("informe") || editedStory.toLowerCase().includes("coherencia") || editedStory.toLowerCase().includes("analiza");
+      let filename = isAcademic ? "tesis-borrador.docx" : "historia-editada.docx";
+      if (isAnalysis) {
+        filename = "informe-coherencia.docx";
+      }
       generateDocx(editedStory, filename);
     }
   }, [editedStory, isAcademic]);

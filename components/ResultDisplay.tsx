@@ -1,4 +1,5 @@
 
+// Added missing React, useState, and useEffect imports
 import React, { useState, useEffect } from 'react';
 import { AppStatus } from '../types';
 import { Loader } from './Loader';
@@ -19,7 +20,7 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ status, text, onDownload 
           const increment = prev > 90 ? Math.random() * 0.1 : Math.random() * 0.8;
           return prev + increment;
         });
-      }, 1500); // Más lento porque la generación de 5k palabras toma tiempo
+      }, 1500); 
     }
     return () => { if (intervalId) clearInterval(intervalId); };
   }, [status]);
@@ -30,9 +31,9 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ status, text, onDownload 
     return (
       <div className="flex flex-col items-center justify-center p-8 space-y-4 w-full border-t border-gray-100 mt-8">
         <Loader />
-        <p className="text-brand-primary font-semibold text-center text-lg">Redactando Manuscrito Épico (5000+ palabras)...</p>
+        <p className="text-brand-primary font-semibold text-center text-lg">Procesando con Magia IA...</p>
         <p className="text-sm text-gray-500 text-center max-w-md italic">
-          Expandiendo cada detalle sensorial, aplicando la frialdad de Aries y la atmósfera de terror ministerial...
+          Consultando las 10 leyes de la alquimia y verificando la coherencia del mundo mágico...
         </p>
         <div className="w-full bg-gray-200 rounded-full h-3 my-4 max-w-lg shadow-inner">
           <div
@@ -45,7 +46,7 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ status, text, onDownload 
   }
 
   if (status === AppStatus.SUCCESS && text) {
-    const isAnalysis = text.toLowerCase().includes("informe") || text.toLowerCase().includes("coherencia");
+    const isAnalysis = text.toLowerCase().includes("informe") || text.toLowerCase().includes("coherencia") || text.toLowerCase().includes("analiza");
     const wordCount = text.split(/\s+/).length;
 
     return (
@@ -53,18 +54,18 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ status, text, onDownload 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <div>
                 <h2 className={`text-2xl font-bold ${isAnalysis ? 'text-blue-700' : 'text-brand-primary'}`}>
-                    {isAnalysis ? "Informe de Coherencia" : "Novela Expandida (Versión Extendida)"}
+                    {isAnalysis ? "Informe de Coherencia Alquímica" : "Manuscrito Expandido"}
                 </h2>
-                <p className="text-xs text-gray-500 font-medium">Extensión alcanzada: {wordCount} palabras</p>
+                <p className="text-xs text-gray-500 font-medium">
+                    {isAnalysis ? "Diagnóstico de estructura y reglas" : `Extensión alcanzada: ${wordCount} palabras`}
+                </p>
             </div>
-            {!isAnalysis && (
-              <ActionButton 
-                onClick={onDownload}
-                text="Descargar Manuscrito"
-                Icon={DownloadIcon}
-                color="bg-green-600 hover:bg-green-700"
-              />
-            )}
+            <ActionButton 
+              onClick={onDownload}
+              text={isAnalysis ? "Descargar Informe" : "Descargar Manuscrito"}
+              Icon={DownloadIcon}
+              color="bg-green-600 hover:bg-green-700"
+            />
         </div>
         <div className={`p-8 border rounded-xl shadow-inner relative group ${isAnalysis ? 'bg-blue-50 border-blue-200' : 'bg-white border-gray-200'}`}>
           <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -72,7 +73,7 @@ const ResultDisplay: React.FC<ResultDisplayProps> = ({ status, text, onDownload 
                {isAnalysis ? "Diagnóstico IA" : "Texto Final"}
              </span>
           </div>
-          <div className={`whitespace-pre-wrap ${isAnalysis ? 'font-mono text-sm text-blue-900' : 'font-serif text-lg text-brand-text leading-relaxed tracking-wide'}`}>
+          <div className={`whitespace-pre-wrap ${isAnalysis ? 'font-mono text-sm text-blue-900 leading-relaxed' : 'font-serif text-lg text-brand-text leading-relaxed tracking-wide'}`}>
             {text}
           </div>
         </div>
