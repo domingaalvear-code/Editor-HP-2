@@ -12,36 +12,36 @@ const ai = new GoogleGenAI({ apiKey: API_KEY });
 // NARRATIVE / FICTION PROMPT (EPIC EXTENSION)
 // ==========================================
 const BASE_PROMPT = `
-      Actúa como un novelista de fantasía épica de clase mundial. Tu objetivo es expandir la historia a capítulos de **5000 PALABRAS**.
+      Actúa como un novelista de fantasía épica de clase mundial. Tu objetivo es expandir la historia a capítulos extensos de aproximadamente **5000 PALABRAS**.
 
-      **DINÁMICA DE PERSONAJES SEGÚN EL AÑO:**
-      - Debes identificar el año escolar en el que transcurre la escena.
-      - **Años 1-3**: Harry es el niño valiente, impulsivo, sarcástico e ingenuo del canon, pero con destellos de su potencial técnico (especialmente en el 3er año con el Patronus).
-      - **Año 4+**: Cambia radicalmente al modo **Líder Formidable**. Harry debe ser audaz, intimidante, técnicamente perfecto con la magia y estratégico. Elimina cualquier dependencia de la "suerte".
+      **TRASFONDO HISTÓRICO OBLIGATORIO (EL PRIMER AÑO YA OCURRIÓ):**
+      - Harry Potter es el líder de una alianza secreta que incluye a Aries (Ravenclaw) y Draco (Slytherin).
+      - Harry usa su Walkman Sony negro como refugio psicológico y su Brújula de James para orientar su magia empática.
+      - Aries Mauvignier es la mente maestra del grupo, #1 académica y conocedora del secreto de la Piedra Filosofal (está a salvo con Flamel).
+      - Draco Malfoy está en fase de Albedo (purificación), respetando el código de honor que Aries le enseñó.
 
-      **USO DE HERMES (EL CUERVO):**
-      - Hermes es una herramienta de espionaje. Úsalo para interceptar correspondencia, imitar voces para crear confusión o como observador silencioso en las sombras. Su lealtad es para Zahira Mauvignier.
+      **SISTEMA TÉCNICO DE MAGIA (10 LEYES DE LA ALQUIMIA):**
+      - No describas magia genérica. Describe la **Triada Operativa** (Entrada-Proceso-Salida).
+      - Menciona el **Equilibrio de Intercambio** (el coste de los hechizos).
+      - Describe los **Anclajes Simbólicos** (runas, geometría) y la **Resonancia Emocional** (cómo el miedo de Harry o la frialdad de Aries afectan el flujo).
+      - Aplica el **Límite de Iteración** para evitar que la magia parezca infinita o sin consecuencias.
 
       **ESTILO NARRATIVO:**
-      - **PROSA HIPER-DETALLADA**: Expande cada gesto, pensamiento y atmósfera. Si Aries está presente, resalta su **frialdad gélida**.
-      - **LENTITUD ESTRATÉGICA**: Las escenas deben tener profundidad psicológica. PROHIBIDO RESUMIR. Describe el terror ministerial de Grimmauld Place y la precisión de las leyes alquímicas.
-
-      **DIRECTIVAS DE COHERENCIA:**
-      1. Aries filtra la información sobre Sirius (Brújula de James).
-      2. Dumbledore es un manipulador bienintencionado que miente sobre la Piedra Filosofal.
-      3. Hermione valora la lógica y el intelecto de Snape.
+      - **PROSA HIPER-DETALLADA**: Describe el frío de Aries, el sonido metálico de Hermes y la atmósfera gótica de Hogwarts.
+      - **PROFUNDIDAD PSICOLÓGICA**: Explora el peso de los secretos y la lealtad.
+      - **PROHIBIDO RESUMIR**: Expande cada diálogo y pensamiento hasta alcanzar la profundidad cinemática requerida.
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un investigador académico senior especializado en análisis literario y estructural. Transforma el material en un tratado detallado que analice la evolución de los personajes y las leyes mágicas.
+      Actúa como un investigador académico senior especializado en análisis literario y estructural. Transforma el material en un tratado exhaustivo que analice la evolución de la alianza Harry-Aries-Draco y el cumplimiento de las 10 leyes de la alquimia tras el primer año.
 `;
 
 const ANALYSIS_PROMPT = `
       Eres un analista de coherencia narrativa. Verifica estrictamente:
-      1. ¿La personalidad de Harry Potter coincide con el año cronológico de la escena (Ingenuo vs Líder Formidable)?
-      2. ¿Se respeta la competencia técnica de Harry en los años superiores?
-      3. ¿Hermes actúa según sus rasgos de inteligencia, mimetismo y sigilo?
-      4. ¿Se mantiene el aura de terror en Grimmauld Place y la frialdad de Aries?
+      1. ¿Se respeta que Harry ya tiene la Brújula Alquímica y el Walkman Negro?
+      2. ¿Se mantiene la alianza secreta entre casas (Draco, Aries, Harry, Hermione, Ron)?
+      3. ¿Se aplican las **10 Reglas de la Alquimia** detalladas (Intercambio, Temporalidad, Contaminación, etc.)?
+      4. ¿Se menciona la frialdad de Aries y su estatus como #1 del año?
       5. ¿La extensión se acerca al objetivo de 5000 palabras?
 `;
 
@@ -61,7 +61,7 @@ export const editStory = async (
     const promptText = `
       ${SYSTEM_PROMPT}
 
-      --- REGLAS DEL MUNDO (INMUTABLES) ---
+      --- REGLAS DEL MUNDO Y CRONOLOGÍA (AU) ---
       ${worldRules}
 
       --- MATERIAL DE REFERENCIA (CONTEXTO CANON) ---
@@ -75,7 +75,7 @@ export const editStory = async (
       ${ideas || 'No se proporcionaron.'}
 
       --- OBJETIVO ---
-      Redacta el manuscrito final (aproximadamente 5000 palabras). Asegúrate de que si es a partir del cuarto año, Harry Potter sea el líder formidable descrito, sin rastro de la "suerte del héroe". Si aparece Hermes, usa su habilidad para imitar voces e interceptar información.
+      Redacta el manuscrito final (aproximadamente 5000 palabras). Asegúrate de que los hechos del primer año (la alianza, los objetos, el secreto de la Piedra, la rivalidad con Snape) se sientan como los cimientos históricos inamovibles.
 
       --- MANUSCRITO EXPANDIDO FINAL ---
     `;
@@ -99,7 +99,7 @@ export const editStory = async (
         return response.text;
     } catch(error) {
         console.error("API Error:", error);
-        throw new Error("La magia de la IA ha fallado. Verifica la conexión con el Ministerio.");
+        throw new Error("La conexión con el mundo mágico se ha interrumpido. Verifica tu llave mágica (API_KEY).");
     }
 };
 
