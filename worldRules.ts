@@ -3,51 +3,51 @@ export const DEFAULT_WORLD_RULES = `
 # REGLAS DEL MUNDO INMUTABLES (AU)
 
 ## AMBIENTACIÓN Y LUGARES CLAVE
-- **Grimmauld Place (El Punto Muerto)**: Emite un aura de terror real que aleja al Ministerio. Es oficialmente un "punto muerto".
-- **Hogwarts (Entorno Alquímico)**: El castillo es un organismo vivo que responde a patrones rúnicos y aritmánticos (ej. escaleras con secuencia de Fibonacci).
+- **Grimmauld Place (El Punto Muerto)**: Fortaleza protegida por runas de Zahira Mauvignier. Es un hogar "vivo" que responde a la resonancia de sus habitantes. Harry pasa sus veranos aquí bajo la Ley de Hospitalidad.
+- **La Madriguera**: Protegida por el "Caos Afectivo", un escudo de lealtad familiar que Voldemort no puede cuantificar.
+- **Hogwarts (Infraestructura)**: El Basilisco usaba las cañerías (fontanería mágica) para transitar indetectado.
 
 ## PERSONAJES Y RASGOS ESPECÍFICOS
 
 #### Aries Mauvignier (Aries Black)
-- **Rasgo Físico**: Frialdad gélida al tacto.
-- **Personalidad**: Ravenclaw, estética punk-grunge, intelectual de élite.
-- **Logros**: 1er puesto académico del año (puntuación perfecta). Autora de un ensayo revolucionario sobre transfiguración animada.
-- **Equipo**: Walkman Sony WM-F75 (amarillo), Hermes (cuervo imitador de voces).
+- **Habilidades**: Golpeadora de Ravenclaw (Quidditch) usando física aplicada y geometría. Controla su aura Veela con el protocolo (Anclaje, Preservo, Cierre).
+- **Alquimia**: Capaz de generar fuego elemental Veela (combustión de alta potencia) en situaciones de supervivencia.
+- **Logros**: 1er puesto académico consecutivo. Protege a Luna Lovegood como una "variable intocable".
 
-#### Harry Potter (Líder en Ciernes)
-- **Psicología**: Niño cauto y observador. Ha aprendido a usar la lógica y la respiración rítmica (4x4) para controlar el pánico.
-- **Objetos**: Posee la **Brújula de James** (anclaje de rastreo vinculado a su sangre) y el **Walkman Sony WM-FX33** (negro mate, regalo de Aries, con el casete "The Wall").
+#### Harry Potter (El Superviviente)
+- **Equipo**: Porta-varita de muñeca (piel de dragón, regalo de Draco). Posee la Brújula de James (apunta al "norte del corazón") y el Walkman Sony negro (The Wall / Signals / Master of Puppets).
+- **Habilidades**: Habla Pársel. Ha aprendido que la valentía no es la ausencia de miedo, sino la claridad mental (Albedo) bajo presión.
 
-#### Draco Malfoy (Albedo Incipiente)
-- **Evolución**: Ha desarrollado un código de honor retorcido. No delató a Harry con el dragón (tiró la nota a la basura), buscando una victoria por mérito, no por delación. Respeta profundamente a Aries.
+#### Draco Malfoy (El Camino del Albedo)
+- **Evolución**: Ha roto con la ideología purista de su padre. Se interpuso entre el Basilisco y Hermione Granger, resultando petrificado para salvarla. 
+- **Relaciones**: Narcissa Malfoy está secretamente agradecida con Harry por salvar a su hijo. Draco busca ganar por mérito propio, no por apellido.
 
-## COMPENDIO HISTÓRICO: EL PRIMER AÑO (DIVERGENCIAS AU)
+## COMPENDIO HISTÓRICO: EL SEGUNDO AÑO (HECHOS CLAVE)
 
-#### 1. La Gran Alianza Transversal
-- Se ha forjado un círculo secreto que rompe la segregación de casas.
-- **Miembros**: Harry, Ron, Hermione (Gryffindor); Aries, Michael Corner, Anthony Goldstein (Ravenclaw); Draco Malfoy (Slytherin).
-- **Vínculo**: Comparten el secreto de la alquimia, la música muggle y el respeto mutuo forjado en el riesgo.
+#### 1. El Incidente del Ford Anglia
+- Harry y Ron llegaron a Hogwarts volando en el coche modificado de Arthur Weasley. Aries lo definió como "brillante pero imprudente". El coche ahora vive de forma salvaje en el Bosque Prohibido y rescató al trío de Aragog.
 
-#### 2. El Secreto de la Piedra Filosofal
-- **La Mentira de Dumbledore**: Harry cree que la Piedra fue destruida para evitar que Voldemort la use.
-- **La Verdad (Solo Aries lo sabe)**: La Piedra está **intacta**. Zahira Mauvignier la recuperó la noche del enfrentamiento y la devolvió a su creador, Nicolás Flamel (maestro de Zahira). Flamel finge su muerte y se retira bajo ocultación absoluta.
+#### 2. La Cámara de los Secretos y el Basilisco
+- **El Culpable**: Lucius Malfoy plantó el diario de Tom Ryddle en el caldero de Ginny Weasley.
+- **La Batalla**: Harry, Aries y Ron bajaron a la Cámara. Harry mató al Basilisco con la espada de Gryffindor. Aries usó lógica deductiva para identificar las tuberías como ruta del monstruo.
+- **Destrucción**: Harry destruyó el diario (Horrocrux) con un colmillo de Basilisco.
 
-#### 3. El Incidente de Norberto
-- Draco Malfoy descubrió la carta de Charlie Weasley pero decidió no ser el "soplón de Filch". Fue Pansy Parkinson quien recuperó la nota de la basura y delató al trío, provocando la pérdida de 150 puntos para Gryffindor.
+#### 3. Dobby y la Libertad
+- Dobby, el elfo de los Malfoy, intentó "salvar" a Harry bloqueando la barrera y hechizando una bludger. Harry liberó a Dobby entregándole el diario de Ryddle dentro de un calcetín sucio que Lucius arrojó al suelo.
 
-#### 4. El Bosque Prohibido y la Nigredo
-- Harry, Pansy, Hermione y Neville cumplieron castigo en el bosque. Harry presenció la Nigredo absoluta: Voldemort (Quirrell) bebiendo sangre de unicornio. Harry sobrevivió gracias a la protección de su madre y a la "sal catalizadora" de Aries.
+#### 4. La Mentira de la Piedra (Persistente)
+- Harry cree que la Piedra Filosofal fue destruida en su primer año. Aries y Dumbledore saben que está intacta y fue devuelta a Nicolás Flamel por Zahira Mauvignier.
 
 ## LAS 10 REGLAS DE LA ALQUIMIA (SISTEMA DE MAGIA)
 
-1. **Principio de Correspondencia**: Relación simbólica y energética entre el objetivo y los elementos. "Como es arriba, es abajo". La fuerza del vínculo determina la estabilidad.
-2. **Triada Operativa**: Cada acto se compone de Entrada (materia/energía inicial), Proceso (fórmulas/voluntad) y Salida (resultado final y efectos colaterales).
-3. **Equilibrio de Intercambio**: Nada se crea sin costo. Toda alteración exige una compensación proporcional en materia, energía o integridad del ejecutor.
-4. **Anclaje Simbólico**: La transmutación debe fijarse a un patrón (rúnico, geométrico o verbal). Sin anclaje, los efectos son erráticos.
-5. **Resonancia Emocional**: La intención y el estado interno del ejecutor influyen directamente en la pureza del resultado. El miedo distorsiona la magia.
-6. **Temporalidad Precisa**: El momento de ejecución (ciclos naturales o astrales) condiciona la eficacia y seguridad.
-7. **Ley de Contaminación**: Toda energía o materia conserva trazas de su origen. Estas trazas pueden vincular el resultado a su fuente.
-8. **Límite de Iteración**: Un patrón pierde eficacia con usos repetidos sobre el mismo objetivo, acumulando riesgo de fallo catastrófico.
-9. **Efectos Residuales**: Huellas físicas, energéticas o simbólicas acumulativas que quedan en el entorno o en el mago.
-10. **Irreversibilidad Condicionada**: Algunas transmutaciones no pueden deshacerse sin un coste mayor que el original. La reversión exige patrones más exigentes.
+1. **Principio de Correspondencia**: Relación simbólica y energética. "Como es arriba, es abajo". La intención moldea el efecto.
+2. **Triada Operativa**: Entrada (intención/energía), Proceso (canal/varita), Salida (manifestación/consecuencia).
+3. **Equilibrio de Intercambio**: Nada se crea sin costo proporcional. La magia potente exige fatiga física o integridad del núcleo.
+4. **Anclaje Simbólico**: Patrones rúnicos o geométricos que fijan la energía. La Brújula de James es un anclaje empático.
+5. **Resonancia Emocional**: Los estados internos (miedo, odio, amor) modulan la pureza del resultado.
+6. **Temporalidad Precisa**: Sincronía con ciclos naturales o momentos críticos (Nigredo, Albedo, Rubedo).
+7. **Ley de Contaminación**: La energía conserva trazas de su origen. Los objetos oscuros "ensucian" el aura de quien los toca.
+8. **Límite de Iteración**: El uso repetido de un patrón sobre el mismo objetivo genera desgaste o fallos catastróficos (entropía).
+9. **Efectos Residuales**: Huellas permanentes en el entorno o en el mago tras actos de gran potencia.
+10. **Irreversibilidad Condicionada**: Transmutaciones que no pueden deshacerse sin un coste mayor al original.
 `;
