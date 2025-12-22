@@ -8,40 +8,37 @@ if (!API_KEY) {
 
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
-// ==========================================
-// NARRATIVE / FICTION PROMPT (EPIC EXTENSION)
-// ==========================================
 const BASE_PROMPT = `
-      Actúa como un novelista de fantasía épica de clase mundial. Tu objetivo es expandir la historia a capítulos extensos de aproximadamente **5000 PALABRAS**.
+      Actúa como un novelista de fantasía épica. Tu objetivo es expandir la historia a capítulos extensos.
 
-      **TRASFONDO HISTÓRICO OBLIGATORIO (POST-SEGUNDO AÑO):**
-      - Harry Potter ha sobrevivido al Basilisco y ha liberado a Dobby (el elfo de los Malfoy).
-      - Draco Malfoy se sacrificó por Hermione y está en una tregua de respeto profundo con Harry. Narcissa Malfoy tiene una deuda de honor con Harry.
-      - Harry posee la Brújula de James, el porta-varita de piel de dragón y el Walkman negro con cintas de Rush, Pink Floyd y Metallica.
-      - Aries Mauvignier es la Golpeadora estrella de Ravenclaw y la estratega del "Cónclave" (Harry, Ron, Hermione, Draco, Daphne, Tracey, Luna).
-      - Sirius Black vigila desde Grimmauld Place en su forma de Canuto. Harry pasa sus veranos allí.
+      **TRASFONDO HISTÓRICO Y PSICOLÓGICO (VERANO 1993):**
+      - Ginny Weasley está en Egipto, sintiéndose como una "muñeca de porcelana" rota. Teme las sombras y las voces de Ryddle.
+      - Existe una envidia corrosiva de Ginny hacia Aries Mauvignier (la ve como perfecta, noble y digna compañera de Harry).
+      - Aries es la mente maestra, fría y protectora, que usa pañuelos de seda para limpiar sangre de monstruos.
+      - Harry Potter está en una tregua con Draco y tiene una deuda de gratitud con Narcissa Malfoy.
+
+      **DINÁMICA DE PERSONAJES:**
+      - **Aries vs Ginny**: Aries no siente malicia, pero su pragmatismo clínico (ofrecer Beauxbatons, hablar de variables) hiere la inseguridad de Ginny.
+      - **Harry**: Líder del Cónclave, protector pero distante de la tragedia de Ginny.
 
       **SISTEMA TÉCNICO DE MAGIA (10 LEYES DE LA ALQUIMIA):**
-      - Describe la magia mediante la **Triada Operativa** (Entrada-Proceso-Salida).
-      - Usa conceptos como **Nigredo** (caos/oscuridad), **Albedo** (purificación/lógica) y **Rubedo** (culminación/vida).
-      - Aplica el **Límite de Iteración** y el **Equilibrio de Intercambio** (el cansancio tras grandes hechizos).
+      - Usa la **Triada Operativa** y la **Resonancia Emocional**.
+      - Describe cómo el trauma de Ginny es una "Nigredo" que interfiere con su magia.
+      - La magia de Aries es "Albedo" puro: purificación, luz blanca/violeta y sin varita si es necesario.
 
-      **ESTILO NARRATIVO:**
-      - **PROSA HIPER-DETALLADA**: Describe las vibraciones de la brújula, el olor a ozono de la magia de Aries y la atmósfera opresiva del mundo mágico.
-      - **PROHIBIDO RESUMIR**: Expande cada interacción, pensamiento y proceso alquímico de forma cinematográfica.
+      **ESTILO:** Prosa hiper-detallada, exploración del monólogo interno de Ginny y la atmósfera gótica del mundo mágico. PROHIBIDO RESUMIR.
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un investigador académico senior. Transforma el material en un tratado detallado que analice la evolución de la alianza secreta Harry-Aries-Draco tras la crisis de la Cámara de los Secretos y la aplicación de las 10 leyes de la alquimia en la resolución del conflicto.
+      Actúa como un investigador académico. Analiza la "Nigredo emocional" de Ginny Weasley frente al "Albedo pragmático" de Aries Mauvignier tras la crisis de la Cámara de los Secretos.
 `;
 
 const ANALYSIS_PROMPT = `
-      Eres un analista de coherencia narrativa. Verifica estrictamente:
-      1. ¿Se respeta que Dobby es libre y Draco salvó a Hermione?
-      2. ¿Harry usa sus objetos característicos (Brújula, Walkman)?
-      3. ¿Se aplican las **10 Reglas de la Alquimia** (Intercambio, Resonancia, etc.)?
-      4. ¿Se mantiene la jerarquía de Aries como la mente maestra?
-      5. ¿La extensión se acerca al objetivo de 5000 palabras?
+      Eres un analista de coherencia. Verifica:
+      1. ¿Se respeta el trauma de Ginny y su envidia hacia Aries?
+      2. ¿Se menciona la "tragedia noble" de Aries vs la "tragedia sucia" de Ginny?
+      3. ¿Se aplican las **10 Reglas de la Alquimia**?
+      4. ¿Se sitúa la acción en el Verano de 1993 (Egipto/Grimmauld/Londres)?
 `;
 
 export const editStory = async (
@@ -55,26 +52,23 @@ export const editStory = async (
     const model = 'gemini-3-pro-preview';
     const SYSTEM_PROMPT = mode === 'academic' ? ACADEMIC_PROMPT : BASE_PROMPT;
     
-    const inputWordCount = story ? story.split(/\s+/).length : 0;
-
     const promptText = `
       ${SYSTEM_PROMPT}
 
-      --- REGLAS DEL MUNDO Y CRONOLOGÍA (AU) ---
+      --- REGLAS DEL MUNDO Y PSICOLOGÍA (AU) ---
       ${worldRules}
 
-      --- MATERIAL DE REFERENCIA (CONTEXTO CANON) ---
+      --- MATERIAL DE REFERENCIA ---
       ${canonReference || "No se proporcionó."}
 
-      --- HISTORIA A EXPANDIR ---
-      ${story || 'Generar nuevo capítulo del inicio del tercer año.'}
-      (Extensión original: ${inputWordCount} palabras)
+      --- HISTORIA / POVS ---
+      ${story || 'Generar nuevo capítulo desde el POV de Ginny en Egipto o Aries en Londres.'}
       
       --- NOTAS DE INSPIRACIÓN ---
       ${ideas || 'No se proporcionaron.'}
 
       --- OBJETIVO ---
-      Redacta el manuscrito final (aproximadamente 5000 palabras). Asegúrate de que los hechos del segundo año (Dobby libre, Draco redimido, el Basilisco) se sientan como los cimientos históricos inamovibles.
+      Redacta el manuscrito final (5000 palabras). Explora la sombra de Ryddle en Ginny y el contraste con la luz de luna que emana Aries.
 
       --- MANUSCRITO EXPANDIDO FINAL ---
     `;
@@ -90,32 +84,22 @@ export const editStory = async (
         const response = await ai.models.generateContent({
           model: model,
           contents: { parts: contentParts },
-          config: {
-            temperature: 0.85,
-            topP: 0.95,
-          }
+          config: { temperature: 0.8, topP: 0.95 }
         });
         return response.text;
     } catch(error) {
         console.error("API Error:", error);
-        throw new Error("La conexión con el mundo mágico se ha interrumpido. Verifica tu llave mágica (API_KEY).");
+        throw new Error("Conexión mágica fallida. Revisa tu API_KEY.");
     }
 };
 
 export const analyzeWorldRules = async (worldRules: string): Promise<string> => {
   const model = 'gemini-3-pro-preview';
-  const prompt = `
-    ${ANALYSIS_PROMPT}
-    --- TEXTO A ANALIZAR ---
-    ${worldRules}
-  `;
+  const prompt = `${ANALYSIS_PROMPT}\n--- REGLAS ---\n${worldRules}`;
   try {
-    const response = await ai.models.generateContent({
-      model: model,
-      contents: prompt,
-    });
+    const response = await ai.models.generateContent({ model: model, contents: prompt });
     return response.text;
   } catch (error) {
-    throw new Error("Error analizando las reglas de coherencia.");
+    throw new Error("Error analizando coherencia.");
   }
 }

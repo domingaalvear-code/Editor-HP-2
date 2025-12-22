@@ -3,51 +3,39 @@ export const DEFAULT_WORLD_RULES = `
 # REGLAS DEL MUNDO INMUTABLES (AU)
 
 ## AMBIENTACIÓN Y LUGARES CLAVE
-- **Grimmauld Place (El Punto Muerto)**: Fortaleza protegida por runas de Zahira Mauvignier. Es un hogar "vivo" que responde a la resonancia de sus habitantes. Harry pasa sus veranos aquí bajo la Ley de Hospitalidad.
-- **La Madriguera**: Protegida por el "Caos Afectivo", un escudo de lealtad familiar que Voldemort no puede cuantificar.
-- **Hogwarts (Infraestructura)**: El Basilisco usaba las cañerías (fontanería mágica) para transitar indetectado.
+- **Grimmauld Place (El Punto Muerto)**: Fortaleza protegida por runas de Zahira Mauvignier. Harry pasa sus veranos aquí bajo la Ley de Hospitalidad.
+- **La Madriguera (Verano 1993)**: Transformada en una "jaula de oro" para Ginny. El amor familiar se percibe asfixiante y condescendiente ("muñeca de porcelana").
+- **Egipto (Contexto Actual)**: La familia Weasley viaja a Egipto tras ganar el gran premio de El Profeta. Ginny teme las "tumbas antiguas" por su conexión con el trauma de la Cámara.
 
 ## PERSONAJES Y RASGOS ESPECÍFICOS
 
 #### Aries Mauvignier (Aries Black)
-- **Habilidades**: Golpeadora de Ravenclaw (Quidditch) usando física aplicada y geometría. Controla su aura Veela con el protocolo (Anclaje, Preservo, Cierre).
-- **Alquimia**: Capaz de generar fuego elemental Veela (combustión de alta potencia) en situaciones de supervivencia.
-- **Logros**: 1er puesto académico consecutivo. Protege a Luna Lovegood como una "variable intocable".
+- **Percepción de Otros**: Vista como la bruja perfecta. Cabello platino, ojos violetas, control absoluto.
+- **Rasgo Clave**: Limpia sangre de basilisco con seda. Ofrece salidas pragmáticas incluso en el terror (ej. oferta de plaza en Beauxbatons para Ginny).
+- **Alquimia**: Representa el "Albedo" constante: pureza, lógica y frialdad protectora.
 
-#### Harry Potter (El Superviviente)
-- **Equipo**: Porta-varita de muñeca (piel de dragón, regalo de Draco). Posee la Brújula de James (apunta al "norte del corazón") y el Walkman Sony negro (The Wall / Signals / Master of Puppets).
-- **Habilidades**: Habla Pársel. Ha aprendido que la valentía no es la ausencia de miedo, sino la claridad mental (Albedo) bajo presión.
+#### Harry Potter (El Héroe Roto)
+- **Vínculo con Aries**: Una alianza de iguales (El Cónclave). Harry usa el Walkman y la Brújula como anclas contra la "Resonancia" de la fama.
+- **Relación con Ginny**: Harry la salvó por instinto heroico, lo que genera en Ginny una mezcla de adoración y vergüenza insoportable.
 
-#### Draco Malfoy (El Camino del Albedo)
-- **Evolución**: Ha roto con la ideología purista de su padre. Se interpuso entre el Basilisco y Hermione Granger, resultando petrificado para salvarla. 
-- **Relaciones**: Narcissa Malfoy está secretamente agradecida con Harry por salvar a su hijo. Draco busca ganar por mérito propio, no por apellido.
+#### Ginny Weasley (Nigredo del Trauma)
+- **Estado Psicológico**: Sufre de "Nigredo emocional". Escucha ecos de la voz de Tom Ryddle. Se siente "sucia" por la posesión, comparando su tragedia con la de Aries (que ve como "noble").
+- **Inseguridad**: Siente que existe un muro invisible entre ella y el grupo de Harry/Aries. Se ve a sí misma como una "sombra" frente al brillo de la herencia Mauvignier/Veela.
 
 ## COMPENDIO HISTÓRICO: EL SEGUNDO AÑO (HECHOS CLAVE)
-
-#### 1. El Incidente del Ford Anglia
-- Harry y Ron llegaron a Hogwarts volando en el coche modificado de Arthur Weasley. Aries lo definió como "brillante pero imprudente". El coche ahora vive de forma salvaje en el Bosque Prohibido y rescató al trío de Aragog.
-
-#### 2. La Cámara de los Secretos y el Basilisco
-- **El Culpable**: Lucius Malfoy plantó el diario de Tom Ryddle en el caldero de Ginny Weasley.
-- **La Batalla**: Harry, Aries y Ron bajaron a la Cámara. Harry mató al Basilisco con la espada de Gryffindor. Aries usó lógica deductiva para identificar las tuberías como ruta del monstruo.
-- **Destrucción**: Harry destruyó el diario (Horrocrux) con un colmillo de Basilisco.
-
-#### 3. Dobby y la Libertad
-- Dobby, el elfo de los Malfoy, intentó "salvar" a Harry bloqueando la barrera y hechizando una bludger. Harry liberó a Dobby entregándole el diario de Ryddle dentro de un calcetín sucio que Lucius arrojó al suelo.
-
-#### 4. La Mentira de la Piedra (Persistente)
-- Harry cree que la Piedra Filosofal fue destruida en su primer año. Aries y Dumbledore saben que está intacta y fue devuelta a Nicolás Flamel por Zahira Mauvignier.
+- **El Diario de Ryddle**: Fue una posesión parasitaria de alto nivel. Ginny se siente estúpida por confiar en él.
+- **El Rescate en la Cámara**: Aries estuvo presente, analítica y estoica, mientras Ginny se desmoronaba. La frase de Aries "La expulsión es una variable burocrática irrelevante" marcó el inicio de la envidia de Ginny.
+- **Dobby y la Libertad**: Harry liberó al elfo usando el calcetín y el diario.
 
 ## LAS 10 REGLAS DE LA ALQUIMIA (SISTEMA DE MAGIA)
-
-1. **Principio de Correspondencia**: Relación simbólica y energética. "Como es arriba, es abajo". La intención moldea el efecto.
-2. **Triada Operativa**: Entrada (intención/energía), Proceso (canal/varita), Salida (manifestación/consecuencia).
-3. **Equilibrio de Intercambio**: Nada se crea sin costo proporcional. La magia potente exige fatiga física o integridad del núcleo.
-4. **Anclaje Simbólico**: Patrones rúnicos o geométricos que fijan la energía. La Brújula de James es un anclaje empático.
-5. **Resonancia Emocional**: Los estados internos (miedo, odio, amor) modulan la pureza del resultado.
-6. **Temporalidad Precisa**: Sincronía con ciclos naturales o momentos críticos (Nigredo, Albedo, Rubedo).
-7. **Ley de Contaminación**: La energía conserva trazas de su origen. Los objetos oscuros "ensucian" el aura de quien los toca.
-8. **Límite de Iteración**: El uso repetido de un patrón sobre el mismo objetivo genera desgaste o fallos catastróficos (entropía).
-9. **Efectos Residuales**: Huellas permanentes en el entorno o en el mago tras actos de gran potencia.
-10. **Irreversibilidad Condicionada**: Transmutaciones que no pueden deshacerse sin un coste mayor al original.
+1. **Principio de Correspondencia**: "Como es arriba, es abajo".
+2. **Triada Operativa**: Entrada, Proceso, Salida.
+3. **Equilibrio de Intercambio**: Nada se crea sin costo.
+4. **Anclaje Simbólico**: Patrones que fijan la energía.
+5. **Resonancia Emocional**: El estado interno modula la pureza mágica. El miedo de Ginny "calcifica" su núcleo mágico.
+6. **Temporalidad Precisa**: Sincronía con ciclos críticos.
+7. **Ley de Contaminación**: Los objetos oscuros dejan trazas permanentes (el diario dejó una "mancha de tinta" en la mente de Ginny).
+8. **Límite de Iteración**: El desgaste de patrones repetidos.
+9. **Efectos Residuales**: Huellas permanentes tras actos de gran potencia.
+10. **Irreversibilidad Condicionada**: Lo que se rompe (como la psique de Ginny) requiere un proceso de Albedo extremo para sanar.
 `;
