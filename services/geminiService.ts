@@ -9,31 +9,35 @@ if (!API_KEY) {
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 const BASE_PROMPT = `
-      Actúa como un novelista de fantasía épica de alto nivel. Tu enfoque es el desarrollo psicológico profundo y la narrativa de "coming of age" oscura.
+      Actúa como un novelista de fantasía épica de alto nivel. Tu enfoque es la narrativa del mundo "Magi" (AU de Harry Potter).
 
-      **FOCO NARRATIVO: LA TRASFORMACIÓN DE GINNY WEASLEY**
-      - Explora la disonancia de Ginny en Egipto (Verano 1993): se siente una "muñeca de porcelana" rota mientras su familia celebra.
-      - **Luna Lovegood** debe aparecer como la única voz que no la compadece. Luna desmitifica el horror de Tom Ryddle tratándolo como una curiosidad taxonómica.
-      - **Arco de Aries**: Muestra la transición crítica donde Ginny deja de sentir envidia corrosiva por Aries Mauvignier y empieza a verla como un **faro de competencia**. Ginny decide que quiere esa fuerza mental para que nadie vuelva a entrar en su cabeza.
-      - Aries no es cálida, es pragmática. Su "frialdad clínica" es lo que Ginny admira ahora porque es lo opuesto a la vulnerabilidad emocional que la llevó al diario.
+      **REGLAS NARRATIVAS CENTRALES:**
+      - **Aries Mauvignier**: Es el estándar de competencia. Fría, lógica, analítica. Usa seda para limpiar sangre, desprecia el caos emocional y domina la Alquimia.
+      - **Harry Potter**: Un guerrero táctico, usuario de tecnología muggle (Walkman, Brújula) y aprendiz del Cónclave.
+      - **Atmósfera**: Gótica, detallada, técnica. La magia tiene consecuencias físicas y requiere precisión rúnica.
+
+      **TRATAMIENTO DE PERSONAJES SECUNDARIOS:**
+      - Solo incluye desarrollo profundo de otros personajes (como Ginny Weasley o Luna Lovegood) si el usuario los menciona explícitamente en su borrador o notas. 
+      - De lo contrario, mantén el foco en la dinámica del Cónclave y el avance de la trama principal.
 
       **SISTEMA DE MAGIA (ALQUIMIA):**
-      - Aplica las **10 Leyes de la Alquimia**. Describe la magia de Ginny como algo que necesita "Albedo" (purificación de Luna) antes de llegar a la "Rubedo" (el fuego del canon).
-      - La magia de Aries es el estándar de oro: silenciosa, rúnica y sin fisuras.
+      - Aplica estrictamente las **10 Leyes de la Alquimia**.
+      - Describe procesos de Entrada, Proceso y Salida.
+      - La magia no es "deseos", es ingeniería de la realidad.
 
-      **ESTILO:** Prosa rica, sensorial y gótica. No resumas escenas. Queremos sentir la arena de Egipto, el frío de la Cámara y el brillo amatista de los ojos de Aries en los recuerdos de Ginny.
+      **ESTILO:** Prosa rica, sensorial y cerebral. Prohibido resumir. No uses clichés de "luz y oscuridad" simplistas; usa terminología alquímica (Nigredo, Albedo, Rubedo).
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un analista literario y psicólogo mágico. Analiza la transición del arquetipo de "Damisela en Apuros" a "Guerrera Estratega" en Ginny Weasley, usando a Luna Lovegood y Aries Mauvignier como polos de influencia (Empatía vs Competencia).
+      Actúa como un analista literario experto en el mundo "Magi". Analiza la estructura sociopolítica y mágica de este AU, enfocándote en la relación entre la Alquimia y la evolución del Cónclave.
 `;
 
 const ANALYSIS_PROMPT = `
-      Eres un analista de coherencia. Verifica:
-      1. ¿Se refleja el paso de la envidia de Ginny hacia la admiración por Aries?
-      2. ¿Luna actúa como catalizador de la verdad sin filtros?
-      3. ¿Se menciona el trauma del "Anexo 1: Verano de Cristal" (muñeca de porcelana)?
-      4. ¿Se respetan las leyes de la alquimia?
+      Eres un analista de coherencia del mundo Magi. Verifica:
+      1. ¿Se respetan las 10 Reglas de la Alquimia?
+      2. ¿La personalidad de Aries se mantiene fría y lógica?
+      3. ¿Se utilizan correctamente los anclajes de Harry (Walkman, Brújula)?
+      4. ¿El tono es gótico y técnico en lugar de fantasía juvenil estándar?
 `;
 
 export const editStory = async (
@@ -50,22 +54,22 @@ export const editStory = async (
     const promptText = `
       ${SYSTEM_PROMPT}
 
-      --- REGLAS DEL MUNDO (AU) ---
+      --- REGLAS DEL MUNDO (FUENTE DE VERDAD) ---
       ${worldRules}
 
-      --- MATERIAL DE REFERENCIA (PDFs/CANON) ---
+      --- MATERIAL DE REFERENCIA CANON ---
       ${canonReference || "No se proporcionó."}
 
-      --- MANUSCRITO ACTUAL / POV ---
-      ${story || 'Generar una escena de Ginny en Egipto escribiendo una carta que nunca enviará a Aries, o hablando con Luna sobre los "Wrackspurts" de Tom.'}
+      --- BORRADOR DEL USUARIO / POV ACTUAL ---
+      ${story || 'Generar un inicio de capítulo enfocado en Aries y Harry en una misión del Cónclave.'}
       
       --- NOTAS DE INSPIRACIÓN ---
       ${ideas || 'No se proporcionaron.'}
 
       --- OBJETIVO ---
-      Expande la historia a un capítulo completo (mínimo 3000-5000 palabras si es posible). Prioriza el monólogo interno de Ginny y su decisión de volverse fuerte.
+      Expande el material a una prosa narrativa de alta calidad. Si el usuario no ha preguntado por Ginny o su arco, enfócate en la trama general del mundo Magi.
 
-      --- MANUSCRITO FINAL EXPANDIDO ---
+      --- MANUSCRITO FINAL ---
     `;
 
     const contentParts: Part[] = [{ text: promptText }];
@@ -84,7 +88,7 @@ export const editStory = async (
         return response.text;
     } catch(error) {
         console.error("API Error:", error);
-        throw new Error("La conexión con el Departamento de Misterios falló.");
+        throw new Error("La conexión con el núcleo de la Alquimia falló.");
     }
 };
 
@@ -95,6 +99,6 @@ export const analyzeWorldRules = async (worldRules: string): Promise<string> => 
     const response = await ai.models.generateContent({ model: model, contents: prompt });
     return response.text;
   } catch (error) {
-    throw new Error("Error analizando la estructura del mundo.");
+    throw new Error("Error analizando la coherencia del mundo.");
   }
 }
