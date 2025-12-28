@@ -9,32 +9,31 @@ if (!API_KEY) {
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 const BASE_PROMPT = `
-      Actúa como un novelista de fantasía épica y experto en psicología de personajes. 
-      Tu objetivo es expandir la historia enfocándote en el **Crecimiento de Ginny Weasley**.
+      Actúa como un novelista de fantasía épica de alto nivel. Tu enfoque es el desarrollo psicológico profundo y la narrativa de "coming of age" oscura.
 
-      **ARCO NARRATIVO PRIORITARIO:**
-      - La amistad entre **Luna Lovegood** y **Ginny** es el catalizador que saca a Ginny de su "jaula de cristal".
-      - Luna no trata a Ginny con lástima (a diferencia de los Weasley); la trata con una curiosidad científica y mística que permite a Ginny explorar su trauma sin vergüenza.
-      - Describe cómo Luna ayuda a Ginny a "quemar" los restos de la voz de Tom Ryddle mediante la aceptación de su propia fuerza oculta.
-      - Aries Mauvignier observa este proceso como una "alquimia del alma" necesaria para que Ginny se una al Cónclave como una igual, no como una carga.
+      **FOCO NARRATIVO: LA TRASFORMACIÓN DE GINNY WEASLEY**
+      - Explora la disonancia de Ginny en Egipto (Verano 1993): se siente una "muñeca de porcelana" rota mientras su familia celebra.
+      - **Luna Lovegood** debe aparecer como la única voz que no la compadece. Luna desmitifica el horror de Tom Ryddle tratándolo como una curiosidad taxonómica.
+      - **Arco de Aries**: Muestra la transición crítica donde Ginny deja de sentir envidia corrosiva por Aries Mauvignier y empieza a verla como un **faro de competencia**. Ginny decide que quiere esa fuerza mental para que nadie vuelva a entrar en su cabeza.
+      - Aries no es cálida, es pragmática. Su "frialdad clínica" es lo que Ginny admira ahora porque es lo opuesto a la vulnerabilidad emocional que la llevó al diario.
 
-      **ATMÓSFERA Y MAGIA:**
-      - Usa la **Triada Operativa** para describir cómo la magia de Ginny, antes "calcificada" por el miedo, comienza a fluir con una violencia contenida y poderosa.
-      - Contraste visual: La luz blanca/violeta de Aries frente a la calidez errática y ardiente que Ginny empieza a recuperar.
+      **SISTEMA DE MAGIA (ALQUIMIA):**
+      - Aplica las **10 Leyes de la Alquimia**. Describe la magia de Ginny como algo que necesita "Albedo" (purificación de Luna) antes de llegar a la "Rubedo" (el fuego del canon).
+      - La magia de Aries es el estándar de oro: silenciosa, rúnica y sin fisuras.
 
-      **ESTILO:** Prosa hiper-detallada. Explora el monólogo interno de Ginny pasando de la envidia hacia Aries a la inspiración. PROHIBIDO RESUMIR.
+      **ESTILO:** Prosa rica, sensorial y gótica. No resumas escenas. Queremos sentir la arena de Egipto, el frío de la Cámara y el brillo amatista de los ojos de Aries en los recuerdos de Ginny.
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un sociólogo mágico. Analiza el impacto de Luna Lovegood como "Variable Catalizadora" en la reconstrucción de la integridad mágica de Ginny Weasley tras una posesión de Clase X.
+      Actúa como un analista literario y psicólogo mágico. Analiza la transición del arquetipo de "Damisela en Apuros" a "Guerrera Estratega" en Ginny Weasley, usando a Luna Lovegood y Aries Mauvignier como polos de influencia (Empatía vs Competencia).
 `;
 
 const ANALYSIS_PROMPT = `
-      Eres un analista de coherencia narrativa. Verifica:
-      1. ¿La amistad con Luna es el motor principal del cambio en Ginny?
-      2. ¿Se evita tratar a Ginny como una víctima pasiva y se muestra su camino hacia la fuerza?
-      3. ¿Se mantienen las **10 Reglas de la Alquimia**?
-      4. ¿Se refleja el contraste entre el Albedo de Aries y la Rubedo naciente de Ginny?
+      Eres un analista de coherencia. Verifica:
+      1. ¿Se refleja el paso de la envidia de Ginny hacia la admiración por Aries?
+      2. ¿Luna actúa como catalizador de la verdad sin filtros?
+      3. ¿Se menciona el trauma del "Anexo 1: Verano de Cristal" (muñeca de porcelana)?
+      4. ¿Se respetan las leyes de la alquimia?
 `;
 
 export const editStory = async (
@@ -51,22 +50,22 @@ export const editStory = async (
     const promptText = `
       ${SYSTEM_PROMPT}
 
-      --- REGLAS DEL MUNDO Y PSICOLOGÍA (AU) ---
+      --- REGLAS DEL MUNDO (AU) ---
       ${worldRules}
 
-      --- MATERIAL DE REFERENCIA ---
+      --- MATERIAL DE REFERENCIA (PDFs/CANON) ---
       ${canonReference || "No se proporcionó."}
 
-      --- HISTORIA ACTUAL ---
-      ${story || 'Generar capítulo sobre el primer encuentro significativo entre Luna y Ginny en la biblioteca o la torre.'}
+      --- MANUSCRITO ACTUAL / POV ---
+      ${story || 'Generar una escena de Ginny en Egipto escribiendo una carta que nunca enviará a Aries, o hablando con Luna sobre los "Wrackspurts" de Tom.'}
       
       --- NOTAS DE INSPIRACIÓN ---
       ${ideas || 'No se proporcionaron.'}
 
       --- OBJETIVO ---
-      Redacta el manuscrito final (5000 palabras). Asegúrate de que la voz de Luna sea el puente que lleva a Ginny de la oscuridad (Nigredo) a su fuerza final (Rubedo).
+      Expande la historia a un capítulo completo (mínimo 3000-5000 palabras si es posible). Prioriza el monólogo interno de Ginny y su decisión de volverse fuerte.
 
-      --- MANUSCRITO EXPANDIDO FINAL ---
+      --- MANUSCRITO FINAL EXPANDIDO ---
     `;
 
     const contentParts: Part[] = [{ text: promptText }];
@@ -80,12 +79,12 @@ export const editStory = async (
         const response = await ai.models.generateContent({
           model: model,
           contents: { parts: contentParts },
-          config: { temperature: 0.82, topP: 0.95 }
+          config: { temperature: 0.8, topP: 0.95 }
         });
         return response.text;
     } catch(error) {
         console.error("API Error:", error);
-        throw new Error("La red Flu está caída. Revisa tu conexión con la API.");
+        throw new Error("La conexión con el Departamento de Misterios falló.");
     }
 };
 
@@ -96,6 +95,6 @@ export const analyzeWorldRules = async (worldRules: string): Promise<string> => 
     const response = await ai.models.generateContent({ model: model, contents: prompt });
     return response.text;
   } catch (error) {
-    throw new Error("Error analizando coherencia mágica.");
+    throw new Error("Error analizando la estructura del mundo.");
   }
 }
