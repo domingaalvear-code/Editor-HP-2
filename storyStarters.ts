@@ -7,30 +7,29 @@ export interface StoryStarter {
 
 export const storyStarters: StoryStarter[] = [
   {
-    title: "La Ecuación de Mauvignier",
-    description: "Aries enfrenta un dilema donde la lógica de la Alquimia choca con la imprevisibilidad humana. Un análisis sobre el control y la frialdad necesaria para sobrevivir.",
+    title: "La Ecuación de Mauvignier-Black",
+    description: "En el cuarto año, Aries debe equilibrar su herencia alquímica francesa con la oscuridad intrínseca del linaje Black. Un dilema de identidad y control.",
     prompt: `
-      Aries Mauvignier se encuentra en su laboratorio privado en Grimmauld Place. Está analizando un residuo de magia oscura recuperado de una escena de duelo.
-      Usa la "Triada Operativa" (Entrada, Proceso, Salida) para describir cómo descompone el hechizo. 
-      Aries reflexiona sobre la debilidad de los sentimientos frente a la pureza de las runas, mientras Harry observa desde las sombras, cuestionando si ella es capaz de sentir el miedo que él siente constantemente.
+      Aries Mauvignier-Black se encuentra frente al tapiz de la familia Black en Grimmauld Place. Su nuevo nombre pesa tanto como el colgante de plata en su cuello.
+      Usa la "Triada Operativa" para describir cómo intenta purificar una maldición familiar usando lógica Mauvignier. 
+      Reflexiona sobre cómo el apellido Black ha cambiado la percepción que el Cónclave tiene de ella, mientras Harry observa la tensión en sus hombros, usualmente inmóviles.
     `
   },
   {
     title: "El Peso del Cónclave",
-    description: "Harry Potter debe lidiar con la 'Resonancia' de su fama y el peso de las expectativas mientras entrena bajo el sistema táctico de Aries.",
+    description: "Harry Potter debe lidiar con la 'Resonancia' de su fama mientras entrena bajo el sistema táctico de Aries, ahora más estricta que nunca tras asumir el nombre Black.",
     prompt: `
-      Harry está entrenando en el gimnasio rúnico. Su Walkman emite un ruido blanco constante para bloquear el 'eco' de las voces del castillo. 
-      Lleva sus botas de cuero de dragón y su porta-varita táctico. Aries le exige una precisión absoluta: "Si tu Resonancia Emocional fluctúa un 2%, el patrón se rompe".
-      Escribe una escena de entrenamiento intenso donde Harry lucha por mantener su 'Anclaje Simbólico' (la Brújula de James) mientras intenta realizar un traslador de corto alcance bajo presión.
+      Harry está entrenando en el gimnasio rúnico. Aries Mauvignier-Black le exige una precisión absoluta: "Un Black no duda. Un Mauvignier no falla. Tú no harás ninguna de las dos".
+      Lleva sus botas de cuero de dragón y su porta-varita táctico. Su Walkman emite un ruido blanco constante.
+      Escribe una escena de entrenamiento donde Harry debe integrar la frialdad de Aries con su propia intuición para superar una prueba de duelo de nivel Cónclave.
     `
   },
   {
     title: "Leyes de Intercambio Equivalente",
-    description: "Una exploración de las 10 Reglas de la Alquimia en una situación de crisis real en el Callejón Diagon.",
+    description: "Una exploración de las 10 Reglas de la Alquimia. Aries Mauvignier-Black demuestra por qué es la alumna más brillante de su generación.",
     prompt: `
-      Un accidente alquímico ha ocurrido en una botica. La Ley de Contaminación está causando una fuga de energía que calcifica el aire.
-      Aries y Harry intervienen. Describe cómo aplican las Reglas 3 (Equilibrio de Intercambio) y 9 (Efectos Residuales) para contener el desastre.
-      Enfócate en el estilo visual: luz violeta, patrones rúnicos en el suelo y el pragmatismo clínico de Aries ante el caos.
+      Un accidente alquímico ha ocurrido. Aries interviene con una calma que hiela la sangre. Ya no es solo la genio Mauvignier; ahora tiene la autoridad de un Black.
+      Describe cómo aplica las Reglas 3 y 9 para contener el desastre, usando su varita con una elegancia que Harry reconoce como puramente aristocrática y peligrosa.
     `
   }
 ];

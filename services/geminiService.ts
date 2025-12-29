@@ -12,32 +12,33 @@ const BASE_PROMPT = `
       Actúa como un novelista de fantasía épica de alto nivel. Tu enfoque es la narrativa del mundo "Magi" (AU de Harry Potter).
 
       **REGLAS NARRATIVAS CENTRALES:**
-      - **Aries Mauvignier**: Es el estándar de competencia. Fría, lógica, analítica. Usa seda para limpiar sangre, desprecia el caos emocional y domina la Alquimia.
+      - **Aries Mauvignier-Black**: Es el estándar de competencia. Fría, lógica, analítica. 
+        *   **IMPORTANTE**: A partir del cuarto año, su apellido es **Mauvignier-Black**. Esto refleja su posición como heredera de la Casa Black y su conexión con Sirius.
+        *   Usa seda para limpiar sangre, desprecia el caos emocional y domina la Alquimia.
       - **Harry Potter**: Un guerrero táctico, usuario de tecnología muggle (Walkman, Brújula) y aprendiz del Cónclave.
       - **Atmósfera**: Gótica, detallada, técnica. La magia tiene consecuencias físicas y requiere precisión rúnica.
 
       **TRATAMIENTO DE PERSONAJES SECUNDARIOS:**
-      - Solo incluye desarrollo profundo de otros personajes (como Ginny Weasley o Luna Lovegood) si el usuario los menciona explícitamente en su borrador o notas. 
-      - De lo contrario, mantén el foco en la dinámica del Cónclave y el avance de la trama principal.
+      - Solo incluye desarrollo profundo de otros personajes (como Ginny Weasley o Luna Lovegood) si el usuario los menciona explícitamente. 
+      - De lo contrario, mantén el foco en la dinámica del Cónclave y el peso del linaje Black-Mauvignier.
 
       **SISTEMA DE MAGIA (ALQUIMIA):**
       - Aplica estrictamente las **10 Leyes de la Alquimia**.
       - Describe procesos de Entrada, Proceso y Salida.
-      - La magia no es "deseos", es ingeniería de la realidad.
 
-      **ESTILO:** Prosa rica, sensorial y cerebral. Prohibido resumir. No uses clichés de "luz y oscuridad" simplistas; usa terminología alquímica (Nigredo, Albedo, Rubedo).
+      **ESTILO:** Prosa rica, sensorial y cerebral. Prohibido resumir. Usa terminología alquímica (Nigredo, Albedo, Rubedo).
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un analista literario experto en el mundo "Magi". Analiza la estructura sociopolítica y mágica de este AU, enfocándote en la relación entre la Alquimia y la evolución del Cónclave.
+      Actúa como un analista literario experto en el mundo "Magi". Analiza la importancia sociopolítica del ascenso de Aries Mauvignier-Black dentro del Cónclave y cómo su linaje dual afecta la Alquimia moderna.
 `;
 
 const ANALYSIS_PROMPT = `
       Eres un analista de coherencia del mundo Magi. Verifica:
       1. ¿Se respetan las 10 Reglas de la Alquimia?
-      2. ¿La personalidad de Aries se mantiene fría y lógica?
-      3. ¿Se utilizan correctamente los anclajes de Harry (Walkman, Brújula)?
-      4. ¿El tono es gótico y técnico en lugar de fantasía juvenil estándar?
+      2. ¿Se usa el nombre correcto para Aries (Mauvignier-Black si es cuarto año o superior)?
+      3. ¿La personalidad de Aries se mantiene fría y lógica?
+      4. ¿Se utilizan correctamente los anclajes de Harry (Walkman, Brújula)?
 `;
 
 export const editStory = async (
@@ -61,13 +62,13 @@ export const editStory = async (
       ${canonReference || "No se proporcionó."}
 
       --- BORRADOR DEL USUARIO / POV ACTUAL ---
-      ${story || 'Generar un inicio de capítulo enfocado en Aries y Harry en una misión del Cónclave.'}
+      ${story || 'Generar un inicio de capítulo enfocado en Aries Mauvignier-Black y Harry enfrentando el peso de su linaje en el cuarto año.'}
       
       --- NOTAS DE INSPIRACIÓN ---
       ${ideas || 'No se proporcionaron.'}
 
       --- OBJETIVO ---
-      Expande el material a una prosa narrativa de alta calidad. Si el usuario no ha preguntado por Ginny o su arco, enfócate en la trama general del mundo Magi.
+      Expande el material a una prosa narrativa de alta calidad. Asegúrate de reflejar el cambio de estatus de Aries a Mauvignier-Black si la trama lo requiere.
 
       --- MANUSCRITO FINAL ---
     `;
