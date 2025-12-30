@@ -16,21 +16,21 @@ export const storyStarters: StoryStarter[] = [
     `
   },
   {
+    title: "El Rompimiento del Azúcar",
+    description: "Un momento de quietud en la cocina de Grimmauld Place. La Crème Brûlée como metáfora de la máscara de Aries.",
+    prompt: `
+      Es medianoche. El silencio en Grimmauld Place es absoluto, roto solo por el clic de una cuchara de plata contra la superficie endurecida de una Crème Brûlée.
+      Aries está sola en la cocina, la luz de una sola vela iluminando sus ojos amatistas. Harry aparece en el umbral. Describe este momento de vulnerabilidad controlada, donde el acto de romper la capa de azúcar caramelizada simboliza cómo Aries permite que Harry vea lo que hay debajo de su armadura de Mauvignier-Black.
+      Reflexiona sobre cómo el fuego que endureció el dulce es el mismo que está forjando su destino en la Rubedo.
+    `
+  },
+  {
     title: "El Despertar de la Rubedo",
     description: "En el cuarto año, Aries acepta su destino. El aceite esencial de Zahira es el catalizador de su nueva identidad.",
     prompt: `
       Aries Mauvignier-Black sostiene el pequeño frasco de cristal tallado que Zahira le dio en agosto. Al destaparlo, el aroma a Vainilla Negra inunda la habitación, seguido por el matiz terroso y peligroso de la Belladona.
       Reflexiona sobre cómo esta esencia no es un perfume, sino una declaración de guerra. Describe el momento en que se aplica el aceite en las muñecas, sintiendo cómo la toxicidad controlada de la planta alinea sus centros de magia. 
       Ya no es una niña jugando con runas; es una Mauvignier-Black preparándose para la Rubedo.
-    `
-  },
-  {
-    title: "El Peso del Cónclave",
-    description: "Harry entrena bajo la supervisión de Aries, cuya presencia es ahora un recordatorio constante de su linaje.",
-    prompt: `
-      Harry está exhausto en el gimnasio rúnico. Aries se acerca y el rastro de Belladona en el aire parece calmar sus nervios destrozados, actuando como el sedante que Zahira pretendía que fuera para sus aliados.
-      "Un Black no duda. Un Mauvignier no falla", susurra ella, su voz cargada de una autoridad que Harry solo había escuchado antes en Zahira.
-      Escribe sobre este momento de conexión sensorial y cómo Harry encuentra la fuerza para seguir adelante bajo la mirada amatista de Aries.
     `
   }
 ];

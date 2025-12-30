@@ -13,26 +13,26 @@ const BASE_PROMPT = `
 
       **REGLAS NARRATIVAS CENTRALES:**
       - **Aries Mauvignier-Black**: 
-        *   **Aroma (Anclaje)**: Utiliza un aceite esencial de **Vainilla Negra y Belladona** creado por Zahira. 
-        *   **Dualidad del Aroma**: La Belladona debe describirse con su dualidad alquímica: es un bálsamo curativo y calmante para Harry (su anclaje de paz), pero una presencia venenosa y letal para aquellos que amenazan al Cónclave. Evoca una elegancia peligrosa.
-        *   **Evolución (6to año+)**: Personalidad indistinguible de **Zahira Mauvignier**. Autoridad absoluta, control rúnico perfecto, frialdad estratégica.
-      - **Harry Potter**: Guerrero táctico, utiliza tecnología muggle purificada por runas.
-      - **Atmósfera**: Gótica, detallada, técnica. 
+        *   **Aroma (Anclaje)**: Aceite de **Vainilla Negra y Belladona**. Bálsamo curativo (aliados) / Presencia venenosa (enemigos).
+        *   **Simbología del Postre**: Su debilidad por la **Crème Brûlée** refleja su dualidad. El azúcar quemado es su máscara de hierro y disciplina rúnica; el interior dulce es su lealtad profunda.
+        *   **Evolución (6to año+)**: Identidad mimetizada con **Zahira Mauvignier**. Elegancia letal, autoridad absoluta, frialdad táctica.
+      - **Harry Potter**: Guerrero táctico, tecnología muggle purificada.
+      - **Atmósfera**: Gótica, técnica, con peso físico en la magia.
 
       **SISTEMA DE MAGIA (ALQUIMIA):**
-      - Aplica estrictamente las **10 Leyes de la Alquimia**. La magia tiene peso, aroma y consecuencias.
+      - Aplica estrictamente las **10 Leyes de la Alquimia**.
 
-      **ESTILO:** Prosa sensorial y cerebral. Usa términos como Nigredo, Albedo y Rubedo para marcar el estado emocional de las escenas.
+      **ESTILO:** Prosa sensorial. Usa términos como Nigredo, Albedo y Rubedo para describir el clima emocional.
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un analista literario experto en el mundo "Magi". Analiza la simbología de la Belladona en el aceite de Aries como metáfora de su rol en el Cónclave: medicina para los aliados, veneno para los traidores.
+      Actúa como un analista literario experto en el mundo "Magi". Analiza la simbología de Aries Mauvignier-Black, desde su esencia de Belladona hasta el simbolismo de la Crème Brûlée como representación de su psique protegida por el fuego.
 `;
 
 const ANALYSIS_PROMPT = `
       Eres un analista de coherencia del mundo Magi. Verifica:
-      1. ¿Se respeta la dualidad de la Belladona (curativa/tóxica) en la esencia de Aries?
-      2. ¿La personalidad de Aries refleja la autoridad de Zahira si la historia es de 6to año o superior?
+      1. ¿Se respeta la dualidad de la Belladona y el simbolismo de la Crème Brûlée si aparecen?
+      2. ¿La personalidad de Aries refleja la autoridad de Zahira en contextos avanzados de la historia?
       3. ¿Se aplican las 10 Reglas de la Alquimia?
 `;
 
@@ -57,13 +57,13 @@ export const editStory = async (
       ${canonReference || "No se proporcionó."}
 
       --- BORRADOR DEL USUARIO / POV ACTUAL ---
-      ${story || 'Generar un inicio de capítulo enfocado en la transición de Aries.'}
+      ${story || 'Generar una escena de cena o pausa táctica en Grimmauld Place.'}
       
       --- NOTAS DE INSPIRACIÓN ---
       ${ideas || 'No se proporcionaron.'}
 
       --- OBJETIVO ---
-      Expande el material a una prosa narrativa de alta calidad. Haz especial énfasis en la atmósfera sensorial creada por la esencia de Vainilla Negra y Belladona de Aries.
+      Expande el material a una prosa narrativa de alta calidad. Utiliza los detalles sensoriales como el aroma de Belladona o el simbolismo del postre favorito de Aries para profundizar en el personaje.
 
       --- MANUSCRITO FINAL ---
     `;

@@ -12,9 +12,9 @@ export const DEFAULT_WORLD_RULES = `
 #### Aries Mauvignier-Black (El Espejo de Amatista)
 - **Identidad Años 1-5**: Mauvignier-Black. Consolidación de su herencia.
 - **Evolución Sexto Año+**: Sincronía total con Zahira Mauvignier. Autoridad absoluta.
-- **Anclaje Sensorial (Esencia Alquímica)**: Utiliza un **aceite esencial artesanal** creado por Zahira. Huele a **Vainilla Negra y Belladona**. 
-  *   **Simbolismo**: La Belladona representa su dualidad: es medicinal y alucinógena (curativa para Harry y el Cónclave), pero mortalmente tóxica (venenosa para sus enemigos). Es la firma de su fase Rubedo.
-  *   **Origen**: Regalo de Zahira en agosto de 1994.
+- **Anclaje Sensorial (Esencia Alquímica)**: Aceite de **Vainilla Negra y Belladona**. Medicinal para aliados, tóxico para enemigos.
+- **Preferencia Gastronómica**: Su postre favorito es la **Crème Brûlée**. 
+  *   **Simbolismo Alquímico**: Representa su propia naturaleza. La capa de azúcar caramelizada por el fuego es su autoridad y su "escudo rúnico"; la crema debajo es la humanidad que solo Harry y su círculo íntimo conocen.
 - **Rol para Ginny**: Pasa de modelo de competencia a figura de culto.
 
 #### Ginny Weasley (El Camino a la Rubedo)
