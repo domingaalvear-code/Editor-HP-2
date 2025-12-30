@@ -13,33 +13,27 @@ const BASE_PROMPT = `
 
       **REGLAS NARRATIVAS CENTRALES:**
       - **Aries Mauvignier-Black**: 
-        *   **Años 1-5**: Fría, lógica, analítica. Heredera de la Casa Black y Mauvignier.
-        *   **Sexto Año en adelante (Evolución Zahira)**: Su personalidad se vuelve indistinguible de la de **Zahira Mauvignier**. Es una figura de autoridad absoluta, elegancia aristocrática y un control mágico que no admite disidencia. Su presencia es imponente y su voz tiene el peso de siglos de dominio rúnico.
-        *   Usa seda para limpiar sangre, desprecia el caos emocional y domina la Alquimia con una maestría que asusta incluso a sus aliados.
-      - **Harry Potter**: Un guerrero táctico, usuario de tecnología muggle (Walkman, Brújula) y aprendiz del Cónclave.
-      - **Atmósfera**: Gótica, detallada, técnica. La magia tiene consecuencias físicas y requiere precisión rúnica.
-
-      **TRATAMIENTO DE PERSONAJES SECUNDARIOS:**
-      - Solo incluye desarrollo profundo de otros personajes (como Ginny Weasley o Luna Lovegood) si el usuario los menciona explícitamente. 
-      - De lo contrario, mantén el foco en la dinámica del Cónclave y el peso del linaje Black-Mauvignier.
+        *   **Aroma (Anclaje)**: Utiliza un aceite esencial de **Vainilla Negra y Belladona** creado por Zahira. 
+        *   **Dualidad del Aroma**: La Belladona debe describirse con su dualidad alquímica: es un bálsamo curativo y calmante para Harry (su anclaje de paz), pero una presencia venenosa y letal para aquellos que amenazan al Cónclave. Evoca una elegancia peligrosa.
+        *   **Evolución (6to año+)**: Personalidad indistinguible de **Zahira Mauvignier**. Autoridad absoluta, control rúnico perfecto, frialdad estratégica.
+      - **Harry Potter**: Guerrero táctico, utiliza tecnología muggle purificada por runas.
+      - **Atmósfera**: Gótica, detallada, técnica. 
 
       **SISTEMA DE MAGIA (ALQUIMIA):**
-      - Aplica estrictamente las **10 Leyes de la Alquimia**.
-      - Describe procesos de Entrada, Proceso y Salida.
+      - Aplica estrictamente las **10 Leyes de la Alquimia**. La magia tiene peso, aroma y consecuencias.
 
-      **ESTILO:** Prosa rica, sensorial y cerebral. Prohibido resumir. Usa terminología alquímica (Nigredo, Albedo, Rubedo).
+      **ESTILO:** Prosa sensorial y cerebral. Usa términos como Nigredo, Albedo y Rubedo para marcar el estado emocional de las escenas.
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un analista literario experto en el mundo "Magi". Analiza la transmutación de Aries Mauvignier-Black hacia el arquetipo de Zahira Mauvignier a partir del sexto año y su impacto en la jerarquía del Cónclave.
+      Actúa como un analista literario experto en el mundo "Magi". Analiza la simbología de la Belladona en el aceite de Aries como metáfora de su rol en el Cónclave: medicina para los aliados, veneno para los traidores.
 `;
 
 const ANALYSIS_PROMPT = `
       Eres un analista de coherencia del mundo Magi. Verifica:
-      1. ¿Se respetan las 10 Reglas de la Alquimia?
-      2. ¿Si la historia es del 6to año o superior, Aries muestra la personalidad de Zahira?
-      3. ¿La personalidad de Aries se mantiene fría y lógica?
-      4. ¿Se utilizan correctamente los anclajes de Harry (Walkman, Brújula)?
+      1. ¿Se respeta la dualidad de la Belladona (curativa/tóxica) en la esencia de Aries?
+      2. ¿La personalidad de Aries refleja la autoridad de Zahira si la historia es de 6to año o superior?
+      3. ¿Se aplican las 10 Reglas de la Alquimia?
 `;
 
 export const editStory = async (
@@ -63,13 +57,13 @@ export const editStory = async (
       ${canonReference || "No se proporcionó."}
 
       --- BORRADOR DEL USUARIO / POV ACTUAL ---
-      ${story || 'Generar un inicio de capítulo enfocado en la evolución de Aries hacia la autoridad de Zahira en el sexto año.'}
+      ${story || 'Generar un inicio de capítulo enfocado en la transición de Aries.'}
       
       --- NOTAS DE INSPIRACIÓN ---
       ${ideas || 'No se proporcionaron.'}
 
       --- OBJETIVO ---
-      Expande el material a una prosa narrativa de alta calidad. Refleja la transición de personalidad de Aries si la cronología lo indica.
+      Expande el material a una prosa narrativa de alta calidad. Haz especial énfasis en la atmósfera sensorial creada por la esencia de Vainilla Negra y Belladona de Aries.
 
       --- MANUSCRITO FINAL ---
     `;
