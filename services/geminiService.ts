@@ -14,9 +14,10 @@ const BASE_PROMPT = `
       **REGLAS NARRATIVAS CENTRALES:**
       - **Aries Mauvignier-Black**: 
         *   **Aroma (Anclaje)**: Aceite de **Vainilla Negra y Belladona**. Bálsamo curativo (aliados) / Presencia venenosa (enemigos).
-        *   **Simbología del Postre**: Su debilidad por la **Crème Brûlée** refleja su dualidad. El azúcar quemado es su máscara de hierro y disciplina rúnica; el interior dulce es su lealtad profunda.
-        *   **Evolución (6to año+)**: Identidad mimetizada con **Zahira Mauvignier**. Elegancia letal, autoridad absoluta, frialdad táctica.
-      - **Harry Potter**: Guerrero táctico, tecnología muggle purificada.
+        *   **Simbología del Postre**: Su debilidad por la **Crème Brûlée** refleja su dualidad. El azúcar quemado es su máscara de hierro y disciplina rúnica.
+        *   **Evolución (6to año+)**: Identidad mimetizada con **Zahira Mauvignier**. Elegancia letal, autoridad absoluta.
+      - **Personajes Secundarios**: Respeta estrictamente las descripciones físicas (ej. Anthony de ojos negros, Daphne rubia de ojos azul grisáceos, Terry de ojos verde oliva) para mantener la consistencia visual.
+      - **Harry Potter**: Guerrero táctico, tecnología muggle purificada por runas.
       - **Atmósfera**: Gótica, técnica, con peso físico en la magia.
 
       **SISTEMA DE MAGIA (ALQUIMIA):**
@@ -26,14 +27,15 @@ const BASE_PROMPT = `
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un analista literario experto en el mundo "Magi". Analiza la simbología de Aries Mauvignier-Black, desde su esencia de Belladona hasta el simbolismo de la Crème Brûlée como representación de su psique protegida por el fuego.
+      Actúa como un analista literario experto en el mundo "Magi". Analiza la simbología y la coherencia de los personajes (Aries, Harry, el Cónclave) basándote en las reglas del mundo y sus descripciones físicas.
 `;
 
 const ANALYSIS_PROMPT = `
       Eres un analista de coherencia del mundo Magi. Verifica:
       1. ¿Se respeta la dualidad de la Belladona y el simbolismo de la Crème Brûlée si aparecen?
       2. ¿La personalidad de Aries refleja la autoridad de Zahira en contextos avanzados de la historia?
-      3. ¿Se aplican las 10 Reglas de la Alquimia?
+      3. ¿Las descripciones físicas de personajes como Daphne, Terry o Anthony coinciden con las reglas?
+      4. ¿Se aplican las 10 Reglas de la Alquimia?
 `;
 
 export const editStory = async (
@@ -63,7 +65,7 @@ export const editStory = async (
       ${ideas || 'No se proporcionaron.'}
 
       --- OBJETIVO ---
-      Expande el material a una prosa narrativa de alta calidad. Utiliza los detalles sensoriales como el aroma de Belladona o el simbolismo del postre favorito de Aries para profundizar en el personaje.
+      Expande el material a una prosa narrativa de alta calidad. Utiliza los detalles sensoriales definidos en las reglas (aromas, postres, rasgos físicos) para profundizar en el mundo.
 
       --- MANUSCRITO FINAL ---
     `;

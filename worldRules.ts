@@ -21,6 +21,13 @@ export const DEFAULT_WORLD_RULES = `
 - **Trauma Residual**: Ecos de Tom Ryddle.
 - **De la Envidia a la Admiración**: Adopta a Aries como modelo de fuerza mental.
 
+## DESCRIPCIONES FÍSICAS DE REFERENCIA
+- **Anthony Goldstein**: Cabello castaño y ojos negros.
+- **Terry Boot**: Cabello castaño claro y ojos verde oliva.
+- **Michael Corner**: Cabello negro y ojos marrones.
+- **Tracey Davis**: Cabello castaño oscuro y ojos avellana.
+- **Daphne Greengrass**: Cabello rubio y ojos azules grisáceos.
+
 ## DINÁMICA DE LA MAGIA Y EL TRAUMA
 1. **Resonancia de la Posesión**: Magia errática en Ginny.
 2. **Sincronía Luna-Ginny**: Luna como filtro de ruido.
