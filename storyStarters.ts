@@ -8,29 +8,29 @@ export interface StoryStarter {
 export const storyStarters: StoryStarter[] = [
   {
     title: "La Sombra de Zahira",
-    description: "Aries proyecta la autoridad de Zahira. Su aroma a Vainilla Negra y Belladona es un bálsamo para Harry, pero un presagio de muerte para sus enemigos.",
+    description: "Aries ya no es solo una estudiante; es la heredera del Cónclave. Su abrigo de seda de acromántula y sus botas de cuero de dragón marcan su ascenso.",
     prompt: `
-      Es una tarde lluviosa en Grimmauld Place. Aries Mauvignier-Black está de pie en el centro del salón rúnico. Harry entra y el aroma lo golpea de inmediato: Vainilla Negra y Belladona.
-      Para Harry, ese olor es sinónimo de seguridad, el recordatorio de que Aries está al mando. Pero cuando un intruso es arrastrado al salón, Harry nota cómo el mismo aroma parece volverse gélido, casi asfixiante, como si la toxicidad de la Belladona se manifestara físicamente.
-      Describe la transición de Aries de la calma medicinal a la letalidad absoluta mientras interroga al prisionero con la voz de Zahira.
+      Es una tarde lluviosa en Grimmauld Place. Aries Mauvignier-Black está de pie en el centro del salón rúnico. Harry entra y por un momento cree ver a Zahira: el mismo abrigo de seda de acromántula negra con el cuello alto, el mismo cinturón táctico de cuero de dragón con viales plateados.
+      Describe cómo las runas de plata bordadas en los hombros de Aries brillan con una luz amatista cuando Harry se acerca. El aroma a Vainilla Negra y Belladona completa la transformación.
+      Aries no dice nada, simplemente ajusta su porta-varita táctico en el antebrazo. Escribe una escena donde la autoridad visual de Aries sea tan pesada como el aire de la habitación.
     `
   },
   {
     title: "El Rompimiento del Azúcar",
-    description: "Un momento de quietud en la cocina de Grimmauld Place. La Crème Brûlée como metáfora de la máscara de Aries.",
+    description: "Un momento de quietud. La rigidez de la seda de acromántula contrastada con la fragilidad de una Crème Brûlée.",
     prompt: `
-      Es medianoche. El silencio en Grimmauld Place es absoluto, roto solo por el clic de una cuchara de plata contra la superficie endurecida de una Crème Brûlée.
-      Aries está sola en la cocina, la luz de una sola vela iluminando sus ojos amatistas. Harry aparece en el umbral. Describe este momento de vulnerabilidad controlada, donde el acto de romper la capa de azúcar caramelizada simboliza cómo Aries permite que Harry vea lo que hay debajo de su armadura de Mauvignier-Black.
-      Reflexiona sobre cómo el fuego que endureció el dulce es el mismo que está forjando su destino en la Rubedo.
+      Aries está en la cocina, su abrigo rúnico desabrochado, revelando el forro de seda púrpura. Sobre la mesa, una Crème Brûlée.
+      Describe el contraste entre sus manos enguantadas en cuero de dragón fino y la delicadeza de la cuchara de plata. Harry la observa desde la sombra. 
+      Rompimiento de la capa de azúcar: una metáfora de cómo Aries se quita la armadura de Zahira por unos minutos antes de volver a la guerra.
     `
   },
   {
     title: "El Despertar de la Rubedo",
-    description: "En el cuarto año, Aries acepta su destino. El aceite esencial de Zahira es el catalizador de su nueva identidad.",
+    description: "El momento en que Aries recibe su primer equipo táctico de manos de Zahira.",
     prompt: `
-      Aries Mauvignier-Black sostiene el pequeño frasco de cristal tallado que Zahira le dio en agosto. Al destaparlo, el aroma a Vainilla Negra inunda la habitación, seguido por el matiz terroso y peligroso de la Belladona.
-      Reflexiona sobre cómo esta esencia no es un perfume, sino una declaración de guerra. Describe el momento en que se aplica el aceite en las muñecas, sintiendo cómo la toxicidad controlada de la planta alinea sus centros de magia. 
-      Ya no es una niña jugando con runas; es una Mauvignier-Black preparándose para la Rubedo.
+      Agosto de 1994. Zahira Mauvignier entrega a Aries una caja de madera de ébano. Dentro, el abrigo de seda de acromántula y el aceite de Belladona.
+      "Esto no es ropa, Aries. Es un anclaje. Es tu piel en el campo de batalla".
+      Describe la primera vez que Aries se pone el equipo, sintiendo el peso de la responsabilidad y la toxicidad controlada del aceite en sus muñecas.
     `
   }
 ];

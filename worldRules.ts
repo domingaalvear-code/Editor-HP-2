@@ -9,13 +9,20 @@ export const DEFAULT_WORLD_RULES = `
 
 ## PERSONAJES Y DESARROLLO PSICOLÓGICO
 
+#### Zahira Mauvignier (El Origen de la Autoridad)
+- **Estética**: Elegancia letal. Su presencia impone un silencio inmediato.
+- **Vestimenta**: 
+  *   **Abrigo/Toga**: Hecho de **seda de acromántula** color negro carbón, con un cuello alto y rígido. El forro interior es de un color amatista profundo que solo se ve al moverse.
+  *   **Detalles Rúnicos**: Bordados de hilo de plata que forman runas de protección de "Grado Cónclave". Estas runas brillan tenuemente cuando detectan magia hostil.
+  *   **Equipo Táctico**: Un cinturón de **cuero de dragón negro mate** con compartimentos para viales alquímicos y un porta-varita de extracción rápida en el antebrazo izquierdo.
+  *   **Calzado**: Botas militares de cuero de dragón, diseñadas para el movimiento silencioso y la resistencia a maldiciones de área.
+
 #### Aries Mauvignier-Black (El Espejo de Amatista)
 - **Identidad Años 1-5**: Mauvignier-Black. Consolidación de su herencia.
-- **Evolución Sexto Año+**: Sincronía total con Zahira Mauvignier. Autoridad absoluta.
+- **Evolución Sexto Año+**: Sincronía total con Zahira. Adopta su vestimenta rúnica y su frialdad.
 - **Anclaje Sensorial (Esencia Alquímica)**: Aceite de **Vainilla Negra y Belladona**. Medicinal para aliados, tóxico para enemigos.
 - **Preferencia Gastronómica**: Su postre favorito es la **Crème Brûlée**. 
-  *   **Simbolismo Alquímico**: Representa su propia naturaleza. La capa de azúcar caramelizada por el fuego es su autoridad y su "escudo rúnico"; la crema debajo es la humanidad que solo Harry y su círculo íntimo conocen.
-- **Rol para Ginny**: Pasa de modelo de competencia a figura de culto.
+  *   **Simbolismo Alquímico**: Capa de azúcar (escudo/autoridad) vs interior dulce (humanidad oculta).
 
 #### Ginny Weasley (El Camino a la Rubedo)
 - **Trauma Residual**: Ecos de Tom Ryddle.

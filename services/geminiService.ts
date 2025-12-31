@@ -12,29 +12,30 @@ const BASE_PROMPT = `
       Actúa como un novelista de fantasía épica de alto nivel. Tu enfoque es la narrativa del mundo "Magi" (AU de Harry Potter).
 
       **REGLAS NARRATIVAS CENTRALES:**
+      - **Zahira Mauvignier**: Icono de autoridad. Viste seda de acromántula negra con forro amatista, botas de cuero de dragón y un porta-varita táctico en el antebrazo. Su ropa tiene runas de plata que reaccionan a la magia.
       - **Aries Mauvignier-Black**: 
-        *   **Aroma (Anclaje)**: Aceite de **Vainilla Negra y Belladona**. Bálsamo curativo (aliados) / Presencia venenosa (enemigos).
-        *   **Simbología del Postre**: Su debilidad por la **Crème Brûlée** refleja su dualidad. El azúcar quemado es su máscara de hierro y disciplina rúnica.
-        *   **Evolución (6to año+)**: Identidad mimetizada con **Zahira Mauvignier**. Elegancia letal, autoridad absoluta.
-      - **Personajes Secundarios**: Respeta estrictamente las descripciones físicas (ej. Anthony de ojos negros, Daphne rubia de ojos azul grisáceos, Terry de ojos verde oliva) para mantener la consistencia visual.
+        *   **Evolución**: En el 6to año, su vestimenta es idéntica a la de Zahira, simbolizando su ascenso al trono del Cónclave.
+        *   **Aroma**: Aceite de **Vainilla Negra y Belladona**.
+        *   **Simbología**: La Crème Brûlée como metáfora de su psique (fuego exterior, suavidad interior).
+      - **Personajes Secundarios**: Respeta estrictamente las descripciones físicas proporcionadas (Daphne rubia, Terry de ojos verde oliva, etc.).
       - **Harry Potter**: Guerrero táctico, tecnología muggle purificada por runas.
       - **Atmósfera**: Gótica, técnica, con peso físico en la magia.
 
       **SISTEMA DE MAGIA (ALQUIMIA):**
-      - Aplica estrictamente las **10 Leyes de la Alquimia**.
+      - Aplica estrictamente las **10 Leyes de la Alquimia**. La magia no es "varitas al aire", es geometría rúnica y voluntad técnica.
 
-      **ESTILO:** Prosa sensorial. Usa términos como Nigredo, Albedo y Rubedo para describir el clima emocional.
+      **ESTILO:** Prosa sensorial y cerebral. Usa términos como Nigredo, Albedo y Rubedo para describir el clima emocional y la transmutación de los personajes.
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un analista literario experto en el mundo "Magi". Analiza la simbología y la coherencia de los personajes (Aries, Harry, el Cónclave) basándote en las reglas del mundo y sus descripciones físicas.
+      Actúa como un analista literario experto en el mundo "Magi". Analiza la simbología de la vestimenta rúnica de Zahira y cómo el uso de materiales como el cuero de dragón y la seda de acromántula refuerzan el tema de la "protección absoluta" y la "alquimia de guerra".
 `;
 
 const ANALYSIS_PROMPT = `
       Eres un analista de coherencia del mundo Magi. Verifica:
-      1. ¿Se respeta la dualidad de la Belladona y el simbolismo de la Crème Brûlée si aparecen?
-      2. ¿La personalidad de Aries refleja la autoridad de Zahira en contextos avanzados de la historia?
-      3. ¿Las descripciones físicas de personajes como Daphne, Terry o Anthony coinciden con las reglas?
+      1. ¿Se respeta la vestimenta rúnica de Zahira/Aries (seda de acromántula, cuero de dragón)?
+      2. ¿La dualidad de la Belladona y el simbolismo de la Crème Brûlée se integran correctamente?
+      3. ¿Las descripciones físicas de los personajes secundarios coinciden con las reglas?
       4. ¿Se aplican las 10 Reglas de la Alquimia?
 `;
 
@@ -59,13 +60,13 @@ export const editStory = async (
       ${canonReference || "No se proporcionó."}
 
       --- BORRADOR DEL USUARIO / POV ACTUAL ---
-      ${story || 'Generar una escena de cena o pausa táctica en Grimmauld Place.'}
+      ${story || 'Generar una escena de mando en Grimmauld Place.'}
       
       --- NOTAS DE INSPIRACIÓN ---
       ${ideas || 'No se proporcionaron.'}
 
       --- OBJETIVO ---
-      Expande el material a una prosa narrativa de alta calidad. Utiliza los detalles sensoriales definidos en las reglas (aromas, postres, rasgos físicos) para profundizar en el mundo.
+      Expande el material a una prosa narrativa de alta calidad. Utiliza la vestimenta rúnica de Zahira y el aroma de Aries para construir una atmósfera de poder y misterio.
 
       --- MANUSCRITO FINAL ---
     `;
