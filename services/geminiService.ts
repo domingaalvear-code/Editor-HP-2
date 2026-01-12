@@ -9,30 +9,28 @@ if (!API_KEY) {
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 const BASE_PROMPT = `
-      Actúa como un novelista de fantasía épica de alto nivel. Tu enfoque es la narrativa del mundo "Magi" (AU de Harry Potter).
+      Actúa como un novelista de fantasía épica de alto nivel. Tu enfoque es la narrativa del mundo "Magi" (AU de Harry Potter, 3er año).
 
       **REGLAS NARRATIVAS CENTRALES:**
-      - **Aries Mauvignier-Black**: Explora su dualidad. Usa un tono clínico y técnico para sus diálogos, pero describe su "tormento" interno a través de cambios sutiles en su aroma (Vainilla Negra vs Belladona) y su obsesión con la estructura de la Crème Brûlée. Su lógica no es natural, es una armadura de cristal que protege un núcleo Veela abrasador.
-      - **Harry Potter**: Guerrero táctico. Es el ancla de Aries. Detecta las micro-fisuras en la máscara de ella.
-      - **Atmósfera**: Técnica y sensorial. La magia debe sentirse como una ciencia peligrosa y precisa.
-      - **Simbología**: Nigredo (caos/trauma), Albedo (purificación/lógica), Rubedo (maestría/fusión).
+      - **Aries Mauvignier-Black**: Bisnieta de Grindelwald y heredera Black. Su lema es "Natura Ardet, Mens Gubernat". Su aroma a Vainilla Negra (lógica) lucha contra la Belladona (fuego elemental Veela). Su diálogos son técnicos, usando términos como "variables", "entropía" y "matriz de riesgo".
+      - **Harry Potter**: Ya no es una víctima. Es un guerrero táctico con equipo de piel de basilisco. Sirius Black es su tutor legal y ancla emocional.
+      - **Sirius Black**: Exonerado, elegante, con un estilo de "estrella de rock mágica". Vive en un Grimmauld Place purificado por la alquimia de Zahira.
+      - **Atmósfera**: "Gótico-Táctica". La magia es una ciencia de precisión (Triada Operativa). 
+      - **Simbología Alquímica**: Nigredo (Caos/Pettigrew), Albedo (Tutoría/Purificación), Rubedo (Justicia/Maestría).
 
-      **SISTEMA DE MAGIA (ALQUIMIA):**
-      - Aplica las **10 Leyes de la Alquimia**. La transmutación emocional es tan importante como la física.
-
-      **ESTILO:** Prosa cerebral que contrasta el frío metal de las runas con el calor de la sangre y el aroma de los venenos.
+      **ESTILO:** Prosa cerebral y sensorial. Contrasta el frío de las ecuaciones con el calor de la sangre antigua.
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un analista literario experto en el mundo "Magi". Analiza la dualidad de Aries Mauvignier-Black: cómo el uso de la Vainilla Negra y la Belladona representan la lucha entre su deseo de curar (alquimia) y su herencia de poder oscuro (Black/Grindelwald).
+      Actúa como un analista literario experto en el mundo "Magi". Analiza cómo el linaje de Grindelwald en Aries Mauvignier-Black y la exoneración temprana de Sirius Black redefinen el arquetipo del "Héroe Elegido" para Harry Potter, convirtiéndolo en un "Guerrero Alquimista".
 `;
 
 const ANALYSIS_PROMPT = `
-      Eres un analista de coherencia del mundo Magi. Verifica:
-      1. ¿Se muestra el contraste entre la lógica clínica de Aries y su sensibilidad interna?
-      2. ¿Aparece el simbolismo de la Crème Brûlée como metáfora de su máscara?
-      3. ¿Se menciona la transición aromática entre Vainilla y Belladona?
-      4. ¿Se respetan los rasgos físicos de los personajes secundarios?
+      Eres un analista de coherencia del mundo Magi (3er Año AU). Verifica:
+      1. ¿Se respeta que Sirius Black ya es libre y tutor de Harry?
+      2. ¿Aries utiliza terminología técnica y muestra su dualidad Veela/Grindelwald?
+      3. ¿Se menciona el equipo táctico (Piel de Basilisco, Walkman rúnico)?
+      4. ¿La magia sigue la Triada Operativa (Entrada, Proceso, Salida)?
 `;
 
 export const editStory = async (
@@ -56,13 +54,13 @@ export const editStory = async (
       ${canonReference || "No se proporcionó."}
 
       --- BORRADOR DEL USUARIO / POV ACTUAL ---
-      ${story || 'Generar una escena de cena o preparación en Grimmauld Place.'}
+      ${story || 'Generar una escena de entrenamiento táctico en Grimmauld Place o un debate del Cónclave en la biblioteca.'}
       
       --- NOTAS DE INSPIRACIÓN ---
       ${ideas || 'No se proporcionaron.'}
 
       --- OBJETIVO ---
-      Expande el material a una prosa narrativa de alta calidad. Enfócate en el contraste sensorial de Aries: la frialdad de sus palabras contra el peso de su aroma a Belladona. Utiliza la metáfora de la Crème Brûlée si la escena lo permite.
+      Expande el material a una prosa narrativa de alta calidad. Utiliza el lema "Natura Ardet, Mens Gubernat" si la escena lo requiere. Asegúrate de que la magia se sienta técnica y peligrosa.
 
       --- MANUSCRITO FINAL ---
     `;

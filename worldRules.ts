@@ -1,46 +1,35 @@
 
 export const DEFAULT_WORLD_RULES = `
-# REGLAS DEL MUNDO INMUTABLES (AU)
+# REGLAS DEL MUNDO INMUTABLES: MAGI (AU 3er AÑO)
 
-## AMBIENTACIÓN Y LUGARES CLAVE
-- **La Madriguera (Verano 1993)**: Una "jaula de oro". Ginny se siente tratada como una "muñeca de porcelana".
-- **Grimmauld Place**: La fortaleza rúnica de Zahira Mauvignier. Ahora es un centro de operaciones tácticas.
+## CONTEXTO HISTÓRICO (OTOÑO 1993)
+- **Sirius Black**: Exonerado el 2 de noviembre de 1993. Jefe de la Noble y Ancestral Casa Black. Vive en Grimmauld Place 12.
+- **La Gran Mentira**: El mundo cree que Peter Pettigrew murió como un héroe, hasta que el Cónclave lo captura en Halloween de 1993 mediante la "Caja de Opresión Psicológica".
+- **La Alquimia del Poder**: Zahira Mauvignier financió la libertad de Sirius con un millón de galeones, comprando la "dignidad" del Ministro Fudge.
 
-## PERSONAJES Y DESARROLLO PSICOLÓGICO
+## PERSONAJES Y LINAJES
+#### Aries Mauvignier-Black (La Alquimista de Sangre Fría)
+- **Linaje**: Bisnieta de Gellert Grindelwald. Posee sangre de la "Veela de los Cárpatos" (Elysia), una magia elemental pura y violenta.
+- **Lema**: "Natura Ardet, Mens Gubernat" (La naturaleza arde, la mente gobierna).
+- **Psicología**: Utiliza la Aritmancia para filtrar el exceso de "input" sensorial y emocional. Su lógica no es falta de alma, es un dique de contención para no incinerar su entorno.
+- **Mascota**: Eros (Gato Siamés/Kneazle), detector de mentiras biológico.
 
-#### Zahira Mauvignier (El Origen de la Autoridad)
-- **Vestimenta**: Seda de acromántula negra con forro amatista, botas de cuero de dragón y runas de plata de Grado Cónclave.
+#### Harry Potter (El Guerrero Táctico)
+- **Equipamiento**: Chaqueta de piel de basilisco (impermeable a hechizos medios), Walkman Sony rúnico (escudo sónico), Brújula de James (anclaje emocional).
+- **Evolución**: Entrenado por Sirius en "pelea sucia" y por Zahira en "Intención Soberana". Ya no es una víctima, es un cazador.
 
-#### Aries Mauvignier-Black (La Paradoja del Mercurio)
-- **Dicotomía de Estado**:
-  *   **Estado Clínico (Rubedo Externa)**: Procesa la magia y las relaciones como ecuaciones. Su voz es monótona, sus ojos son amatistas fijos. Es la heredera que no permite errores.
-  *   **Estado Sensible (Vulnerabilidad Interna)**: Debido a su sangre Veela de los Cárpatos, siente el "ruido" emocional del mundo como dolor físico. Su frialdad no es falta de sentimiento, sino un dique de contención.
-- **Anclaje Sensorial**: Aceite de **Vainilla Negra y Belladona**. 
-  *   *Dualidad*: La dulzura de la vainilla calma el sistema nervioso de sus aliados; el rastro amargo de la belladona advierte de su capacidad para la destrucción quirúrgica.
-- **Simbología Gastronómica: La Crème Brûlée**:
-  *   Aries solo come este postre cuando su máscara está a punto de romperse. 
-  *   **El Ritual**: Romper la capa de azúcar caramelizada con la cuchara es la única forma en que exterioriza la violencia que ejerce sobre su propia psique para mantenerse "lógica". Si el azúcar no cruje perfectamente, Aries considera que su control ha fallado.
+#### El Cónclave (Alianza Inter-Casas)
+- **Miembros**: Harry, Aries, Draco (reformado), Hermione, Ron, Ginny, Luna, Anthony Goldstein, Terry Boot, Michael Corner, Daphne Greengrass y Tracey Davis.
+- **Dinámica**: Aplican la "Tutoría Cruzada" para la excelencia académica y la "Operación Extracción" para misiones encubiertas.
 
-#### Harry Potter (El Guerrero Alquimista)
-- **Estética**: "Tecnología Muggle Purificada". Estilo táctico-militar (Chaqueta M65, Walkman Rúnico).
-- **Rol**: Es el único capaz de notar cuando el aroma de Aries vira de la Vainilla a la Belladona pura.
+## SISTEMA DE MAGIA Y OBJETOS
+1. **Triada Operativa**: Entrada (Voluntad), Proceso (Lógica rúnica/alquímica), Salida (Efecto). No piden permiso al hechizo; lo ordenan.
+2. **Piel de Basilisco**: Material alquímico procesado de la Cámara de los Secretos. Absorbe la Nigredo y protege al portador.
+3. **Resonancia Hemma**: La protección de sangre de Lily Potter ha sido transmutada y anclada a Grimmauld Place mediante un rubí incrustado en la chimenea.
+4. **Caja de Opresión Psicológica**: Artefacto Malfoy del siglo XVIII. Proyecta miedos en un bucle infinito para romper mentes cobardes.
 
-#### Ginny Weasley (El Camino a la Rubedo)
-- **Evolución**: De víctima a superviviente. Aprende a "quemar" su trauma usando la lógica de Aries.
-
-## DESCRIPCIONES FÍSICAS INMUTABLES (CÓNCLAVE Y ALIADOS)
-- **Anthony Goldstein**: Cabello castaño y ojos negros.
-- **Terry Boot**: Cabello castaño claro y ojos verde oliva.
-- **Michael Corner**: Cabello negro y ojos marrones.
-- **Tracey Davis**: Cabello castaño oscuro y ojos avellana.
-- **Daphne Greengrass**: Cabello rubio y ojos azules grisáceos.
-
-## DINÁMICA DE LA MAGIA Y EL TRAUMA
-1. **Triada Operativa**: Entrada (Voluntad), Proceso (Lógica Rúnica), Salida (Efecto Físico).
-2. **Resonancia de la Posesión**: La oscuridad de Ginny es combustible para su futura Rubedo.
-
-## LAS 10 REGLAS DE LA ALQUIMIA
-1. **Principio de Correspondencia**: "Como es arriba, es abajo".
-2. **Equilibrio de Intercambio**: La fuerza exige el abandono de la inocencia.
-3. **Anclaje Simbólico**: Los objetos (Walkman, Brújula) son canales de estabilidad.
+## ESTADOS ALQUÍMICOS DEL RELATO
+- **Nigredo**: Fase de trauma o caos inicial (ej. la sombra del diario en Ginny).
+- **Albedo**: Fase de purificación mediante la lógica y el estudio (ej. la tutoría del Cónclave).
+- **Rubedo**: Fase de maestría y acción final (ej. la captura de Pettigrew).
 `;
