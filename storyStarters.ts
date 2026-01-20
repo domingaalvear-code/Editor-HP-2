@@ -7,33 +7,32 @@ export interface StoryStarter {
 
 export const storyStarters: StoryStarter[] = [
   {
-    title: "La Variable del Afecto",
-    description: "Harry intenta agradecer a Aries por el equipo táctico y ella entra en bucle lógico.",
+    title: "El Colapso de la Estructura",
+    description: "Un encuentro imprevisto con un Boggart o una emboscada deja a Aries sin plan y sin varita.",
     prompt: `
-      Harry detiene a Aries en el pasillo para agradecerle la chaqueta de piel de basilisco. 
-      Narra el proceso interno de Aries: ella analiza la dilatación de las pupilas de Harry y el tono de su voz. 
-      En lugar de decir 'De nada', Aries comienza una disertación sobre la resistencia a la tracción del cuero mágico. 
-      Describe la frustración de Aries al darse cuenta, demasiado tarde, de que debería haber sonreído.
+      Durante una exploración en los terrenos, algo sale mal y Aries pierde su varita. 
+      Narra cómo su mente intenta desesperadamente calcular una salida, pero la falta de herramientas y de un plan previo la paraliza. 
+      Describe su desmoronamiento: el temblor en sus manos, la respiración errática y cómo Harry tiene que sacarla físicamente del lugar mientras ella repite que 'esto no estaba en la matriz'. 
+      Muestra la vulnerabilidad absoluta de la genio sin su armadura lógica.
     `
   },
   {
-    title: "Geometría del Vals",
-    description: "Aries es obligada a asistir a una reunión social y trata de bailar usando matemáticas.",
+    title: "Soluciones para un Corazón Roto",
+    description: "Ginny está sufriendo por las secuelas del diario y Aries intenta 'repararla' con lógica.",
     prompt: `
-      En una recepción en Grimmauld Place, Aries debe bailar con un joven heredero de una casa sangre pura. 
-      Narra cómo ella cuenta los pasos en voz baja ('Un cuarto de giro, 45 grados, eje de rotación constante'). 
-      Su pareja está aterrorizada por su intensidad. 
-      Harry la observa desde lejos, sabiendo que Aries no está siendo arrogante, sino que está luchando por no pisar a nadie mientras calcula la trayectoria de la falda.
+      Aries encuentra a Ginny Weasley llorando en un rincón. 
+      En lugar de un abrazo, Aries saca un vial de poción y una lista de ejercicios de Aritmancia para 'redirigir el flujo sináptico del trauma'. 
+      Narra el diálogo donde Aries suena condescendiente sin darse cuenta, diciendo que 'llorar es una pérdida de electrolitos ineficiente'. 
+      Muestra cómo Aries cree sinceramente que está ayudando, mientras Ginny la mira con una mezcla de confusión y dolor.
     `
   },
   {
-    title: "El Error del Consuelo",
-    description: "Hermione está llorando en la biblioteca y Aries intenta ayudar... a su manera.",
+    title: "La Corrección Inoportuna",
+    description: "En una reunión del Cónclave bajo alta tensión, Aries interrumpe a Sirius para corregir un tecnicismo.",
     prompt: `
-      Hermione está abrumada por los exámenes. Aries se acerca. 
-      Describe cómo Aries saca un pergamino y comienza a graficar las probabilidades de éxito de Hermione basándose en sus notas anteriores. 
-      Aries dice algo como: 'Tus glándulas lacrimales están desperdiciando recursos hídricos innecesarios para un examen de Transformaciones'. 
-      Al ver la cara de Hermione, Aries se da cuenta de que su 'diagnóstico' no era lo que se necesitaba.
+      Sirius Black está explicando un plan peligroso para capturar a Pettigrew. La tensión es máxima. 
+      Aries interrumpe para corregir la pronunciación de Sirius sobre un antiguo hechizo Black o para señalar un error de 0.5% en su cálculo de tiempo. 
+      Narra la reacción de la sala: el silencio pesado, la irritación de Sirius y cómo Aries no entiende por qué todos la miran mal si ella solo 'quería que la información fuera correcta'.
     `
   }
 ];

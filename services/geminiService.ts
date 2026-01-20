@@ -12,27 +12,28 @@ const BASE_PROMPT = `
       Actúa como un novelista de fantasía épica. Tu enfoque es el mundo "Magi" (AU 3er año).
 
       **MATIZ PERSONAJE: ARIES MAUVIGNIER-BLACK**
-      - No es una "villana fría" por maldad. Es una **Aritmante Socialmente Torpe**. 
-      - Sus interacciones deben reflejar un esfuerzo intelectual por parecer "normal". 
-      - Ejemplo: Si alguien llora, ella podría preguntar por la salinidad de las lágrimas porque no sabe cómo abrazar.
-      - Su voz es técnica, precisa y a veces involuntariamente cómica por su falta de tacto.
-      - En combate es una máquina; en un pasillo escolar, es un desastre de "inputs" no procesados.
+      - **Voz**: Técnica, precisa, gótica.
+      - **Defecto 1 (Análisis)**: Nunca actúa por impulso. Si no entiende el problema, se queda paralizada.
+      - **Defecto 2 (Empatía Fallida)**: Es incapaz de dar consuelo emocional. Si alguien llora, ella ofrece una poción vigorizante o un análisis de por qué el llanto es poco práctico.
+      - **Defecto 3 (Condescendencia)**: Suena arrogante sin quererlo. Corregir a otros es su forma de interactuar.
+      - **Defecto 4 (Pánico)**: Sin un plan, se desmorona. Si pierde su varita o el control, muestra un miedo infantil y vulnerable que contrasta con su genialidad. No sabe improvisar.
 
-      **REGLAS NARRATIVAS:**
-      - **Harry y Sirius**: Son su familia, pero incluso con ellos, Aries se comunica mediante "informes de estado" y lógica.
-      - **Atmósfera**: Gótico-Táctica. La magia es ciencia, pero la emoción es el "ruido" que Aries no sabe filtrar.
-      - **Estilo**: Mezcla descripciones cerebrales con momentos de vulnerabilidad silenciosa.
+      **DINÁMICA NARRATIVA:**
+      - Harry es su ancla social y táctica. 
+      - Aries es el cerebro, pero un cerebro que necesita una estructura rígida para no estallar.
+      - La magia debe sentirse como una ciencia exacta que ella usa para ocultar sus debilidades humanas.
 `;
 
 const ACADEMIC_PROMPT = `
-      Analiza la "Torpeza del Genio" en Aries Mauvignier-Black. Cómo su linaje de Grindelwald y su dependencia de la Aritmancia actúan como una neurodivergencia mágica que redefine sus relaciones con Harry y el Cónclave.
+      Analiza la dicotomía entre el poder alquímico y la fragilidad psicológica en Aries Mauvignier-Black. Explora cómo su pánico al caos y su falta de empatía social la convierten en un personaje trágico dentro del AU Magi.
 `;
 
 const ANALYSIS_PROMPT = `
       Verifica la coherencia en el mundo Magi:
-      1. ¿La frialdad de Aries se percibe como una barrera lógica/social y no solo como crueldad?
-      2. ¿Se mantiene la técnica de la Triada Operativa en la magia?
-      3. ¿Harry actúa como puente emocional para Aries?
+      1. ¿Aries muestra sus defectos (falta de improvisación, condescendencia involuntaria)?
+      2. ¿Se siente el pánico cuando pierde el control?
+      3. ¿Ofrece soluciones prácticas en lugar de apoyo emocional?
+      4. ¿Se mantiene la técnica de la Triada Operativa?
 `;
 
 export const editStory = async (
@@ -53,13 +54,13 @@ export const editStory = async (
       ${worldRules}
 
       --- BORRADOR DEL USUARIO ---
-      ${story || 'Generar una escena donde Aries intenta dar un cumplido a Harry y termina explicando la física de los buscadores.'}
+      ${story || 'Generar una escena donde el plan de Aries falla durante una misión y ella comienza a desmoronarse mientras Harry intenta estabilizarla.'}
       
       --- NOTAS DE INSPIRACIÓN ---
-      ${ideas || 'Enfatizar la incomodidad social de Aries.'}
+      ${ideas || 'Enfatizar los defectos de Aries: su pánico y su incapacidad de consolar.'}
 
       --- OBJETIVO ---
-      Transformar la escena. Aries debe resultar fascinante pero claramente fuera de su elemento en lo social. Su lógica es su escudo contra la confusión emocional.
+      Transformar la escena resaltando la fragilidad de Aries. Ella es una genio, pero una genio que se rompe sin estructura.
 
       --- MANUSCRITO FINAL ---
     `;
@@ -75,12 +76,12 @@ export const editStory = async (
         const response = await ai.models.generateContent({
           model: model,
           contents: { parts: contentParts },
-          config: { temperature: 0.8 }
+          config: { temperature: 0.85 }
         });
         return response.text;
     } catch(error) {
         console.error("API Error:", error);
-        throw new Error("La matriz de procesamiento falló.");
+        throw new Error("La matriz de procesamiento falló ante el caos.");
     }
 };
 

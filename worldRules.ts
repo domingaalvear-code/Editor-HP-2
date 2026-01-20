@@ -3,23 +3,24 @@ export const DEFAULT_WORLD_RULES = `
 # REGLAS DEL MUNDO INMUTABLES: MAGI (AU 3er AÑO)
 
 ## CONTEXTO HISTÓRICO (OTOÑO 1993)
-- **Sirius Black**: Exonerado el 2 de noviembre de 1993. Jefe de la Noble y Ancestral Casa Black.
-- **La Alquimia del Poder**: Zahira Mauvignier controla el flujo de oro; la justicia es ahora una transacción.
+- **Sirius Black**: Exonerado. Tutor legal de Harry. Jefe de la Casa Black.
+- **La Alquimia del Poder**: El dinero de los Mauvignier ha "transmutado" la política del Ministerio.
 
 ## PERSONAJES Y LINAJES
-#### Aries Mauvignier-Black (La Alquimista Inadaptada)
-- **Linaje**: Bisnieta de Grindelwald. Sangre de Veela de los Cárpatos.
-- **Psicología (La Paradoja de Aries)**: Su aparente "frialdad" es en realidad **Torpeza Social de Alto Nivel**. Su mente procesa la realidad en matrices aritmánticas; cuando una persona le sonríe, Aries busca la "Variable Oculta" en lugar de devolver la sonrisa.
-- **Comportamiento**: 
-    - Ante el afecto, se "congela" (Input Error).
-    - Utiliza tecnicismos para evitar la intimidad emocional. 
-    - Cree que el "contacto visual" tiene una duración óptima calculable, lo que la hace parecer intimidante cuando solo está contando segundos.
-- **Lema Personal**: "Natura Ardet, Mens Gubernat" (Su mente gobierna el fuego, pero no entiende las cenizas del afecto).
+#### Aries Mauvignier-Black (La Alquimista de Cristal)
+- **Linaje**: Bisnieta de Grindelwald. Veela de los Cárpatos.
+- **Lema Personal**: "Natura Ardet, Mens Gubernat" (La mente gobierna el fuego).
 
-#### Harry Potter (El Ancla Táctica)
-- **Rol**: Es el único que entiende que el silencio de Aries no es juicio, sino procesamiento. Actúa como su "Traductor Social" ante el Cónclave.
+**DEFECTOS DE SISTEMA (PUNTOS DE RUPTURA):**
+1. **Dependencia Estructural**: Aries es incapaz de actuar sin entender la arquitectura del problema. No es instintiva; es metódica. Si no puede "mapear" la situación, se queda estática.
+2. **Incapacidad de Consuelo**: Ante el dolor ajeno, su respuesta automática es la "Propuesta de Solución Técnica". Un abrazo le resulta una variable desconocida e ineficiente.
+3. **Condescendencia Involuntaria**: Su búsqueda de la precisión léxica suena a arrogancia. Suele corregir a los demás en momentos inapropiados, pensando que está ayudando a aclarar la realidad.
+4. **Pánico al Caos (El Desmoronamiento)**: Tiene terror visceral a perder el control. Sin un plan de contingencia o sin su varita, su fachada de frialdad se rompe instantáneamente. Es mucho más frágil que sus compañeros ante lo imprevisto.
+
+#### Harry Potter (El Guerrero Táctico)
+- **Rol**: El protector pragmático. Él es quien interviene cuando Aries se bloquea por la falta de un plan o cuando ofende a alguien sin querer.
 
 ## SISTEMA DE MAGIA
-1. **Triada Operativa**: Entrada, Proceso, Salida. Aries intenta aplicar esto a las conversaciones, fallando estrepitosamente en el "Proceso" de las emociones.
-2. **Resonancia de Sangre**: El linaje de Grindelwald la hace sentir "ajena" a la humanidad común, reforzando su aislamiento social.
+1. **Triada Operativa**: Entrada, Proceso, Salida. Aries vive bajo este dogma. Si el "Proceso" es incierto, la "Salida" es nula.
+2. **Resonancia de Sangre**: El fuego Veela es caótico; Aries usa la lógica para encadenar ese fuego. Si pierde la lógica, el fuego (su pánico) la consume.
 `;
