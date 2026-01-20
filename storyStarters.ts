@@ -7,43 +7,44 @@ export interface StoryStarter {
 
 export const storyStarters: StoryStarter[] = [
   {
-    title: "Comfortably Numb",
-    description: "Tras un enfrentamiento tenso, Aries se refugia en su música muggle para evitar un colapso.",
+    title: "La Mirada del Depredador",
+    description: "La presencia Veela de Aries causa un silencio incómodo en el Gran Comedor.",
     prompt: `
-      La misión ha sido un caos de imprevistos. Aries está en su habitación en Grimmauld Place, con las manos temblando. 
-      En lugar de buscar a Sirius o Harry, se coloca sus auriculares rúnicos. 
-      Narra cómo los acordes de 'Comfortably Numb' de Pink Floyd comienzan a organizar el ruido en su cabeza. 
-      Describe cómo la música transmuta su pánico en una melancolía controlada, permitiéndole recuperar su fachada sarcástica antes de que Harry entre a ver cómo está.
+      Aries camina hacia la mesa de Gryffindor para hablar con Harry. 
+      Narra cómo los estudiantes a su alrededor se apartan, no por admiración, sino por un instinto primordial de peligro. 
+      Describe cómo Aries nota los susurros y las miradas de desconfianza. 
+      Ella se sienta y le dice a Harry con un sarcasmo gélido: 'Parece que hoy el 84% de la sala cree que voy a devorar sus hígados. ¿Podemos proceder con el análisis del mapa?'. 
+      Muestra su soledad y cómo solo Harry parece inmune a esa atmósfera inquietante.
     `
   },
   {
-    title: "La Variable del Insomnio",
-    description: "Aries lleva 48 horas sin dormir intentando descifrar una protección rúnica.",
+    title: "El Peso de Grimmauld Place",
+    description: "Aries tiene que frenar una idea imprudente de Sirius mientras gestiona las cuentas de la casa.",
     prompt: `
-      Son las 3:45 AM en la biblioteca. Aries tiene ojeras profundas y el pelo revuelto, rodeada de pergaminos con matrices aritmánticas. 
-      Narra su irritación cuando Harry entra a pedirle que descanse. 
-      Ella responde con un sarcasmo mordaz sobre la 'pobre capacidad de procesamiento de los cerebros normales'. 
-      Muestra su obsesión: no puede cerrar los ojos porque los patrones de la runa se proyectan en sus párpados. 
-      Es la excelencia pagada con el precio de su propia salud.
+      Sirius quiere organizar una incursión arriesgada o una fiesta ruidosa para 'celebrar la libertad'. 
+      Aries está rodeada de libros contables y planes de seguridad. 
+      Narra la discusión: Aries siendo la voz de la razón, fría y técnica, mientras Sirius la acusa de ser 'demasiado Mauvignier'. 
+      Muestra el cansancio de Aries al tener que ser la adulta de la relación y cómo, tras la discusión, se encierra a escuchar 'Wish You Were Here' para lidiar con la envidia de no poder ser tan libre como él.
     `
   },
   {
-    title: "Humor en el Borde del Abismo",
-    description: "Atrapados por una trampa mágica, Aries usa el sarcasmo para no entrar en pánico.",
+    title: "Cuando el Dique Rompe",
+    description: "Un error humano trivial arruina un experimento perfecto y Aries explota.",
     prompt: `
-      Aries y el Cónclave están atrapados en una cámara que se llena de gas alucinógeno o se estrecha. 
-      A medida que el plan de Aries falla, ella comienza a soltar bromas de humor negro sobre lo 'estéticamente desagradable' que será su muerte. 
-      Narra cómo los demás se irritan por su cinismo, sin darse cuenta de que Aries está usando cada broma como un clavo para mantener su mente clavada a la realidad y no desmoronarse.
+      Aries ha pasado semanas en un experimento de alquimia rúnica. Alguien (quizás un compañero distraído) comete un error ilógico que lo arruina todo. 
+      No narres una Aries indiferente. Narra cómo su necesidad de control se quiebra. 
+      Su reacción es una explosión de sarcasmo violento seguido de una ansiedad paralizante donde comienza a hiperventilar porque 'el mundo no tiene sentido si la gente no sigue las reglas'. 
+      Harry tiene que intervenir para recordarle que el caos es parte de la Variable Humana.
     `
   },
   {
-    title: "La Estética de la Disciplina",
-    description: "Una escena de entrenamiento donde Aries demuestra que su talento es puro trabajo duro.",
+    title: "El Glamour Desconfiado",
+    description: "Un chico intenta invitar a Aries a salir y ella analiza sus niveles de dopamina con desprecio.",
     prompt: `
-      Aries está en el gimnasio rúnico de Grimmauld Place. 
-      Narra su rutina: repeticiones exactas de movimientos de varita, meditación bajo presión de gravedad mágica. 
-      Describe el sudor y el agotamiento. 
-      Muestra el momento en que alguien (quizás Ron o Draco) sugiere que ella tiene 'suerte' de ser tan poderosa, y la respuesta fría y técnica de Aries donde explica exactamente cuántas miles de horas ha invertido en ese 'don'.
+      Un estudiante valiente intenta invitar a Aries a Hogsmeade. 
+      Narra cómo Aries lo mira fijamente, buscando señales de que su interés es real y no una reacción a su sangre Veela. 
+      Ella responde con un cuestionario técnico sobre sus intenciones y termina rechazándolo de forma condescendiente, convencida de que solo es un títere de sus propios instintos biológicos. 
+      Luego, ella se pregunta si alguna vez alguien la verá sin el filtro de su linaje.
     `
   }
 ];

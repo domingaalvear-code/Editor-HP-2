@@ -12,29 +12,29 @@ const BASE_PROMPT = `
       Actúa como un novelista de fantasía épica de estilo gótico-táctico. Tu enfoque es el mundo "Magi" (AU 3er año).
 
       **PERSONALIDAD DE ARIES MAUVIGNIER-BLACK:**
-      - **Voz**: Sarcástica, técnica, directa. Usa el humor negro cuando la situación se desborda.
-      - **Mentalidad**: Ve patrones, estructuras y música en la magia. Es una científica del ocultismo.
-      - **Obsesión**: Si hay algo que no entiende, se vuelve irritable, deja de comer y duerme poco. Su curiosidad es una patología.
-      - **Esfuerzo**: No es una "elegida". Es una trabajadora incansable que desprecia la mediocridad.
-      - **Vínculos**: Distante con el mundo, pero una loba protectora con Harry y Sirius.
-      - **Regulación**: Menciona su conexión con la música muggle (Pink Floyd) como su momento de paz no utilitaria.
+      - **Voz**: Sarcástica, técnica, cargada de una ironía defensiva.
+      - **Linaje Veela**: Su belleza debe describirse como inquietante o depredadora. La gente se siente intimidada, no atraída de forma dulce. Ella odia que la miren por su "glamour".
+      - **Carga de Responsabilidad**: Ella es la sensata en Grimmauld Place. Cuida de Sirius pero envidia su libertad. Se siente vieja para su edad.
+      - **El Dique**: Su frialdad es un esfuerzo consciente por contener una ansiedad explosiva. Si algo no tiene lógica, Aries se irrita o entra en pánico interno.
+      - **Música**: Su conexión con Pink Floyd es su único refugio donde no tiene que ser la "adulta" ni la "alquimista".
+      - **Relaciones**: Con Harry es protectora y vulnerable a su manera técnica. Con los demás, es un muro de cristal.
 
       **DINÁMICA NARRATIVA:**
-      - La magia es una ciencia de precisión (Triada Operativa).
-      - El sarcasmo de Aries es su escudo contra el miedo.
-      - Evita el sentimentalismo barato; Aries ofrece soluciones o ironías, nunca abrazos (a menos que sea un momento de ruptura total).
+      - La magia es una arquitectura de precisión.
+      - El sarcasmo es su armadura; cuanto más miedo tiene, más muerden sus palabras.
+      - Evita convertirla en una Mary Sue; sus defectos (falta de empatía, pánico al caos, condescendencia) son reales y tienen consecuencias.
 `;
 
 const ACADEMIC_PROMPT = `
-      Analiza la construcción del personaje de Aries Mauvignier-Black: su sinestesia entre música y matemáticas, su disciplina de trabajo como motor de su poder y cómo su sarcasmo actúa como mecanismo de defensa psicológica.
+      Analiza la subversión del tropo Veela en Aries Mauvignier-Black: de la seducción a la depredación social. Explora su papel como "ancla de madurez" para Sirius Black y cómo su necesidad de control lógico es una respuesta al trauma y al miedo a su propia naturaleza caótica.
 `;
 
 const ANALYSIS_PROMPT = `
       Verifica la coherencia en el mundo Magi:
-      1. ¿Aries usa el sarcasmo o humor negro ante la tensión?
-      2. ¿Se refleja su obsesión por resolver problemas (insomnio/mal humor)?
-      3. ¿La excelencia de Aries se siente como fruto del esfuerzo y no del azar?
-      4. ¿Se menciona su anclaje en la música o patrones estructurales?
+      1. ¿La belleza de Aries se siente inquietante/depredadora en lugar de solo atractiva?
+      2. ¿Se muestra la carga de Aries siendo la "adulta" frente a la imprudencia de Sirius?
+      3. ¿Aparece el sarcasmo como escudo ante el miedo o la falta de lógica?
+      4. ¿Se mantiene la técnica de la Triada Operativa y su obsesión por los patrones?
 `;
 
 export const editStory = async (
@@ -55,13 +55,13 @@ export const editStory = async (
       ${worldRules}
 
       --- BORRADOR DEL USUARIO ---
-      ${story || 'Generar una escena de Aries trabajando en un problema rúnico imposible a las 4 AM mientras escucha Pink Floyd.'}
+      ${story || 'Generar una escena donde la presencia Veela de Aries incomoda a un grupo de estudiantes y ella se refugia en su sarcasmo mientras Harry observa.'}
       
       --- NOTAS DE INSPIRACIÓN ---
-      ${ideas || 'Enfatizar la obsesión de Aries y su uso del sarcasmo.'}
+      ${ideas || 'Enfatizar el matiz depredador del linaje Veela y la carga de responsabilidad de Aries.'}
 
       --- OBJETIVO ---
-      Transformar la escena. Muestra a la Aries que se esfuerza hasta el agotamiento, que ve patrones donde otros ven caos, y que usa la ironía para no mostrar su cansancio.
+      Transformar la escena mostrando a una Aries compleja: poderosa pero socialmente aislada, responsable pero agotada, y siempre protegida por su lógica y su música.
 
       --- MANUSCRITO FINAL ---
     `;
@@ -82,7 +82,7 @@ export const editStory = async (
         return response.text;
     } catch(error) {
         console.error("API Error:", error);
-        throw new Error("La matriz de procesamiento falló ante la complejidad del sujeto.");
+        throw new Error("La matriz de procesamiento falló ante la complejidad emocional.");
     }
 };
 
