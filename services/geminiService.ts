@@ -9,31 +9,32 @@ if (!API_KEY) {
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 const BASE_PROMPT = `
-      Actúa como un novelista de fantasía épica. Tu enfoque es el mundo "Magi" (AU 3er año).
+      Actúa como un novelista de fantasía épica de estilo gótico-táctico. Tu enfoque es el mundo "Magi" (AU 3er año).
 
-      **MATIZ PERSONAJE: ARIES MAUVIGNIER-BLACK**
-      - **Voz**: Técnica, precisa, gótica.
-      - **Defecto 1 (Análisis)**: Nunca actúa por impulso. Si no entiende el problema, se queda paralizada.
-      - **Defecto 2 (Empatía Fallida)**: Es incapaz de dar consuelo emocional. Si alguien llora, ella ofrece una poción vigorizante o un análisis de por qué el llanto es poco práctico.
-      - **Defecto 3 (Condescendencia)**: Suena arrogante sin quererlo. Corregir a otros es su forma de interactuar.
-      - **Defecto 4 (Pánico)**: Sin un plan, se desmorona. Si pierde su varita o el control, muestra un miedo infantil y vulnerable que contrasta con su genialidad. No sabe improvisar.
+      **PERSONALIDAD DE ARIES MAUVIGNIER-BLACK:**
+      - **Voz**: Sarcástica, técnica, directa. Usa el humor negro cuando la situación se desborda.
+      - **Mentalidad**: Ve patrones, estructuras y música en la magia. Es una científica del ocultismo.
+      - **Obsesión**: Si hay algo que no entiende, se vuelve irritable, deja de comer y duerme poco. Su curiosidad es una patología.
+      - **Esfuerzo**: No es una "elegida". Es una trabajadora incansable que desprecia la mediocridad.
+      - **Vínculos**: Distante con el mundo, pero una loba protectora con Harry y Sirius.
+      - **Regulación**: Menciona su conexión con la música muggle (Pink Floyd) como su momento de paz no utilitaria.
 
       **DINÁMICA NARRATIVA:**
-      - Harry es su ancla social y táctica. 
-      - Aries es el cerebro, pero un cerebro que necesita una estructura rígida para no estallar.
-      - La magia debe sentirse como una ciencia exacta que ella usa para ocultar sus debilidades humanas.
+      - La magia es una ciencia de precisión (Triada Operativa).
+      - El sarcasmo de Aries es su escudo contra el miedo.
+      - Evita el sentimentalismo barato; Aries ofrece soluciones o ironías, nunca abrazos (a menos que sea un momento de ruptura total).
 `;
 
 const ACADEMIC_PROMPT = `
-      Analiza la dicotomía entre el poder alquímico y la fragilidad psicológica en Aries Mauvignier-Black. Explora cómo su pánico al caos y su falta de empatía social la convierten en un personaje trágico dentro del AU Magi.
+      Analiza la construcción del personaje de Aries Mauvignier-Black: su sinestesia entre música y matemáticas, su disciplina de trabajo como motor de su poder y cómo su sarcasmo actúa como mecanismo de defensa psicológica.
 `;
 
 const ANALYSIS_PROMPT = `
       Verifica la coherencia en el mundo Magi:
-      1. ¿Aries muestra sus defectos (falta de improvisación, condescendencia involuntaria)?
-      2. ¿Se siente el pánico cuando pierde el control?
-      3. ¿Ofrece soluciones prácticas en lugar de apoyo emocional?
-      4. ¿Se mantiene la técnica de la Triada Operativa?
+      1. ¿Aries usa el sarcasmo o humor negro ante la tensión?
+      2. ¿Se refleja su obsesión por resolver problemas (insomnio/mal humor)?
+      3. ¿La excelencia de Aries se siente como fruto del esfuerzo y no del azar?
+      4. ¿Se menciona su anclaje en la música o patrones estructurales?
 `;
 
 export const editStory = async (
@@ -54,13 +55,13 @@ export const editStory = async (
       ${worldRules}
 
       --- BORRADOR DEL USUARIO ---
-      ${story || 'Generar una escena donde el plan de Aries falla durante una misión y ella comienza a desmoronarse mientras Harry intenta estabilizarla.'}
+      ${story || 'Generar una escena de Aries trabajando en un problema rúnico imposible a las 4 AM mientras escucha Pink Floyd.'}
       
       --- NOTAS DE INSPIRACIÓN ---
-      ${ideas || 'Enfatizar los defectos de Aries: su pánico y su incapacidad de consolar.'}
+      ${ideas || 'Enfatizar la obsesión de Aries y su uso del sarcasmo.'}
 
       --- OBJETIVO ---
-      Transformar la escena resaltando la fragilidad de Aries. Ella es una genio, pero una genio que se rompe sin estructura.
+      Transformar la escena. Muestra a la Aries que se esfuerza hasta el agotamiento, que ve patrones donde otros ven caos, y que usa la ironía para no mostrar su cansancio.
 
       --- MANUSCRITO FINAL ---
     `;
@@ -76,12 +77,12 @@ export const editStory = async (
         const response = await ai.models.generateContent({
           model: model,
           contents: { parts: contentParts },
-          config: { temperature: 0.85 }
+          config: { temperature: 0.8 }
         });
         return response.text;
     } catch(error) {
         console.error("API Error:", error);
-        throw new Error("La matriz de procesamiento falló ante el caos.");
+        throw new Error("La matriz de procesamiento falló ante la complejidad del sujeto.");
     }
 };
 

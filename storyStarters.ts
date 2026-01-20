@@ -7,32 +7,43 @@ export interface StoryStarter {
 
 export const storyStarters: StoryStarter[] = [
   {
-    title: "El Colapso de la Estructura",
-    description: "Un encuentro imprevisto con un Boggart o una emboscada deja a Aries sin plan y sin varita.",
+    title: "Comfortably Numb",
+    description: "Tras un enfrentamiento tenso, Aries se refugia en su música muggle para evitar un colapso.",
     prompt: `
-      Durante una exploración en los terrenos, algo sale mal y Aries pierde su varita. 
-      Narra cómo su mente intenta desesperadamente calcular una salida, pero la falta de herramientas y de un plan previo la paraliza. 
-      Describe su desmoronamiento: el temblor en sus manos, la respiración errática y cómo Harry tiene que sacarla físicamente del lugar mientras ella repite que 'esto no estaba en la matriz'. 
-      Muestra la vulnerabilidad absoluta de la genio sin su armadura lógica.
+      La misión ha sido un caos de imprevistos. Aries está en su habitación en Grimmauld Place, con las manos temblando. 
+      En lugar de buscar a Sirius o Harry, se coloca sus auriculares rúnicos. 
+      Narra cómo los acordes de 'Comfortably Numb' de Pink Floyd comienzan a organizar el ruido en su cabeza. 
+      Describe cómo la música transmuta su pánico en una melancolía controlada, permitiéndole recuperar su fachada sarcástica antes de que Harry entre a ver cómo está.
     `
   },
   {
-    title: "Soluciones para un Corazón Roto",
-    description: "Ginny está sufriendo por las secuelas del diario y Aries intenta 'repararla' con lógica.",
+    title: "La Variable del Insomnio",
+    description: "Aries lleva 48 horas sin dormir intentando descifrar una protección rúnica.",
     prompt: `
-      Aries encuentra a Ginny Weasley llorando en un rincón. 
-      En lugar de un abrazo, Aries saca un vial de poción y una lista de ejercicios de Aritmancia para 'redirigir el flujo sináptico del trauma'. 
-      Narra el diálogo donde Aries suena condescendiente sin darse cuenta, diciendo que 'llorar es una pérdida de electrolitos ineficiente'. 
-      Muestra cómo Aries cree sinceramente que está ayudando, mientras Ginny la mira con una mezcla de confusión y dolor.
+      Son las 3:45 AM en la biblioteca. Aries tiene ojeras profundas y el pelo revuelto, rodeada de pergaminos con matrices aritmánticas. 
+      Narra su irritación cuando Harry entra a pedirle que descanse. 
+      Ella responde con un sarcasmo mordaz sobre la 'pobre capacidad de procesamiento de los cerebros normales'. 
+      Muestra su obsesión: no puede cerrar los ojos porque los patrones de la runa se proyectan en sus párpados. 
+      Es la excelencia pagada con el precio de su propia salud.
     `
   },
   {
-    title: "La Corrección Inoportuna",
-    description: "En una reunión del Cónclave bajo alta tensión, Aries interrumpe a Sirius para corregir un tecnicismo.",
+    title: "Humor en el Borde del Abismo",
+    description: "Atrapados por una trampa mágica, Aries usa el sarcasmo para no entrar en pánico.",
     prompt: `
-      Sirius Black está explicando un plan peligroso para capturar a Pettigrew. La tensión es máxima. 
-      Aries interrumpe para corregir la pronunciación de Sirius sobre un antiguo hechizo Black o para señalar un error de 0.5% en su cálculo de tiempo. 
-      Narra la reacción de la sala: el silencio pesado, la irritación de Sirius y cómo Aries no entiende por qué todos la miran mal si ella solo 'quería que la información fuera correcta'.
+      Aries y el Cónclave están atrapados en una cámara que se llena de gas alucinógeno o se estrecha. 
+      A medida que el plan de Aries falla, ella comienza a soltar bromas de humor negro sobre lo 'estéticamente desagradable' que será su muerte. 
+      Narra cómo los demás se irritan por su cinismo, sin darse cuenta de que Aries está usando cada broma como un clavo para mantener su mente clavada a la realidad y no desmoronarse.
+    `
+  },
+  {
+    title: "La Estética de la Disciplina",
+    description: "Una escena de entrenamiento donde Aries demuestra que su talento es puro trabajo duro.",
+    prompt: `
+      Aries está en el gimnasio rúnico de Grimmauld Place. 
+      Narra su rutina: repeticiones exactas de movimientos de varita, meditación bajo presión de gravedad mágica. 
+      Describe el sudor y el agotamiento. 
+      Muestra el momento en que alguien (quizás Ron o Draco) sugiere que ella tiene 'suerte' de ser tan poderosa, y la respuesta fría y técnica de Aries donde explica exactamente cuántas miles de horas ha invertido en ese 'don'.
     `
   }
 ];
