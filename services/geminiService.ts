@@ -9,28 +9,30 @@ if (!API_KEY) {
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 const BASE_PROMPT = `
-      Actúa como un novelista de fantasía épica de alto nivel. Tu enfoque es la narrativa del mundo "Magi" (AU de Harry Potter, 3er año).
+      Actúa como un novelista de fantasía épica. Tu enfoque es el mundo "Magi" (AU 3er año).
 
-      **REGLAS NARRATIVAS CENTRALES:**
-      - **Aries Mauvignier-Black**: Bisnieta de Grindelwald y heredera Black. Su lema es "Natura Ardet, Mens Gubernat". Su aroma a Vainilla Negra (lógica) lucha contra la Belladona (fuego elemental Veela). Su diálogos son técnicos, usando términos como "variables", "entropía" y "matriz de riesgo".
-      - **Harry Potter**: Ya no es una víctima. Es un guerrero táctico con equipo de piel de basilisco. Sirius Black es su tutor legal y ancla emocional.
-      - **Sirius Black**: Exonerado, elegante, con un estilo de "estrella de rock mágica". Vive en un Grimmauld Place purificado por la alquimia de Zahira.
-      - **Atmósfera**: "Gótico-Táctica". La magia es una ciencia de precisión (Triada Operativa). 
-      - **Simbología Alquímica**: Nigredo (Caos/Pettigrew), Albedo (Tutoría/Purificación), Rubedo (Justicia/Maestría).
+      **MATIZ PERSONAJE: ARIES MAUVIGNIER-BLACK**
+      - No es una "villana fría" por maldad. Es una **Aritmante Socialmente Torpe**. 
+      - Sus interacciones deben reflejar un esfuerzo intelectual por parecer "normal". 
+      - Ejemplo: Si alguien llora, ella podría preguntar por la salinidad de las lágrimas porque no sabe cómo abrazar.
+      - Su voz es técnica, precisa y a veces involuntariamente cómica por su falta de tacto.
+      - En combate es una máquina; en un pasillo escolar, es un desastre de "inputs" no procesados.
 
-      **ESTILO:** Prosa cerebral y sensorial. Contrasta el frío de las ecuaciones con el calor de la sangre antigua.
+      **REGLAS NARRATIVAS:**
+      - **Harry y Sirius**: Son su familia, pero incluso con ellos, Aries se comunica mediante "informes de estado" y lógica.
+      - **Atmósfera**: Gótico-Táctica. La magia es ciencia, pero la emoción es el "ruido" que Aries no sabe filtrar.
+      - **Estilo**: Mezcla descripciones cerebrales con momentos de vulnerabilidad silenciosa.
 `;
 
 const ACADEMIC_PROMPT = `
-      Actúa como un analista literario experto en el mundo "Magi". Analiza cómo el linaje de Grindelwald en Aries Mauvignier-Black y la exoneración temprana de Sirius Black redefinen el arquetipo del "Héroe Elegido" para Harry Potter, convirtiéndolo en un "Guerrero Alquimista".
+      Analiza la "Torpeza del Genio" en Aries Mauvignier-Black. Cómo su linaje de Grindelwald y su dependencia de la Aritmancia actúan como una neurodivergencia mágica que redefine sus relaciones con Harry y el Cónclave.
 `;
 
 const ANALYSIS_PROMPT = `
-      Eres un analista de coherencia del mundo Magi (3er Año AU). Verifica:
-      1. ¿Se respeta que Sirius Black ya es libre y tutor de Harry?
-      2. ¿Aries utiliza terminología técnica y muestra su dualidad Veela/Grindelwald?
-      3. ¿Se menciona el equipo táctico (Piel de Basilisco, Walkman rúnico)?
-      4. ¿La magia sigue la Triada Operativa (Entrada, Proceso, Salida)?
+      Verifica la coherencia en el mundo Magi:
+      1. ¿La frialdad de Aries se percibe como una barrera lógica/social y no solo como crueldad?
+      2. ¿Se mantiene la técnica de la Triada Operativa en la magia?
+      3. ¿Harry actúa como puente emocional para Aries?
 `;
 
 export const editStory = async (
@@ -47,20 +49,17 @@ export const editStory = async (
     const promptText = `
       ${SYSTEM_PROMPT}
 
-      --- REGLAS DEL MUNDO (FUENTE DE VERDAD INMUTABLE) ---
+      --- REGLAS DEL MUNDO (FUENTE DE VERDAD) ---
       ${worldRules}
 
-      --- MATERIAL DE REFERENCIA CANON ---
-      ${canonReference || "No se proporcionó."}
-
-      --- BORRADOR DEL USUARIO / POV ACTUAL ---
-      ${story || 'Generar una escena de entrenamiento táctico en Grimmauld Place o un debate del Cónclave en la biblioteca.'}
+      --- BORRADOR DEL USUARIO ---
+      ${story || 'Generar una escena donde Aries intenta dar un cumplido a Harry y termina explicando la física de los buscadores.'}
       
       --- NOTAS DE INSPIRACIÓN ---
-      ${ideas || 'No se proporcionaron.'}
+      ${ideas || 'Enfatizar la incomodidad social de Aries.'}
 
       --- OBJETIVO ---
-      Expande el material a una prosa narrativa de alta calidad. Utiliza el lema "Natura Ardet, Mens Gubernat" si la escena lo requiere. Asegúrate de que la magia se sienta técnica y peligrosa.
+      Transformar la escena. Aries debe resultar fascinante pero claramente fuera de su elemento en lo social. Su lógica es su escudo contra la confusión emocional.
 
       --- MANUSCRITO FINAL ---
     `;
@@ -76,12 +75,12 @@ export const editStory = async (
         const response = await ai.models.generateContent({
           model: model,
           contents: { parts: contentParts },
-          config: { temperature: 0.8, topP: 0.95 }
+          config: { temperature: 0.8 }
         });
         return response.text;
     } catch(error) {
         console.error("API Error:", error);
-        throw new Error("La conexión con el núcleo de la Alquimia falló.");
+        throw new Error("La matriz de procesamiento falló.");
     }
 };
 
@@ -92,6 +91,6 @@ export const analyzeWorldRules = async (worldRules: string): Promise<string> => 
     const response = await ai.models.generateContent({ model: model, contents: prompt });
     return response.text;
   } catch (error) {
-    throw new Error("Error analizando la coherencia del mundo.");
+    throw new Error("Error en la auditoría de reglas.");
   }
 }

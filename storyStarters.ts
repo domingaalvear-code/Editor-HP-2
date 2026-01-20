@@ -7,43 +7,33 @@ export interface StoryStarter {
 
 export const storyStarters: StoryStarter[] = [
   {
-    title: "El Asedio de la Rata",
-    description: "Operación táctica en la Sala Común de Gryffindor usando a Eros, Crookshanks y Hermes.",
+    title: "La Variable del Afecto",
+    description: "Harry intenta agradecer a Aries por el equipo táctico y ella entra en bucle lógico.",
     prompt: `
-      Narra la 'Fase uno de la operación de contención' en la Torre de Gryffindor. 
-      Aries entra en la sala común con Eros y Hermes (el cuervo). Describe la atmósfera de depredación coordinada. 
-      Scabbers (Pettigrew) está en el bolsillo de Ron, sintiendo que el perímetro se cierra. 
-      Enfócate en la mirada clínica de Aries y cómo Harry vigila las salidas de ventilación, sabiendo que la rata no tiene escapatoria bajo la 'Ley de la Contingencia'.
+      Harry detiene a Aries en el pasillo para agradecerle la chaqueta de piel de basilisco. 
+      Narra el proceso interno de Aries: ella analiza la dilatación de las pupilas de Harry y el tono de su voz. 
+      En lugar de decir 'De nada', Aries comienza una disertación sobre la resistencia a la tracción del cuero mágico. 
+      Describe la frustración de Aries al darse cuenta, demasiado tarde, de que debería haber sonreído.
     `
   },
   {
-    title: "Natura Ardet, Mens Gubernat",
-    description: "Zahira revela a Harry la verdadera herencia de Aries y la conexión con Grindelwald.",
+    title: "Geometría del Vals",
+    description: "Aries es obligada a asistir a una reunión social y trata de bailar usando matemáticas.",
     prompt: `
-      Escena en el salón de Grimmauld Place. Zahira Mauvignier abre la caja de Jean-Luc que contiene las esencias de la Veela de los Cárpatos. 
-      Describe el momento en que se revela que Aries es bisnieta de Gellert Grindelwald. 
-      Explora la reacción de Harry ante esta 'variable' oscura y cómo la filosofía de 'La Mente Gobierna' es lo único que mantiene a Aries a salvo de su propia sangre. 
-      El ambiente debe oler a ozono y a historia antigua.
+      En una recepción en Grimmauld Place, Aries debe bailar con un joven heredero de una casa sangre pura. 
+      Narra cómo ella cuenta los pasos en voz baja ('Un cuarto de giro, 45 grados, eje de rotación constante'). 
+      Su pareja está aterrorizada por su intensidad. 
+      Harry la observa desde lejos, sabiendo que Aries no está siendo arrogante, sino que está luchando por no pisar a nadie mientras calcula la trayectoria de la falda.
     `
   },
   {
-    title: "Vuelo en el Ojo de la Tormenta",
-    description: "El partido contra Ravenclaw. Harry en la Saeta de Fuego contra la balística de Aries.",
+    title: "El Error del Consuelo",
+    description: "Hermione está llorando en la biblioteca y Aries intenta ayudar... a su manera.",
     prompt: `
-      Campo de Quidditch bajo una tormenta escocesa. Harry está sobre su Saeta de Fuego, pero Aries no juega; ella aplica balística como Golpeadora. 
-      Narra el duelo aéreo: Aries desviando Bludgers con precisión de Aritmante para negar el espacio de vuelo de Harry. 
-      Describe la 'Rubedo' de Harry al realizar la maniobra vertical de 90 grados para esquivar el ataque de Aries. 
-      Termina con el reconocimiento mutuo de fuerza al aterrizar en el barro.
-    `
-  },
-  {
-    title: "La Auditoría del Oro",
-    description: "Zahira Mauvignier se enfrenta al Ministro Fudge en el tribunal del Nivel 10.",
-    prompt: `
-      Nivel 10 del Ministerio de Magia. Zahira Mauvignier se pone de pie frente al Wizengamot. 
-      Describe cómo ella 'transmuta' la justicia en una transacción comercial, derramando una cascada de un millón de galeones sobre la mesa del escriba. 
-      Narra el miedo visceral de Fudge al saber que Zahira tiene sus libros de contabilidad. 
-      Es la victoria de la 'Variable Mauvignier' sobre la burocracia corrupta.
+      Hermione está abrumada por los exámenes. Aries se acerca. 
+      Describe cómo Aries saca un pergamino y comienza a graficar las probabilidades de éxito de Hermione basándose en sus notas anteriores. 
+      Aries dice algo como: 'Tus glándulas lacrimales están desperdiciando recursos hídricos innecesarios para un examen de Transformaciones'. 
+      Al ver la cara de Hermione, Aries se da cuenta de que su 'diagnóstico' no era lo que se necesitaba.
     `
   }
 ];
